@@ -1,0 +1,89 @@
+[Emobank]
+split by the original source code
+
+train text 8062
+train label 8062
+valid text 1000
+valid label 1000
+test text 1000
+test label 1000
+
+
+
+[SemEval 2018]
+
+split by the original dataset
+train text 6838
+train label 6838
+valid text 886
+valid label 886
+test text 3259
+
+(has intensity labels of 4 representative emotions)
+
+
+[ISEAR]
+train text 5366
+train label 5366
+valid text 1150
+valid label 1150
+test text 1150
+
+
+[SSEC]
+train text 868
+train label 868
+valid text 218
+valid label 218
+test text 1956
+test label 1956
+
+skip one ex without annotations
+
+
+[ISEAR]
+#https://www.unige.ch/cisa/research/materials-and-online-research/research-material/
+#https://www.kaggle.com/shrivastava/isears-dataset/data#
+'ID',       :   
+'CITY',     :   
+'COUN',     :   국가 1 "SWEDEN" 2 "NORWAY" 3 "F.R.G." 4 "FINLAND" 5 "GREECE" 6 "HONG KONG" 7 "LEBANON" 8 "AUSTRIA" 9 "AUSTRALIA" 10 "BRAZIL" 11 "BOTSWANA" 12 "BULGARIA" 13 "FRANCE" 14 "ITALY" 15 "JAPAN" 16 "NEW ZEALAND" 17 "NETHERLANDS" 18 "PORTUGAL" 19 "SPAIN" 20 "ZAMBIA" 21 "ZIMBABWE" 22 "USA" 23 "POLAND" 24 "NIGERIA" 25 "ISRAEL" 26 "INDIA" 27 "MALAWI" 28 "SWITZERLAND" 29 "CHILE" 30 "CHINA MAINLAND" 31 "YUGOSLAVIA" 32 "COSTA RICA" 33 "HONDURAS" 34 "MEXICO" 35 GUATEMALA" 36 "VENEZUELA" 37 "EL SALVADOR"
+'SUBJ',     :   
+'SEX',      :   성별 1남 2여
+'AGE',      :   
+'RELI',     :   종교 1 "PROTESTANT" 2 "CATHOLIC" 3 "JEWISH" 4 "HINDU" 5 "BUDDHIST" 6 "NATIVE" 7 "OTHERS" 8 "ARELIGIOUS"
+'PRAC',     :   종교참석 1 "PRACTISING" 2 "NOT PRACTISING"
+'FOCC',     :   아빠직업 1 "HOUSEWIFE" 2 "UNEMPLOYED" 3 "STUDENT" 4 "BLUE COLLAR UNTRAINED" 5 "BLUE COLLAR TRAINED" 6 "WHITE COLLAR NONACADEMIC" 7 "WHITE COLLAR ACADEMIC" 8 "SELF-EMPLOYED NONACADEMIC" 9 "SELF-EMPLOYED ACADEMIC"
+'MOCC',     :   엄마직업 1 "HOUSEWIFE" 2 "UNEMPLOYED" 3 "STUDENT" 4 "BLUE COLLAR UNTRAINED" 5 "BLUE COLLAR TRAINED" 6 "WHITE COLLAR NONACADEMIC" 7 "WHITE COLLAR ACADEMIC" 8 "SELF-EMPLOYED NONACADEMIC" 9 "SELF-EMPLOYED ACADEMIC"
+'FIEL',     :   전공 1 "PSYCHOLOGY" 2 "SOCIAL SCIENCES" 3 "LANGUAGES" 4 "FINE ARTS" 5 "LAW" 6 "NATURAL SCIENCE" 7 "ENGINEERING" 8 "MEDICAL" 9 "OTHER"
+'EMOT',     :   1 = JOY, 2 = FEAR, 3 = ANGER, 4 = SADNESS, 5 = DISGUST, 6 = SHAME, 7 = GUILT
+'WHEN',     :   (SIT)이 언제? 1. days ago 	2. weeks ago	3. months ago		4. years ago 
+'LONG',     :   (SIT)얼마나 길게? 1. a few minutes 2. an hour 	3. several hours 4. a day or more
+'INTS',     :   (SIT)Intensity? 1. not very 2. moderately intense 3. intense	4. very intense  
+'ERGO',     :   (SIT)Ergotropic Arousal (reaction) change in breathing, heart beating faster, muscles tensing/trembling, perspiring/moist hands (0-4)
+'TROPHO',   :   (SIT)Trophotropic Arousal (lump in throat, stomach troubles, crying/sobbing)
+'TEMPER',   :   (SIT)Felt temperature: feeling cold/shivering, feeling warm/pleasant, feeling hot/cheeks burning
+'EXPRES',   :   (SIT)Nonverbal activity *laughing/smiling, crying/sobbing, other facial expression change, screaming/yelling, other voice changes, changes in gesturing
+'MOVE',     :   (SIT)Movement behavior *withdrawing (-1) vs moving towards (+1) people   
+'EXP1',     :   (SIT)Laughing, smiling *
+'EXP2',     :   (SIT)Crying, sobbing *
+'EXP10',    :        Moving against people or things, aggression
+'PARAL',    :        Paralinguistic activity *speech-melody change, speech disturbances, speech tempo change
+'CON',      :        Did you try to hide or to control your feelings so that nobody would know how you really felt? 
+'EXPC',     :        Now please think back to the situation or event that caused your emotion. Did you expect this situation to occur?) 
+'PLEA',     :        Did you find the event itself pleasant or unpleasant? 
+'PLAN',     :        How important was the event for your goals, needs, or desires at the time it happened? Did it help or hinder you to follow your plans or to achieve your aims? 	
+'FAIR',     :        Would you say that the situation or event that caused your emotion was unjust or unfair?
+'CAUS',     :        External causation *Who do you think was responsible
+'COPING',   :        How did you evaluate your ability to act on or to cope with the event
+'MORL',     :        would this behavior itself be judged as improper or immoral 
+'SELF',     :        How did this event affect your feelings about yourself such as your self-esteem or your self confidence? 
+'RELA',     :        How did this event change your relationships with the people involved
+
+'VERBAL',   :        For verbal activity, for which respondents could check the following categories "silence, short utterance, one or two sentences, lengthy utterance“ an interval scale variable with scores from 0 (silence) to 3 (lengthy utterance) was constructed via recoding the category checked into the appropriate value for the variable    VERBAL 
+'NEUTRO',   :   
+'Field1',   :       ?
+'Field3',   :       ?
+'Field2',   :       ?
+'MYKEY',    :   
+'SIT',      :   EMOT에 대한 구체적 경험 서술
+'STATE'     :   
