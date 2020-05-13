@@ -16,6 +16,7 @@ class EmotionDatasetLoader():
     def __init__(self, emotion_labels, emotion_label_type):
         assert type(emotion_labels) == list
         assert emotion_label_type in ['cat', 'dim']
+        self.rel_path = os.path.dirname(__file__)
         self.labels = emotion_labels
         self.label_type = emotion_label_type
         self.split_names = ['train', 'valid', 'test']
@@ -73,7 +74,7 @@ class EmobankLoader(EmotionDatasetLoader):
     def __init__(self):
         emotion_labels = ['V', 'A', 'D']
         super(EmobankLoader, self).__init__(emotion_labels, 'dim')
-        self.path = "./../../data/Emobank/"
+        self.path = os.path.join(self.rel_path, "./../../data/Emobank/")
 
 
     def _load_data(self):
@@ -166,7 +167,7 @@ class SemEvalLoader(EmotionDatasetLoader):
             "fear", "joy", "love", "optimism", 
             "pessimism", "sadness", "surprise", "trust"]
         super(SemEvalLoader, self).__init__(emotion_labels, 'cat')
-        self.path = "./../../data/SEMEVAL2018/E-c/"
+        self.path = os.path.join(self.rel_path, './../../data/SEMEVAL2018/E-c/')
     
 
     def _load_split_files(self):
@@ -248,7 +249,7 @@ class ISEARLoader(EmotionDatasetLoader):
             'fear', 'anger', 'guilt', 
             'joy', 'disgust', 'shame', 'sadness']
         super(ISEARLoader, self).__init__(emotion_labels, 'cat')
-        self.path = "./../../data/ISEAR/"
+        self.path = os.path.join(self.rel_path, "./../../data/ISEAR/")
     
 
     def _preprocessing_text(self, text):
@@ -311,7 +312,7 @@ class SSECLoader(EmotionDatasetLoader):
             'fear', 'joy', 'sadness', 
             'surprise', 'trust']
         super(SSECLoader, self).__init__(emotion_labels, 'cat')
-        self.path = "./../../data/SSEC/"
+        self.path = os.path.join(self.rel_path, "./../../data/SSEC/")
         # tweet processing from EmobankLoader()
         self._preprocessing_text = EmobankLoader()._preprocessing_text
 

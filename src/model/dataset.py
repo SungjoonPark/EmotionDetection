@@ -1,15 +1,14 @@
 from torch.utils.data import Dataset, DataLoader
+
 from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader
 
 
-
-class EmotionDataset(Trainer):
+class EmotionDataset():
 
     def __init__(self, args):
         self.args = args
-        self.raw_data = self.load_data()
-    
 
+    
     def _load_data(self):
         if self.args['dataset'] == 'emobank':
             self.loader = EmobankLoader()
@@ -20,4 +19,9 @@ class EmotionDataset(Trainer):
         elif self.args['dataset'] == 'ssec':
             self.loader = SSECLoader()
         return self.loader.load_data()
+    
+
+    def build_dataset(self):
+        data_dict = self._load_data()
+        print(data_dict['train']['text'])
     
