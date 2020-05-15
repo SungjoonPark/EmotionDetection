@@ -1,4 +1,5 @@
 import os
+import torch
 from transformers import BertTokenizer, RobertaTokenizer
 from transformers import BertModel, RobertaModel
 
@@ -53,18 +54,16 @@ class Trainer():
             pass # to do
 
 
-    def load_dataset(self, tokenizer):
-        dataset = self.dataset.build_dataset()
-        return dataset
+    def build_dataloaders(self, tokenizer):
+        dataset = self.dataset.build_dataset(tokenizer)
+        dataloaders = self.dataset.build_dataloaders(dataset)
+        return dataloaders
 
 
     def train(self):
-        #tokenizer, model = self.load_model(ckpt_name=None)
-        
-        model_name = "bert-large-cased-whole-word-masking"
-        cache_path = self.cache_dir + model_name
-        tokenizer = BertTokenizer.from_pretrained(model_name, cache_dir=cache_path+'/vocab/')
-        dataset = self.load_dataset(tokenizer)
+        model, tokenizer = self.load_model(ckpt_name=None)
+        train_loader, valid_loader, test_loader = self.build_dataloaders(tokenizer)
+
 
 
 
@@ -76,6 +75,10 @@ def main():
         'model': 'roberta', # ['bert', 'roberta']
         'dataset': 'semeval', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
+
+        'max_seq_len': 128,
+        'train_batch_size': 32,
+        'eval_batch_size': 32,
 
     }
 
