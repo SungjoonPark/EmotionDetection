@@ -1,7 +1,13 @@
 import os
 import torch
-from transformers import BertTokenizer, RobertaTokenizer
-from transformers import BertModel, RobertaModel
+from transformers import (
+    BertTokenizer, 
+    RobertaTokenizer,
+    BertModel, 
+    RobertaModel, 
+    BertConfig, 
+    RobertaConfig
+)
 
 from data import (
     EmobankLoader, 
@@ -13,11 +19,12 @@ from data import (
 
 from models import (
     PretrainedBERTModel,
-    PretrainedRoBERTaModel
+    PretrainedRoBERTaModel,
+    Trainer,
 )
 
 
-class Trainer():
+class SingleDatasetTrainer():
 
     def __init__(self, args):
         os.environ["CUDA_VISIBLE_DEVICES"]= args['CUDA_VISIBLE_DEVICES']
@@ -30,6 +37,7 @@ class Trainer():
             os.makedirs(self.cache_dir)
 
         self.dataset = EmotionDataset(args)
+        self.trainer = Trainer(args)
 
 
     def _check_args(self, args):
@@ -38,29 +46,6 @@ class Trainer():
         assert args['dataset'] in ['semeval', 'emobank', 'isear', 'ssec']
         assert args['load_model'] in ['pretrained_lm', 'fine_tuned_lm']
 
-
-    #def load_model(self, ckpt_name=None):
-    #    if self.args['load_model'] == 'pretrained_lm':
-    #        if self.args['model'] == 'bert':
-    #            model_name = 'bert-large-cased-whole-word-masking'
-    #            Tokenizer = BertTokenizer
-    #            Model = BertModel
-    #        elif self.args['model'] == 'roberta':
-    #            model_name = 'roberta-large'
-    #            Tokenizer = RobertaTokenizer
-    #            Model = RobertaModel
-    #        cache_path = self.cache_dir + model_name
-    #        if not os.path.exists(cache_path): 
-    #            os.makedirs(cache_path + '/vocab/')
-    #            os.makedirs(cache_path + '/model/init/')
-    #        tokenizer = Tokenizer.from_pretrained(model_name, cache_dir=cache_path+'/vocab/')
-    #        model = Model.from_pretrained(model_name, cache_dir=cache_path+'/model/init/')
-    #        return model, tokenizer
-
-
-    #    elif self.args['load_model'] == 'fine_tuned_lm':    
-    #        assert ckpt_name is not None                      
-    #        pass # to do
 
     def _set_model_args(self):
         if self.args['model'] == 'bert':
@@ -71,6 +56,7 @@ class Trainer():
         if not os.path.exists(cache_path): 
             os.makedirs(cache_path + '/vocab/')
             os.makedirs(cache_path + '/model/init/')
+            os.makedirs(cache_path + '/model/config/')
         return model_name, cache_path
 
 
@@ -80,27 +66,76 @@ class Trainer():
             Tokenizer = BertTokenizer
         elif self.args['model'] == 'roberta':
             Tokenizer = RobertaTokenizer
-        tokenizer = Tokenizer.from_pretrained(model_name, cache_dir=cache_path+'/vocab/')
+        tokenizer = Tokenizer.from_pretrained(
+            model_name, 
+            cache_dir=cache_path+'/vocab/')
         return tokenizer
 
 
     def load_model(self):
         model_name, cache_path = self._set_model_args()
+        self.args['labels'] = self.dataset.labels
+
         if self.args['model'] == 'bert':
-            model = PretrainedBERTModel.from_pretrained(model_name, cache_dir=cache_path+'/model/init/')
+            config = BertConfig.from_pretrained(
+                model_name, 
+                cache_dir=cache_path+'/model/config/')
+            config.args = self.args
+            model = PretrainedBERTModel.from_pretrained(
+                model_name, 
+                cache_dir=cache_path+'/model/init/',
+                config=config)
+
         elif self.args['model'] == 'roberta':
-            model = PretrainedRoBERTaModel.from_pretrained(model_name, cache_dir=cache_path+'/model/init/')
-        return model
+            config = RobertaConfig.from_pretrained(
+                model_name, 
+                cache_dir=cache_path+'/model/config/')
+            config.args = self.args
+            model = PretrainedRoBERTaModel.from_pretrained(
+                model_name, 
+                cache_dir=cache_path+'/model/init/',
+                config=config)
+
+        return model, config
+    
+
+    def compute_loss(self, batch_logit, batch_labels):
+        loss = self.trainer.compute_loss(
+            batch_logit, 
+            batch_labels)
+        return loss
 
 
     def train(self):
         # 1. build dataset for train/valid/test
-        #tokenizer = self.load_tokenizer()
-        #dataset = self.dataset.build_datasets(tokenizer)
-        #train_loader, valid_loader, test_loader = self.dataset.build_dataloaders(dataset)
+        print("build dataset for train/valid/test")
+        tokenizer = self.load_tokenizer()
+        dataset = self.dataset.build_datasets(tokenizer)
+        train_loader, valid_loader, test_loader = self.dataset.build_dataloaders(dataset)
 
         # 2. build/load models
-        model = self.load_model()
+        print("build/load models")
+        model, config = self.load_model()
+        print(model)
+        print(config)
+        print(config.args["labels"])
+
+        for train_batch in train_loader:
+            input_ids, attention_masks, label = train_batch
+            print(input_ids.size())        #[batch_size, max_len]
+            #print(attention_masks.size()) #[batch_size, max_len]
+            #print(label.size())           #[batch_size, n_labels]
+            break
+
+        outputs = model(
+            input_ids,
+            attention_mask=attention_masks)
+
+        logits = outputs                    #[batch_size, n_labels]
+        print(input_ids[0])
+        print(logits[0])
+
+        loss = self.compute_loss(logit, labels)
 
 
 def main():
@@ -108,7 +143,7 @@ def main():
         'CUDA_VISIBLE_DEVICES': "0",
 
         'task': 'category-classification', # ['category-classification', 'vad-regression', 'vad-from-categories']
-        'model': 'bert', # ['bert', 'roberta']
+        'model': 'roberta', # ['bert', 'roberta']
         'dataset': 'semeval', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
 
@@ -118,7 +153,7 @@ def main():
 
     }
 
-    trainer = Trainer(args)
+    trainer = SingleDatasetTrainer(args)
     trainer.train()
 
 

@@ -25,6 +25,7 @@ class EmotionDataset():
             self.loader = ISEARLoader()
         elif self.args['dataset'] == 'ssec':
             self.loader = SSECLoader()
+        self.labels = self.loader.labels
         return self.loader.load_data()
     
     # https://mccormickml.com/2019/07/22/BERT-fine-tuning/#22-parse
@@ -77,11 +78,11 @@ class EmotionDataset():
     def build_datasets(self, tokenizer):
         data_dict = self._load_data()
         data_dict = self.tokenize_dataset(data_dict, tokenizer)
-        print(data_dict['train']['text'][0])
-        print(data_dict['train']['input_ids'][0])
-        print(self._decode_ids(data_dict['train']['input_ids'][0], tokenizer))
-        print(data_dict['train']['attention_masks'][0])
-        print(data_dict['train']['label'][0])
+        #print(data_dict['train']['text'][0])
+        #print(data_dict['train']['input_ids'][0])
+        #print(self._decode_ids(data_dict['train']['input_ids'][0], tokenizer))
+        #print(data_dict['train']['attention_masks'][0])
+        #print(data_dict['train']['label'][0])
         return data_dict
 
 
@@ -102,8 +103,9 @@ class EmotionDataset():
 
             dataloader = DataLoader(
                 dataset,
-                sampler = sampler(dataset),
-                batch_size = batch_size
+                #sampler = sampler(dataset),
+                batch_size = batch_size,
+                shuffle = False,   
             )
             dataloaders.append(dataloader)
 
