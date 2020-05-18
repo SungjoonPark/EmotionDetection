@@ -1,4 +1,9 @@
+# ckpts and vocabs
 ckpt/*
-src/data/__pycache__/*
-src/models/__pycache__/*
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+__pycache__/
+
+# trivial notes
 src/etc/
