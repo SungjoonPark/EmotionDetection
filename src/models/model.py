@@ -45,7 +45,6 @@ class PretrainedBERTModel(BertPreTrainedModel):
         pooled_output = self.dropout(pooled_output)
         logits = self.head(pooled_output)
 
-        #return pooled_output
         return logits
 
 
@@ -90,8 +89,7 @@ class PretrainedRoBERTaModel(BertPreTrainedModel):
 
         # add head over [CLS] token
         # ramdomly initialized layers
-        #pooled_output = self.dropout(pooled_output)
-        #logits = self.head(pooled_output)
+        pooled_output = self.dropout(pooled_output)
+        logits = self.head(pooled_output)
 
-        return pooled_output
-        #return logits
+        return logits

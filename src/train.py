@@ -116,13 +116,13 @@ class SingleDatasetTrainer():
         # 2. build/load models
         print("build/load models")
         model, config = self.load_model()
-        print(model)
+        #print(model)
         print(config)
-        print(config.args["labels"])
+        #print(config.args["labels"])
 
         for train_batch in train_loader:
             input_ids, attention_masks, label = train_batch
-            print(input_ids.size())        #[batch_size, max_len]
+            #print(input_ids.size())       #[batch_size, max_len]
             #print(attention_masks.size()) #[batch_size, max_len]
             #print(label.size())           #[batch_size, n_labels]
             break
