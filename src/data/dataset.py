@@ -1,6 +1,11 @@
 import torch
-from torch.utils.data import Dataset, DataLoader
-from torch.utils.data import RandomSampler, SequentialSampler
+from torch.utils.data import (
+    Dataset, 
+    DataLoader,
+    RandomSampler, 
+    SequentialSampler, 
+    TensorDataset
+    )
 
 from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader
 
@@ -69,7 +74,7 @@ class EmotionDataset():
         return tokenizer.decode(input_ids)
 
 
-    def build_dataset(self, tokenizer):
+    def build_datasets(self, tokenizer):
         data_dict = self._load_data()
         data_dict = self.tokenize_dataset(data_dict, tokenizer)
         print(data_dict['train']['text'][0])
@@ -80,7 +85,7 @@ class EmotionDataset():
         return data_dict
 
 
-    def build_dataloader(self, data_dict):
+    def build_dataloaders(self, data_dict):
         dataloaders = []
         for split_name in self.loader.split_names:
             dataset = TensorDataset(
@@ -98,7 +103,7 @@ class EmotionDataset():
             dataloader = DataLoader(
                 dataset,
                 sampler = sampler(dataset),
-                batch_size = self.args['batch_size']
+                batch_size = batch_size
             )
             dataloaders.append(dataloader)
 
