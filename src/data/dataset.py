@@ -15,7 +15,19 @@ class EmotionDataset():
     def __init__(self, args):
         self.args = args
 
-    
+
+    def load_label_names_and_vads(self):
+        if self.args['dataset'] == 'emobank':
+            self.loader = EmobankLoader()
+        elif self.args['dataset'] == 'semeval':
+            self.loader = SemEvalLoader()
+        elif self.args['dataset'] == 'isear':
+            self.loader = ISEARLoader()
+        elif self.args['dataset'] == 'ssec':
+            self.loader = SSECåLoader()
+        return self.loader.labels, self.loader.get_vad_coordinates_of_labels()
+
+
     def _load_data(self):
         if self.args['dataset'] == 'emobank':
             self.loader = EmobankLoader()
@@ -25,7 +37,6 @@ class EmotionDataset():
             self.loader = ISEARLoader()
         elif self.args['dataset'] == 'ssec':
             self.loader = SSECLoader()
-        self.labels = self.loader.labels
         return self.loader.load_data()
     
     # https://mccormickml.com/2019/07/22/BERT-fine-tuning/#22-parse

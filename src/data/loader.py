@@ -51,7 +51,7 @@ class EmotionDatasetLoader():
 
     def _get_emotion_label_VAD_scores(self):
         vad_score_dict = {}
-        dir_path = "./../../data/NRC-VAD/"
+        dir_path = os.path.join(self.rel_path, "./../../data/NRC-VAD/")
         vad_scores = pd.read_csv(dir_path + "NRC-VAD-Lexicon.txt", sep='\t', index_col='Word')
         for w, (v, a, d) in vad_scores.iterrows():
             vad_score_dict[w] = (round(v, 3), round(a, 3), round(d, 3))

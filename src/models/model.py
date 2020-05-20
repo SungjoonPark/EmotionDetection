@@ -11,7 +11,14 @@ class PretrainedBERTModel(BertPreTrainedModel):
 
         self.bert = BertModel(self.config)
         self.dropout = nn.Dropout(self.config.hidden_dropout_prob)
-        self.head = nn.Linear(self.config.hidden_size, len(self.args['labels']))
+        if self.args['task'] != "vad-from-categories":
+            self.head = nn.Linear(
+                self.config.hidden_size, 
+                len(self.args['labels']) )
+        else:
+            self.head = nn.Linear(
+                self.config.hidden_size, 
+                len(self.args['labels'])*3 )
 
         self.init_weights()
 
@@ -57,8 +64,15 @@ class PretrainedRoBERTaModel(BertPreTrainedModel):
 
         self.roberta = RobertaModel(self.config)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
-        self.head = nn.Linear(config.hidden_size, len(self.args['labels']))
-
+        if self.args['task'] != "vad-from-categories":
+            self.head = nn.Linear(
+                self.config.hidden_size, 
+                len(self.args['labels']) )
+        else:
+            self.head = nn.Linear(
+                self.config.hidden_size, 
+                len(self.args['labels'])*3 )
+        
         self.init_weights()
 
 

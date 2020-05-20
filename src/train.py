@@ -27,16 +27,24 @@ from models import (
 class SingleDatasetTrainer():
 
     def __init__(self, args):
+        # args
         os.environ["CUDA_VISIBLE_DEVICES"]= args['CUDA_VISIBLE_DEVICES']
-
         self._check_args(args)
         self.args = args
 
+        # cache path
         self.cache_dir = "./../ckpt/"
         if not os.path.exists(self.cache_dir):
             os.makedirs(self.cache_dir)
 
+        # dataset class
         self.dataset = EmotionDataset(args)
+        if args['task'] == 'vad-from-categories':
+            label_names, label_vads = self.dataset.load_label_names_and_vads()
+            self.args['label_names'] = label_names
+            self.args['label_vads'] = label_vads
+
+        # trainer class
         self.trainer = Trainer(args)
 
 
@@ -45,6 +53,7 @@ class SingleDatasetTrainer():
         assert args['model'] in ['bert', 'roberta']
         assert args['dataset'] in ['semeval', 'emobank', 'isear', 'ssec']
         assert args['load_model'] in ['pretrained_lm', 'fine_tuned_lm']
+        assert args['label-type'] in ['categorical', 'dimensional']
 
 
     def _set_model_args(self):
@@ -74,7 +83,6 @@ class SingleDatasetTrainer():
 
     def load_model(self):
         model_name, cache_path = self._set_model_args()
-        self.args['labels'] = self.dataset.labels
 
         if self.args['model'] == 'bert':
             config = BertConfig.from_pretrained(
@@ -135,14 +143,25 @@ class SingleDatasetTrainer():
         print(input_ids[0])
         print(logits[0])
 
-        loss = self.compute_loss(logit, labels)
+
+    def _train(self):
+        logits = torch.tensor([
+            [0.5, 0, 0.2, 0, 0.4, 0, 0, 0, 0, 0, 0],
+            [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+        ])
+        labels = torch.tensor([
+            [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0],
+            [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+        ])
+        loss = self.compute_loss((logits, logits, logits), labels)
 
 
 def main():
     args = {
         'CUDA_VISIBLE_DEVICES': "0",
 
-        'task': 'category-classification', # ['category-classification', 'vad-regression', 'vad-from-categories']
+        'task': 'vad-from-categories', # ['category-classification', 'vad-regression', 'vad-from-categories']
+        'label-type': 'categorical', # ['category', 'dimensional']
         'model': 'roberta', # ['bert', 'roberta']
         'dataset': 'semeval', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
@@ -153,8 +172,8 @@ def main():
 
     }
 
-    trainer = SingleDatasetTrainer(args)
-    trainer.train()
+    sdt = SingleDatasetTrainer(args)
+    sdt._train()
 
 
 if __name__ == "__main__":
