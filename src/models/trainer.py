@@ -14,21 +14,25 @@ class EMDLoss(torch.nn.Module):
         """
         super(EMDLoss, self).__init__()
         self.args = args
-
-        assert self.args['task'] == 'vad-from-categories'
-        assert label_type in ['single', 'multi']
+        self._check_args()
 
         if label_type == 'single':
             self.activation = nn.Softmax(dim=1)
         else: # 'multi'
             self.activation = nn.Sigmoid()
 
-        if args['task'] == 'vad-from-categories':
-            self.category_label_vads = self.args['label_vads']
-            self.category_label_names = self.args['label_names']
-            self._sort_labels()
+        self.category_label_vads = self.args['label_vads']
+        self.category_label_names = self.args['label_names']
+        self._sort_labels()
 
         self.eps = 1e-05
+
+
+    def _check_args(self):
+        assert self.args['task'] == 'vad-from-categories'
+        assert label_type in ['single', 'multi']
+        assert self.args['label_vads'] is not None
+        assert self.args['label_names'] is not None
 
 
     def _sort_labels(self):
@@ -87,7 +91,9 @@ class Trainer():
 
     def __init__(self, args):
         self.args = args
+
         self._set_loss()
+        self._set_optimizer()
 
 
     def _set_loss(self):
@@ -115,13 +121,12 @@ class Trainer():
     
 
     def _set_optimizer(self):
-        self.optim = None
+        pass
 
 
     def compute_loss(self, logits, labels):
-        loss = self.loss(logits, labels)
-        return loss
+        return self.loss(logits, labels)
+
 
     def optimize(self):
-
         return

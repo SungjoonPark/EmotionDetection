@@ -18,8 +18,7 @@ from data import (
 )
 
 from models import (
-    PretrainedBERTModel,
-    PretrainedRoBERTaModel,
+    PretrainedLMModel,
     Trainer,
 )
 
@@ -43,6 +42,8 @@ class SingleDatasetTrainer():
             label_names, label_vads = self.dataset.load_label_names_and_vads()
             self.args['label_names'] = label_names
             self.args['label_vads'] = label_vads
+        else:
+            self.args['label_names'] = self.dataset.load_label_names()
 
         # trainer class
         self.trainer = Trainer(args)
@@ -88,29 +89,26 @@ class SingleDatasetTrainer():
             config = BertConfig.from_pretrained(
                 model_name, 
                 cache_dir=cache_path+'/model/config/')
-            config.args = self.args
-            model = PretrainedBERTModel.from_pretrained(
-                model_name, 
-                cache_dir=cache_path+'/model/init/',
-                config=config)
-
         elif self.args['model'] == 'roberta':
             config = RobertaConfig.from_pretrained(
                 model_name, 
                 cache_dir=cache_path+'/model/config/')
-            config.args = self.args
-            model = PretrainedRoBERTaModel.from_pretrained(
-                model_name, 
-                cache_dir=cache_path+'/model/init/',
-                config=config)
+
+        config.args = self.args
+        model = PretrainedLMModel.from_pretrained(
+            model_name, 
+            cache_dir=cache_path+'/model/init/',
+            config=config)
 
         return model, config
     
 
-    def compute_loss(self, batch_logit, batch_labels):
+    def compute_loss(self, batch_logit, batch_labels, reduce=True):
         loss = self.trainer.compute_loss(
             batch_logit, 
             batch_labels)
+        if reduce:
+            loss = torch.sum(loss)
         return loss
 
 
@@ -129,34 +127,35 @@ class SingleDatasetTrainer():
         #print(config.args["labels"])
 
         for train_batch in train_loader:
-            input_ids, attention_masks, label = train_batch
+            input_ids, attention_masks, labels = train_batch
             #print(input_ids.size())       #[batch_size, max_len]
             #print(attention_masks.size()) #[batch_size, max_len]
             #print(label.size())           #[batch_size, n_labels]
+
+            logits = model(
+                input_ids,
+                attention_mask=attention_masks)
+            print(input_ids[0])
+            print(logits[0])
+
+            loss = self.compute_loss(logits, labels) # [1] if reduce=True
+            print(loss)
+
             break
-
-        outputs = model(
-            input_ids,
-            attention_mask=attention_masks)
-
-        logits = outputs                    #[batch_size, n_labels]
-        print(input_ids[0])
-        print(logits[0])
-
-
-    def _train(self):
-        logits = torch.tensor([
-            [0.5, 0, 0.2, 0, 0.4, 0, 0, 0, 0, 0, 0],
-            [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
-        ])
-        labels = torch.tensor([
-            [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0],
-            [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
-        ])
-        loss = self.compute_loss((logits, logits, logits), labels)
+    #def _train(self):
+    #    logits = torch.tensor([
+    #        [0.5, 0, 0.2, 0, 0.4, 0, 0, 0, 0, 0, 0],
+    #        [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+    #    ])
+    #    labels = torch.tensor([
+    #        [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0],
+    #        [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+    #     ])
+    #    loss = self.compute_loss((logits, logits, logits), labels)
 
 
 def main():
+
     args = {
         'CUDA_VISIBLE_DEVICES': "0",
 
@@ -169,11 +168,10 @@ def main():
         'max_seq_len': 128,
         'train_batch_size': 32,
         'eval_batch_size': 32,
-
     }
 
     sdt = SingleDatasetTrainer(args)
-    sdt._train()
+    sdt.train()
 
 
 if __name__ == "__main__":
