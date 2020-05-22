@@ -39,7 +39,9 @@ class EmotionDataset():
     def _tokenize_split(self, split, tokenizer):
         input_ids = []
         attention_masks = []
-        for sent in split['text']:
+        labels = []
+
+        for sent, l in zip(split['text'], split['label']):
             # `encode_plus` will:
             #   (1) Tokenize the sentence.
             #   (2) Prepend the `[CLS]` token to the start.
@@ -47,6 +49,7 @@ class EmotionDataset():
             #   (4) Map tokens to their IDs.
             #   (5) Pad or truncate the sentence to `max_length`
             #   (6) Create attention masks for [PAD] tokens.
+            if sent == "": continue # if sentence is blank preprocessing, skip the example (emobank-train) 
             encoded_dict = tokenizer.encode_plus(
                                 sent,                      # Sentence to encode.
                                 add_special_tokens = True, # Add '[CLS]' and '[SEP]'
@@ -57,15 +60,24 @@ class EmotionDataset():
                         )
             
             # Add the encoded sentence to the list.    
-            input_ids.append(encoded_dict['input_ids'])
+            if len(encoded_dict['input_ids']) > self.args['max_seq_len']:
+                input_id = encoded_dict['input_ids'][:self.args['max_seq_len']]
+                print("An example has longer sequence > max_seq_len")
+            input_ids.append(input_id)
             
             # And its attention mask (simply differentiates padding from non-padding).
-            attention_masks.append(encoded_dict['attention_mask'])
+            if len(encoded_dict['attention_mask']) > self.args['max_seq_len']:
+                attention_mask = encoded_dict['attention_mask'][:self.args['max_seq_len']]
+                print("An example has longer attention mask > max_seq_len")
+            attention_masks.append(attention_mask)
+
+            # add labels
+            labels.append(l)
 
         # Convert the lists into tensors.
         input_ids = torch.cat(input_ids, dim=0)
         attention_masks = torch.cat(attention_masks, dim=0)
-        labels = torch.tensor(split['label'])
+        labels = torch.tensor(labels)
         return input_ids, attention_masks, labels
 
 

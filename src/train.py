@@ -47,6 +47,7 @@ class SingleDatasetTrainer():
 
         # trainer class
         self.trainer = Trainer(args)
+        self.device = self.trainer.args['device']
 
 
     def _check_args(self, args):
@@ -68,6 +69,11 @@ class SingleDatasetTrainer():
             os.makedirs(cache_path + '/model/init/')
             os.makedirs(cache_path + '/model/config/')
         return model_name, cache_path
+
+
+    def set_train_vars(self):
+        self.n_updates = 0
+        self.accumulated_loss = 0
 
 
     def load_tokenizer(self):
@@ -100,6 +106,8 @@ class SingleDatasetTrainer():
             cache_dir=cache_path+'/model/init/',
             config=config)
 
+        model.to(torch.device(self.device))
+
         return model, config
     
 
@@ -112,6 +120,23 @@ class SingleDatasetTrainer():
         return loss
 
 
+    def set_optimizer(self, model):
+        optim, lr_scheduler = self.trainer.set_optimizer(model.parameters())
+        return optim, lr_scheduler
+
+
+    def backward_step(self, it, n_updates, loss, accumulated_loss, optimizer, lr_scheduler):
+        accumulated_loss = self.trainer.backward_step(
+            it, 
+            n_updates,
+            loss, 
+            accumulated_loss, 
+            optimizer, 
+            lr_scheduler
+        )
+        return accumulated_loss
+
+
     def train(self):
         # 1. build dataset for train/valid/test
         print("build dataset for train/valid/test")
@@ -122,52 +147,75 @@ class SingleDatasetTrainer():
         # 2. build/load models
         print("build/load models")
         model, config = self.load_model()
+        model.train()
         #print(model)
         print(config)
         #print(config.args["labels"])
+        optimizer, lr_scheduler = self.set_optimizer(model)
+        optimizer.zero_grad()
+        self.set_train_vars()
 
-        for train_batch in train_loader:
-            input_ids, attention_masks, labels = train_batch
-            #print(input_ids.size())       #[batch_size, max_len]
-            #print(attention_masks.size()) #[batch_size, max_len]
-            #print(label.size())           #[batch_size, n_labels]
+        while self.n_updates != self.args['total_n_updates']: 
 
-            logits = model(
-                input_ids,
-                attention_mask=attention_masks)
-            print(input_ids[0])
-            print(logits[0])
+            for it, train_batch in enumerate(train_loader):
+                input_ids = train_batch[0].to(torch.device(self.device))        #[batch_size, max_len]
+                attention_masks = train_batch[1].to(torch.device(self.device))  #[batch_size, max_len]
+                labels = train_batch[2].to(torch.device(self.device))           #[batch_size, n_labels]
+        
+                logits = model(
+                    input_ids,
+                    attention_mask=attention_masks)
+                #print(input_ids[0])
+                #print(logits[0])
 
-            loss = self.compute_loss(logits, labels) # [1] if reduce=True
-            print(loss)
+                loss = self.compute_loss(logits, labels) # [1] if reduce=True
+                self.accumulated_loss += loss
+                print(loss, self.accumulated_loss)
 
-            break
-    #def _train(self):
-    #    logits = torch.tensor([
-    #        [0.5, 0, 0.2, 0, 0.4, 0, 0, 0, 0, 0, 0],
-    #        [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
-    #    ])
-    #    labels = torch.tensor([
-    #        [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0],
-    #        [0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
-    #     ])
-    #    loss = self.compute_loss((logits, logits, logits), labels)
+                self.accumulated_loss, self.n_updates = self.backward_step(
+                    it, 
+                    self.n_updates,
+                    loss, 
+                    self.accumulated_loss, 
+                    optimizer, 
+                    lr_scheduler)
+
+                if (it+1) % self.args['eval_freq'] == 0:
+                    valid_loss, valid_metrics = self.trainer.evaluate(model, valid_loader)
+                    test_loss, test_metrics = self.trainer.evaluate(model, test_loader)
+                    print("Evaluation:",
+                        valid_loss,
+                        valid_metrics,
+                        test_loss,
+                        test_metrics)
+                if self.n_updates == self.args['total_n_updates']: break
+            
 
 
 def main():
-
     args = {
         'CUDA_VISIBLE_DEVICES': "0",
 
-        'task': 'vad-from-categories', # ['category-classification', 'vad-regression', 'vad-from-categories']
-        'label-type': 'categorical', # ['category', 'dimensional']
+        'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']
+        'label-type': 'dimensional', # ['category', 'dimensional']
         'model': 'roberta', # ['bert', 'roberta']
-        'dataset': 'semeval', # ['semeval', 'emobank', 'isear', 'ssec']
+        'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
 
-        'max_seq_len': 128,
-        'train_batch_size': 32,
-        'eval_batch_size': 32,
+        # memory-args
+        'max_seq_len': 256,
+        'train_batch_size': 16,
+        'eval_batch_size': 16,
+        'update_freq': 2,
+
+        # optim-args
+        'learning_rate': 2e-05,
+        'total_n_updates': 2000, # replacing max_epochs
+        'warmup_proportion': 0.05,
+
+        # etc
+        'eval_freq': 100, # in terms of #batchs
+        
     }
 
     sdt = SingleDatasetTrainer(args)

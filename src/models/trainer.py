@@ -1,7 +1,11 @@
 import numpy as np
+
 import torch
 from torch import nn
 from torch.nn.modules.loss import *
+import torch.nn.functional as F
+
+from transformers import AdamW, get_linear_schedule_with_warmup
 
 from data import EmotionDataset
 
@@ -14,6 +18,7 @@ class EMDLoss(torch.nn.Module):
         """
         super(EMDLoss, self).__init__()
         self.args = args
+        self.label_type = label_type
         self._check_args()
 
         if label_type == 'single':
@@ -30,24 +35,24 @@ class EMDLoss(torch.nn.Module):
 
     def _check_args(self):
         assert self.args['task'] == 'vad-from-categories'
-        assert label_type in ['single', 'multi']
+        assert self.label_type in ['single', 'multi']
         assert self.args['label_vads'] is not None
         assert self.args['label_names'] is not None
 
 
     def _sort_labels(self):
         v_scores = [self.category_label_vads[key][0] for key in self.category_label_names]
-        self.v_sorted_idxs = np.argsort(v_scores).tolist()
+        self.v_sorted_idxs = torch.tensor(np.argsort(v_scores).tolist()).to(self.args['device'])
         a_scores = [self.category_label_vads[key][1] for key in self.category_label_names]
-        self.a_sorted_idxs = np.argsort(a_scores).tolist()
+        self.a_sorted_idxs = torch.tensor(np.argsort(a_scores).tolist()).to(self.args['device'])
         d_scores = [self.category_label_vads[key][2] for key in self.category_label_names]
-        self.d_sorted_idxs = np.argsort(d_scores).tolist()
+        self.d_sorted_idxs = torch.tensor(np.argsort(d_scores).tolist()).to(self.args['device'])
 
 
     def _sort_labels_by_vad_coordinates(self, labels):
-        v_labels = torch.index_select(labels, 1, torch.tensor(self.v_sorted_idxs))
-        a_labels = torch.index_select(labels, 1, torch.tensor(self.a_sorted_idxs))
-        d_labels = torch.index_select(labels, 1, torch.tensor(self.d_sorted_idxs))
+        v_labels = torch.index_select(labels, 1, self.v_sorted_idxs)
+        a_labels = torch.index_select(labels, 1, self.a_sorted_idxs)
+        d_labels = torch.index_select(labels, 1, self.d_sorted_idxs)
         return v_labels, a_labels, d_labels
 
 
@@ -91,9 +96,20 @@ class Trainer():
 
     def __init__(self, args):
         self.args = args
-
+        self.args['device'] = self.set_device()
+        self._set_eval_layers()
         self._set_loss()
-        self._set_optimizer()
+
+    # https://mccormickml.com/2019/07/22/BERT-fine-tuning/
+    def set_device(self):
+        if torch.cuda.is_available():      
+            device = "cuda"
+            print('There are %d GPU(s) available.' % torch.cuda.device_count())
+            print('We will use the GPU:', torch.cuda.get_device_name(0))
+        else:
+            device = "cpu"
+            print('No GPU available, using the CPU instead.')
+        return device
 
 
     def _set_loss(self):
@@ -118,15 +134,92 @@ class Trainer():
                 self.loss = EMDLoss(self.args, label_type='multi')
             elif self.args['dataset'] == 'isear': # single-labeled
                 self.loss = EMDLoss(self.args, label_type='single')
-    
-
-    def _set_optimizer(self):
-        pass
 
 
     def compute_loss(self, logits, labels):
+        if self.args['task'] == 'vad-regression':
+            logits = F.relu(logits)
         return self.loss(logits, labels)
 
+    # https://huggingface.co/transformers/migration.html?highlight=forsequenceclassification
+    def set_optimizer(self, params):
+        optimizer = AdamW(
+            params, 
+            lr = self.args['learning_rate'],
+            betas = (0.9, 0.98),
+            eps = 1e-06,
+            correct_bias=False
+        )
 
-    def optimize(self):
+        lr_scheduler = get_linear_schedule_with_warmup(
+            optimizer, 
+            num_warmup_steps=int(self.args['total_n_updates'] * self.args['warmup_proportion']), 
+            num_training_steps=self.args['total_n_updates'])
+            
+        return optimizer, lr_scheduler
+    
+
+    def backward_step(self, it, n_updates, loss, accumulated_loss, optimizer, lr_scheduler):
+        loss.backward() #Backpropagating the gradients
+
+        if (it + 1) % self.args['update_freq'] == 0:
+            optimizer.step()
+            lr_scheduler.step()
+
+            accumulated_loss = 0
+            optimizer.zero_grad()
+
+            print('step:', it, 
+                  "(", str((it + 1) / self.args['update_freq']) ,")", 'loss:', accumulated_loss)
+            
+            n_updates += 1
+
+        return accumulated_loss, n_updates
+
+
+    def _set_eval_layers(self):
+        self.softmax = nn.Softmax(dim=1)
+        self.sigmoid = nn.Sigmoid()
+
+
+    def _compute_eval_metric(self, predictions, labels):
+        print(predictions)
+        print(labels)
         return
+
+
+    def evaluate(self, model, dataloader):
+        total_losses = []
+        total_predictions = []
+        total_labels = []
+
+        for it, batch in enumerate(dataloader):
+            
+            # 1. compute logits
+            input_ids = batch[0].to(torch.device(self.device))
+            attention_masks = batch[1].to(torch.device(self.device))
+            labels = batch[2].to(torch.device(self.device))
+            total_labels.append(labels)
+
+            logits = model(
+                input_ids,
+                attention_mask=attention_masks)
+
+            # 2. compute loss (objective)
+            eval_loss = self.comput_loss(logits, labels)
+            total_losses.append(eval_loss)
+            
+            # 3. model predictions
+            if self.args['task'] == 'vad-regression':
+                predictions = self.activation(logits) # vads
+            elif self.args['task'] == 'vad-from-categories':
+                #predictions =            # vad 
+                pass
+            elif self.args['task'] == 'category-classification':
+                #predictions =           # class probs
+                pass
+            total_predictions.append(predictions)
+
+        eval_metrics = self._compute_eval_metric(total_predictions, total_labels)
+                
+        return eval_loss, eval_metrics
