@@ -206,7 +206,9 @@ class SingleDatasetTrainer():
 
 
 def main():
+
     args = {
+
         'CUDA_VISIBLE_DEVICES': "0",
 
         'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']

@@ -171,6 +171,7 @@ class Trainer():
         )
         return optimizer, None
 
+
     def backward_step(self, it, n_updates, model, loss, accumulated_loss, optimizer, lr_scheduler):
         loss.backward() #Backpropagating the gradients
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
