@@ -129,9 +129,9 @@ class EmotionDataset():
 
             dataloader = DataLoader(
                 dataset,
-                #sampler = sampler(dataset),
+                sampler = sampler(dataset),
                 batch_size = batch_size,
-                shuffle = False,   
+            #    shuffle = True, # sampler option is mutually exclusive with shuffle
             )
             dataloaders.append(dataloader)
 

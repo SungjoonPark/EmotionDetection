@@ -5,8 +5,10 @@ import torch
 from torch import nn
 from torch.nn.modules.loss import *
 import torch.nn.functional as F
+from torch.nn.utils import clip_grad_norm_
 
 from transformers import AdamW, get_linear_schedule_with_warmup
+from pytorch_pretrained_bert import BertAdam
 
 from data import EmotionDataset
 
@@ -159,13 +161,24 @@ class Trainer():
             
         return optimizer, lr_scheduler
     
+    def set_legacy_optimizer(self, params):
+        optimizer = BertAdam(
+            params, 
+            lr = self.args['learning_rate'], 
+            schedule='warmup_linear', 
+            warmup = self.args['warmup_proportion'], 
+            t_total = self.args['total_n_updates']
+        )
+        return optimizer, None
 
-    def backward_step(self, it, n_updates, loss, accumulated_loss, optimizer, lr_scheduler):
+    def backward_step(self, it, n_updates, model, loss, accumulated_loss, optimizer, lr_scheduler):
         loss.backward() #Backpropagating the gradients
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
 
         if (it + 1) % self.args['update_freq'] == 0:
             optimizer.step()
-            lr_scheduler.step()
+            if self.args['optimizer_type'] == 'trans':
+                lr_scheduler.step()
 
             print('step:', it, 
                     "(updates:", n_updates ,")", 'loss:', accumulated_loss.item())

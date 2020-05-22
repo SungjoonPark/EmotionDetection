@@ -58,6 +58,7 @@ class SingleDatasetTrainer():
         assert args['dataset'] in ['semeval', 'emobank', 'isear', 'ssec']
         assert args['load_model'] in ['pretrained_lm', 'fine_tuned_lm']
         assert args['label-type'] in ['categorical', 'dimensional']
+        assert args['optimizer_type'] in ['legacy', 'trans']
 
 
     def _set_model_args(self):
@@ -103,10 +104,7 @@ class SingleDatasetTrainer():
                 cache_dir=cache_path+'/model/config/')
 
         config.args = self.args
-        model = PretrainedLMModel.from_pretrained(
-            model_name, 
-            cache_dir=cache_path+'/model/init/',
-            config=config)
+        model = PretrainedLMModel(config, cache_path, model_name)
 
         model.to(torch.device(self.device))
 
@@ -123,17 +121,21 @@ class SingleDatasetTrainer():
 
 
     def set_optimizer(self, model):
-        optim, lr_scheduler = self.trainer.set_optimizer(model.parameters())
+        if self.args['optimizer_type'] == 'trans':
+            optim, lr_scheduler = self.trainer.set_optimizer(model.parameters())
+        else : # self.args['optimizer_type'] == 'legacy':
+            optim, lr_scheduler = self.trainer.set_legacy_optimizer(model.parameters())
         return optim, lr_scheduler
 
 
-    def backward_step(self, it, n_updates, loss, accumulated_loss, optimizer, lr_scheduler):
+    def backward_step(self, it, n_updates, model, loss, accumulated_loss, optimizer, lr_scheduler):
         accumulated_loss = self.trainer.backward_step(
             it, 
             n_updates,
+            model,
             loss, 
-            accumulated_loss, 
-            optimizer, 
+            accumulated_loss,
+            optimizer,
             lr_scheduler
         )
         return accumulated_loss
@@ -178,6 +180,7 @@ class SingleDatasetTrainer():
                 self.accumulated_loss, self.n_updates = self.backward_step(
                     it, 
                     self.n_updates,
+                    model,
                     loss, 
                     self.accumulated_loss, 
                     optimizer, 
@@ -211,7 +214,7 @@ def main():
         'model': 'bert', # ['bert', 'roberta']
         'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
-
+        
         # memory-args
         'max_seq_len': 256,
         'train_batch_size': 32,
@@ -219,7 +222,8 @@ def main():
         'update_freq': 2,
 
         # optim-args
-        'learning_rate': 2e-04,
+        'optimizer_type' : 'legacy', # ['legacy', 'trans']
+        'learning_rate': 5e-05,
         'total_n_updates': 2000, # replacing max_epochs
         'warmup_proportion': 0.05,
 

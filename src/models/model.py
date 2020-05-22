@@ -4,16 +4,22 @@ from transformers import *
 
 class PretrainedLMModel(BertPreTrainedModel):
     
-    def __init__(self, config):
+    def __init__(self, config, cache_path, model_name):
         super(PretrainedLMModel, self).__init__(config)
         self.config = config
         self.args = config.args
 
         # language models
         if self.args['model'] == 'bert':
-            self.pre_trained_lm = BertModel(self.config)
+            self.pre_trained_lm = BertModel.from_pretrained(
+                model_name, 
+                cache_dir=cache_path+'/model/init/',
+                config=self.config)
         else: # 'roberta
-            self.pre_trained_lm = RobertaModel(self.config)
+            self.pre_trained_lm = RobertaModel.from_pretrained(
+                model_name, 
+                cache_dir=cache_path+'/model/init/',
+                config=self.config)
 
         # dropout
         self.dropout = nn.Dropout(self.config.hidden_dropout_prob)
