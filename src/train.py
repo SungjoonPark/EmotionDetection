@@ -147,7 +147,6 @@ class SingleDatasetTrainer():
         # 2. build/load models
         print("build/load models")
         model, config = self.load_model()
-        model.train()
         #print(model)
         print(config)
         #print(config.args["labels"])
@@ -158,20 +157,22 @@ class SingleDatasetTrainer():
         while self.n_updates != self.args['total_n_updates']: 
 
             for it, train_batch in enumerate(train_loader):
+                model.train()
+
                 input_ids = train_batch[0].to(torch.device(self.device))        #[batch_size, max_len]
                 attention_masks = train_batch[1].to(torch.device(self.device))  #[batch_size, max_len]
                 labels = train_batch[2].to(torch.device(self.device))           #[batch_size, n_labels]
-        
-                logits = model(
+
+                # forward
+                logits = model(                                                 #[batch_size, n_labels]
                     input_ids,
                     attention_mask=attention_masks)
-                #print(input_ids[0])
-                #print(logits[0])
 
+                # compute loss
                 loss = self.compute_loss(logits, labels) # [1] if reduce=True
                 self.accumulated_loss += loss
-                print(loss, self.accumulated_loss)
 
+                # backward
                 self.accumulated_loss, self.n_updates = self.backward_step(
                     it, 
                     self.n_updates,
@@ -180,6 +181,7 @@ class SingleDatasetTrainer():
                     optimizer, 
                     lr_scheduler)
 
+                # evaluation
                 if (it+1) % self.args['eval_freq'] == 0:
                     valid_loss, valid_metrics = self.trainer.evaluate(model, valid_loader)
                     test_loss, test_metrics = self.trainer.evaluate(model, test_loader)
@@ -188,6 +190,7 @@ class SingleDatasetTrainer():
                         valid_metrics,
                         test_loss,
                         test_metrics)
+
                 if self.n_updates == self.args['total_n_updates']: break
             
 
@@ -204,8 +207,8 @@ def main():
 
         # memory-args
         'max_seq_len': 256,
-        'train_batch_size': 16,
-        'eval_batch_size': 16,
+        'train_batch_size': 8,
+        'eval_batch_size': 8,
         'update_freq': 2,
 
         # optim-args
@@ -214,7 +217,7 @@ def main():
         'warmup_proportion': 0.05,
 
         # etc
-        'eval_freq': 100, # in terms of #batchs
+        'eval_freq': 10, # in terms of #batchs
         
     }
 

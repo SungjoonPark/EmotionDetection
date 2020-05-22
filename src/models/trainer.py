@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.stats import pearsonr
 
 import torch
 from torch import nn
@@ -166,12 +167,11 @@ class Trainer():
             optimizer.step()
             lr_scheduler.step()
 
+            print('step:', it, 
+                    "(updates:", n_updates ,")", 'loss:', accumulated_loss)
+
             accumulated_loss = 0
             optimizer.zero_grad()
-
-            print('step:', it, 
-                  "(", str((it + 1) / self.args['update_freq']) ,")", 'loss:', accumulated_loss)
-            
             n_updates += 1
 
         return accumulated_loss, n_updates
@@ -182,44 +182,80 @@ class Trainer():
         self.sigmoid = nn.Sigmoid()
 
 
-    def _compute_eval_metric(self, predictions, labels):
-        print(predictions)
-        print(labels)
-        return
+    def compute_eval_metric(self, predictions, labels):
+        assert predictions.size() == labels.size()
+        print(predictions.size())
+        print(labels.size())
+
+        predictions = predictions.cpu().detach().numpy()
+        labels = labels.cpu().detach().numpy()
+        metrics = {}
+
+        if self.args['task'] == 'vad-regression': # corrleations between v, a, d
+            for x, y, name in zip(predictions.T, labels.T, ["v_cor", 'a_cor', 'd_cor']):
+                metrics[name] = pearsonr(x, y)
+        elif self.args['task'] == 'vad-from-categories':
+            #predictions =            # vad 
+            pass
+        elif self.args['task'] == 'category-classification':
+            pass
+
+        return metrics
 
 
-    def evaluate(self, model, dataloader):
+    def predict(self, model, dataloader):
+        model.eval()
+
         total_losses = []
         total_predictions = []
         total_labels = []
 
-        for it, batch in enumerate(dataloader):
-            
-            # 1. compute logits
-            input_ids = batch[0].to(torch.device(self.device))
-            attention_masks = batch[1].to(torch.device(self.device))
-            labels = batch[2].to(torch.device(self.device))
-            total_labels.append(labels)
+        with torch.no_grad():
 
-            logits = model(
-                input_ids,
-                attention_mask=attention_masks)
-
-            # 2. compute loss (objective)
-            eval_loss = self.comput_loss(logits, labels)
-            total_losses.append(eval_loss)
-            
-            # 3. model predictions
-            if self.args['task'] == 'vad-regression':
-                predictions = self.activation(logits) # vads
-            elif self.args['task'] == 'vad-from-categories':
-                #predictions =            # vad 
-                pass
-            elif self.args['task'] == 'category-classification':
-                #predictions =           # class probs
-                pass
-            total_predictions.append(predictions)
-
-        eval_metrics = self._compute_eval_metric(total_predictions, total_labels)
+            for it, batch in enumerate(dataloader):
                 
+                # 1. compute logits
+                input_ids = batch[0].to(torch.device(self.args['device']))
+                attention_masks = batch[1].to(torch.device(self.args['device']))
+                labels = batch[2].to(torch.device(self.args['device']))
+                total_labels.append(labels)
+
+                logits = model(
+                    input_ids,
+                    attention_mask=attention_masks)
+
+                # 2. compute loss (objective)
+                eval_loss = self.compute_loss(logits, labels)
+                total_losses.append(eval_loss)
+                
+                # 3. model predictions
+                if self.args['task'] == 'vad-regression':
+                    predictions = F.relu(logits) # vads
+                elif self.args['task'] == 'vad-from-categories':
+                    #predictions =            # vad 
+                    pass
+                elif self.args['task'] == 'category-classification':
+                    assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
+                    if self.args['dataset'] == 'semeval': # multi-labeled
+                        predictions = self.sigmoid(logits)
+                    elif self.args['dataset'] == 'ssec': # multi-labeled
+                        predictions = self.sigmoid(logits)
+                    elif self.args['dataset'] == 'isear': # single-labeled
+                        predictions = self.softmax(logits)
+                total_predictions.append(predictions)
+
+        total_predictions = torch.cat(total_predictions, 0)
+        total_labels = torch.cat(total_labels, 0)
+        total_losses = torch.stack(total_losses, 0)
+
+        return total_predictions, total_labels, total_losses
+
+
+    def evaluate(self, model, dataloader):
+        predictions = self.predict(model, dataloader)
+        total_predictions, total_labels, total_losses = predictions
+
+        eval_loss = torch.mean(total_losses)
+        eval_metrics = self.compute_eval_metric(total_predictions, total_labels)
+
         return eval_loss, eval_metrics

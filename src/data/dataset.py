@@ -36,7 +36,7 @@ class EmotionDataset():
         return self.loader.load_data()
     
     # https://mccormickml.com/2019/07/22/BERT-fine-tuning/#22-parse
-    def _tokenize_split(self, split, tokenizer):
+    def _tokenize_split(self, split, tokenizer, split_name):
         input_ids = []
         attention_masks = []
         labels = []
@@ -49,7 +49,10 @@ class EmotionDataset():
             #   (4) Map tokens to their IDs.
             #   (5) Pad or truncate the sentence to `max_length`
             #   (6) Create attention masks for [PAD] tokens.
-            if sent == "": continue # if sentence is blank preprocessing, skip the example (emobank-train) 
+            if sent == "": 
+                print("Empty example encounters (after preprocessing): skip example... (", split_name, "set )")
+                continue # if sentence is blank preprocessing, skip the example (emobank-train) 
+            
             encoded_dict = tokenizer.encode_plus(
                                 sent,                      # Sentence to encode.
                                 add_special_tokens = True, # Add '[CLS]' and '[SEP]'
@@ -63,12 +66,16 @@ class EmotionDataset():
             if len(encoded_dict['input_ids']) > self.args['max_seq_len']:
                 input_id = encoded_dict['input_ids'][:self.args['max_seq_len']]
                 print("An example has longer sequence > max_seq_len")
+            else:
+                input_id = encoded_dict['input_ids']
             input_ids.append(input_id)
             
             # And its attention mask (simply differentiates padding from non-padding).
             if len(encoded_dict['attention_mask']) > self.args['max_seq_len']:
                 attention_mask = encoded_dict['attention_mask'][:self.args['max_seq_len']]
                 print("An example has longer attention mask > max_seq_len")
+            else:
+                attention_mask = encoded_dict['attention_mask']
             attention_masks.append(attention_mask)
 
             # add labels
@@ -83,7 +90,7 @@ class EmotionDataset():
 
     def tokenize_dataset(self, data_dict, tokenizer):
         for split_name in self.loader.split_names:
-            input_ids, attention_masks, labels = self._tokenize_split(data_dict[split_name], tokenizer)
+            input_ids, attention_masks, labels = self._tokenize_split(data_dict[split_name], tokenizer, split_name)
             data_dict[split_name]['input_ids'] = input_ids
             data_dict[split_name]['attention_masks'] = attention_masks
             data_dict[split_name]['label'] = labels
