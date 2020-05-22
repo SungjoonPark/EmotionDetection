@@ -50,7 +50,7 @@ class EmotionDataset():
             #   (5) Pad or truncate the sentence to `max_length`
             #   (6) Create attention masks for [PAD] tokens.
             if sent == "": 
-                print("Empty example encounters (after preprocessing): skip example... (", split_name, "set )")
+                print("An empty sentence example encountered. (after preprocessing): skipping... (", split_name, "set )")
                 continue # if sentence is blank preprocessing, skip the example (emobank-train) 
             
             encoded_dict = tokenizer.encode_plus(

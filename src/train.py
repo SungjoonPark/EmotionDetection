@@ -1,4 +1,4 @@
-import os
+import os, pprint
 import torch
 from transformers import (
     BertTokenizer, 
@@ -21,6 +21,8 @@ from models import (
     PretrainedLMModel,
     Trainer,
 )
+
+pp = pprint.PrettyPrinter(indent=4)
 
 
 class SingleDatasetTrainer():
@@ -182,14 +184,19 @@ class SingleDatasetTrainer():
                     lr_scheduler)
 
                 # evaluation
-                if (it+1) % self.args['eval_freq'] == 0:
-                    valid_loss, valid_metrics = self.trainer.evaluate(model, valid_loader)
-                    test_loss, test_metrics = self.trainer.evaluate(model, test_loader)
-                    print("Evaluation:",
-                        valid_loss,
+                if it == 0 and self.n_updates != 0 : # eval every epoch
+                    valid_loss, valid_metrics, valid_size = self.trainer.evaluate(model, valid_loader)
+                    test_loss, test_metrics, test_size = self.trainer.evaluate(model, test_loader)
+                    pp.pprint([
+                        "Evaluation:",
+                        self.n_updates,
+                        valid_loss.item(),
                         valid_metrics,
-                        test_loss,
-                        test_metrics)
+                        valid_size,
+                        test_loss.item(),
+                        test_metrics,
+                        test_size
+                        ])
 
                 if self.n_updates == self.args['total_n_updates']: break
             
@@ -201,23 +208,23 @@ def main():
 
         'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']
         'label-type': 'dimensional', # ['category', 'dimensional']
-        'model': 'roberta', # ['bert', 'roberta']
+        'model': 'bert', # ['bert', 'roberta']
         'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
 
         # memory-args
         'max_seq_len': 256,
-        'train_batch_size': 8,
-        'eval_batch_size': 8,
+        'train_batch_size': 32,
+        'eval_batch_size': 32,
         'update_freq': 2,
 
         # optim-args
-        'learning_rate': 2e-05,
+        'learning_rate': 2e-04,
         'total_n_updates': 2000, # replacing max_epochs
         'warmup_proportion': 0.05,
 
         # etc
-        'eval_freq': 10, # in terms of #batchs
+        'eval_freq': None, # in terms of #batchs
         
     }
 

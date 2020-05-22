@@ -168,7 +168,7 @@ class Trainer():
             lr_scheduler.step()
 
             print('step:', it, 
-                    "(updates:", n_updates ,")", 'loss:', accumulated_loss)
+                    "(updates:", n_updates ,")", 'loss:', accumulated_loss.item())
 
             accumulated_loss = 0
             optimizer.zero_grad()
@@ -184,8 +184,6 @@ class Trainer():
 
     def compute_eval_metric(self, predictions, labels):
         assert predictions.size() == labels.size()
-        print(predictions.size())
-        print(labels.size())
 
         predictions = predictions.cpu().detach().numpy()
         labels = labels.cpu().detach().numpy()
@@ -258,4 +256,4 @@ class Trainer():
         eval_loss = torch.mean(total_losses)
         eval_metrics = self.compute_eval_metric(total_predictions, total_labels)
 
-        return eval_loss, eval_metrics
+        return eval_loss, eval_metrics, total_predictions.size()
