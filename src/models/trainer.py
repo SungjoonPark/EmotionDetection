@@ -181,8 +181,9 @@ class Trainer():
             if self.args['optimizer_type'] == 'trans':
                 lr_scheduler.step()
 
-            print('step:', it, 
-                    "(updates:", n_updates ,")", 'loss:', accumulated_loss.item())
+            if self.args['log_updates']:
+                print('step:', it, 
+                        "(updates:", n_updates ,")", 'loss:', accumulated_loss.item())
 
             accumulated_loss = 0
             optimizer.zero_grad()

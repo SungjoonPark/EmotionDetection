@@ -77,6 +77,7 @@ class SingleDatasetTrainer():
     def set_train_vars(self):
         self.n_updates = 0
         self.accumulated_loss = 0
+        self.n_epoch = 0
 
 
     def load_tokenizer(self):
@@ -161,6 +162,8 @@ class SingleDatasetTrainer():
         while self.n_updates != self.args['total_n_updates']: 
 
             for it, train_batch in enumerate(train_loader):
+                if it == 0: self.n_epoch += 1
+
                 model.train()
 
                 input_ids = train_batch[0].to(torch.device(self.device))        #[batch_size, max_len]
@@ -188,6 +191,7 @@ class SingleDatasetTrainer():
 
                 # evaluation
                 if it == 0 and self.n_updates != 0 : # eval every epoch
+                    print("Epoch:", self.n_epoch)
                     valid_loss, valid_metrics, valid_size = self.trainer.evaluate(model, valid_loader)
                     test_loss, test_metrics, test_size = self.trainer.evaluate(model, test_loader)
                     pp.pprint([
@@ -225,13 +229,13 @@ def main():
 
         # optim-args
         'optimizer_type' : 'legacy', # ['legacy', 'trans']
-        'learning_rate': 5e-05,
-        'total_n_updates': 2000, # replacing max_epochs
-        'warmup_proportion': 0.05,
+        'learning_rate': 2e-05,
+        'total_n_updates': 5000, # about 20epoch for emobank
+        'warmup_proportion': 0.1,
 
         # etc
         'eval_freq': None, # in terms of #batchs
-        
+        'log_updates': False,
     }
 
     sdt = SingleDatasetTrainer(args)
