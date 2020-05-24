@@ -162,8 +162,6 @@ class SingleDatasetTrainer():
         while self.n_updates != self.args['total_n_updates']: 
 
             for it, train_batch in enumerate(train_loader):
-                if it == 0: self.n_epoch += 1
-
                 model.train()
 
                 input_ids = train_batch[0].to(torch.device(self.device))        #[batch_size, max_len]
@@ -191,7 +189,7 @@ class SingleDatasetTrainer():
 
                 # evaluation
                 if it == 0 and self.n_updates != 0 : # eval every epoch
-                    print("Epoch:", self.n_epoch)
+                    self.n_epoch += 1; print("Epoch:", self.n_epoch)
                     valid_loss, valid_metrics, valid_size = self.trainer.evaluate(model, valid_loader)
                     test_loss, test_metrics, test_size = self.trainer.evaluate(model, test_loader)
                     pp.pprint([
@@ -206,18 +204,24 @@ class SingleDatasetTrainer():
                         ])
 
                 if self.n_updates == self.args['total_n_updates']: break
-            
+                if self.n_epoch == self.args['max_epoch']: break
 
 
 def main():
 
     args = {
 
-        'CUDA_VISIBLE_DEVICES': "0",
+        'CUDA_VISIBLE_DEVICES': "3",
+        # 0 bert true
+        # 1 bert false
+        # 2 roberta true
+        # 3 roberta false
 
+        # task and models
         'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']
         'label-type': 'dimensional', # ['category', 'dimensional']
-        'model': 'bert', # ['bert', 'roberta']
+        'model': 'roberta', # ['bert', 'roberta'],
+        'load_pretrained_lm_weights': False,
         'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
         
@@ -230,7 +234,8 @@ def main():
         # optim-args
         'optimizer_type' : 'legacy', # ['legacy', 'trans']
         'learning_rate': 2e-05,
-        'total_n_updates': 5000, # about 20epoch for emobank
+        'total_n_updates': 10000
+        'max_epoch': 30,
         'warmup_proportion': 0.1,
 
         # etc

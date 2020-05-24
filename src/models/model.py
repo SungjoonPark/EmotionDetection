@@ -10,16 +10,25 @@ class PretrainedLMModel(BertPreTrainedModel):
         self.args = config.args
 
         # language models
-        if self.args['model'] == 'bert':
-            self.pre_trained_lm = BertModel.from_pretrained(
-                model_name, 
-                cache_dir=cache_path+'/model/init/',
-                config=self.config)
-        else: # 'roberta
-            self.pre_trained_lm = RobertaModel.from_pretrained(
-                model_name, 
-                cache_dir=cache_path+'/model/init/',
-                config=self.config)
+        if self.args['load_pretrained_lm_weights']:
+            if self.args['model'] == 'bert':
+                self.pre_trained_lm, loading_info = BertModel.from_pretrained(
+                    model_name, 
+                    cache_dir=cache_path+'/model/init/',
+                    config=self.config,
+                    output_loading_info=True)
+            else: # 'roberta
+                self.pre_trained_lm, loading_info = RobertaModel.from_pretrained(
+                    model_name, 
+                    cache_dir=cache_path+'/model/init/',
+                    config=self.config,
+                    output_loading_info=True)
+            print("Model Loading Info:", loading_info)
+        else:
+            if self.args['model'] == 'bert':
+                self.pre_trained_lm = BertModel(self.config)
+            else: # 'roberta
+                self.pre_trained_lm = RobertaModel(self.config)            
 
         # dropout
         self.dropout = nn.Dropout(self.config.hidden_dropout_prob)
@@ -33,9 +42,6 @@ class PretrainedLMModel(BertPreTrainedModel):
             self.head = nn.Linear(
                 self.config.hidden_size, 
                 len(self.args['label_names'])*3 )
-
-        # init weights
-        self.init_weights()
 
 
     def forward(

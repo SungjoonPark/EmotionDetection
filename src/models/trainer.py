@@ -174,17 +174,15 @@ class Trainer():
 
     def backward_step(self, it, n_updates, model, loss, accumulated_loss, optimizer, lr_scheduler):
         loss.backward() #Backpropagating the gradients
-        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
 
         if (it + 1) % self.args['update_freq'] == 0:
-            optimizer.step()
             if self.args['optimizer_type'] == 'trans':
+                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
                 lr_scheduler.step()
-
+            optimizer.step()
             if self.args['log_updates']:
                 print('step:', it, 
                         "(updates:", n_updates ,")", 'loss:', accumulated_loss.item())
-
             accumulated_loss = 0
             optimizer.zero_grad()
             n_updates += 1
