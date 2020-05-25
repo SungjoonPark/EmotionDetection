@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<annotation>
+  <head>
+    <specification src="C:\Anvil\spec\Mocap2.xml" />
+    <video src="C:\Mocap\Videos\Ses03M_script03_1.avi" />
+    <info key="coder" type="String">
+      Jeremy
+    </info>
+
+  </head>
+
+  <body>
+    <track name="Female.Emotion" type="primary">
+      <el index="0" start="14.64767" end="15.775">
+        <attribute name="Fear">true</attribute>
+      </el>
+      <el index="1" start="16.91656" end="20.235">
+        <attribute name="Fear">true</attribute>
+      </el>
+      <el index="2" start="21.788" end="23.8275">
+        <attribute name="Fear">true</attribute>
+      </el>
+      <el index="3" start="27.02646" end="28.955">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="4" start="30.29633" end="32.905">
+        <attribute name="Fear">true</attribute>
+      </el>
+      <el index="5" start="37.8825" end="42.6425">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="6" start="46.54557" end="48.01">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="7" start="49.8488" end="53.27">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="8" start="58.4906" end="61.285">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="9" start="62.5975" end="66.835">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="10" start="69.2175" end="71.8175">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="11" start="79.1775" end="82.1825">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="12" start="84.745" end="86.08">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="13" start="98.7775" end="103.275">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="14" start="106.6775" end="111.075">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="15" start="113.17747" end="115.545">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="16" start="118.7775" end="121.6175">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="17" start="126.47" end="131.10249">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="18" start="134.27499" end="136.0925">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="19" start="141.85249" end="145.09">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="20" start="168.5425" end="171.7825">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="21" start="188.44501" end="192.7375">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="22" start="192.84" end="198.33501">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="23" start="201.74001" end="204.2075">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="24" start="206.72501" end="214.3925">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="25" start="216.25" end="223.11749">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="26" start="225.565" end="228.17999">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="27" start="234.07249" end="238.08749">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="28" start="238.58749" end="244.07001">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="29" start="245.84068" end="254.3475">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="30" start="254.59" end="258.78751">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="31" start="260.95547" end="262.905">
+        <attribute name="Happiness">true</attribute>
+      </el>
+    </track>
+
+    <track name="Female.Primitives" type="span" ref="Female.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+      <el index="18" start="18" end="18">
+      </el>
+      <el index="19" start="19" end="19">
+      </el>
+      <el index="20" start="20" end="20">
+      </el>
+      <el index="21" start="21" end="21">
+      </el>
+      <el index="22" start="22" end="22">
+      </el>
+      <el index="23" start="23" end="23">
+      </el>
+      <el index="24" start="24" end="24">
+      </el>
+      <el index="25" start="25" end="25">
+      </el>
+      <el index="26" start="26" end="26">
+      </el>
+      <el index="27" start="27" end="27">
+      </el>
+      <el index="28" start="28" end="28">
+      </el>
+      <el index="29" start="29" end="29">
+      </el>
+      <el index="30" start="30" end="30">
+      </el>
+      <el index="31" start="31" end="31">
+      </el>
+    </track>
+
+    <track name="Male.Emotion" type="primary">
+      <el index="0" start="12.82" end="14.6775">
+        <attribute name="Fear">true</attribute>
+      </el>
+      <el index="1" start="15.81548" end="16.905">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="2" start="20.31989" end="21.7625">
+        <attribute name="Fear">true</attribute>
+      </el>
+      <el index="3" start="23.85669" end="27.07">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="4" start="28.86159" end="30.1525">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="5" start="32.89888" end="38.3375">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="6" start="38.58" end="40.34">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="7" start="42.70848" end="46.5675">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="8" start="48.08041" end="49.86">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="9" start="53.31887" end="58.535">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="10" start="61.39344" end="64.085">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="11" start="66.1825" end="69.695">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="12" start="71.6875" end="79.85">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="13" start="80.2325" end="84.91647">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="14" start="86.11765" end="91.9825">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="15" start="92.125" end="98.6125">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="16" start="103.30114" end="106.6475">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="17" start="111.305" end="113.2375">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="18" start="115.57982" end="120.03">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="19" start="121.5857" end="126.225">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="20" start="130.55499" end="134.785">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="21" start="135.58" end="142.155">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="22" start="144.44" end="148.3175">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="23" start="148.8075" end="161.53">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="24" start="161.5675" end="169.175">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="25" start="172.0275" end="178.36749">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="26" start="178.4025" end="188.98">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="27" start="199.2975" end="202.33749">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="28" start="203.61749" end="209.07249">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="29" start="213.0325" end="216.72">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="30" start="219.4975" end="220.47501">
+        <attribute name="Disgust">true</attribute>
+      </el>
+      <el index="31" start="223.235" end="225.5025">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="32" start="228.0275" end="234.735">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="33" start="234.96001" end="235.785">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="34" start="237.5125" end="239.73">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="35" start="244.00555" end="245.845">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="36" start="247.75" end="254.52499">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="37" start="258.88678" end="260.91">
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="38" start="262.9675" end="267.98251">
+        <attribute name="Anger">true</attribute>
+      </el>
+    </track>
+
+    <track name="Male.Primitives" type="span" ref="Male.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+      <el index="18" start="18" end="18">
+      </el>
+      <el index="19" start="19" end="19">
+      </el>
+      <el index="20" start="20" end="20">
+      </el>
+      <el index="21" start="21" end="21">
+      </el>
+      <el index="22" start="22" end="22">
+      </el>
+      <el index="23" start="23" end="23">
+      </el>
+      <el index="24" start="24" end="24">
+      </el>
+      <el index="25" start="25" end="25">
+      </el>
+      <el index="26" start="26" end="26">
+      </el>
+      <el index="27" start="27" end="27">
+      </el>
+      <el index="28" start="28" end="28">
+      </el>
+      <el index="29" start="29" end="29">
+      </el>
+      <el index="30" start="30" end="30">
+      </el>
+      <el index="31" start="31" end="31">
+      </el>
+      <el index="32" start="32" end="32">
+      </el>
+      <el index="33" start="33" end="33">
+      </el>
+      <el index="34" start="34" end="34">
+      </el>
+      <el index="35" start="35" end="35">
+      </el>
+      <el index="36" start="36" end="36">
+      </el>
+      <el index="37" start="37" end="37">
+      </el>
+      <el index="38" start="38" end="38">
+      </el>
+    </track>
+
+  </body>
+</annotation>

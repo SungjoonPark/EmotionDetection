@@ -1,0 +1,344 @@
+% [START_TIME - END_TIME] TURN_NAME EMOTION [V, A, D]
+
+[7.2688 - 16.6000]	Ses01F_impro02_F000	sad	[2.5000, 2.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness; Fear;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness;	()
+A-E3:	val 3; act 1; dom  1;	()
+A-E4:	val 2; act 3; dom  2;	(bracing herself, tense)
+A-F1:	val 3; act 3; dom  4;	()
+
+[19.8500 - 22.7800]	Ses01F_impro02_F001	sad	[2.0000, 1.5000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness;	()
+A-E3:	val 2; act 1; dom  1;	()
+A-E4:	val 2; act 2; dom  2;	(resigned)
+A-F1:	val 3; act 2; dom  3;	()
+
+[26.5659 - 32.2895]	Ses01F_impro02_F002	sad	[2.0000, 1.5000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness; Other;	(resigned)
+C-E4:	Neutral;	()
+C-F1:	Frustration; Sadness;	()
+A-E3:	val 2; act 1; dom  1;	()
+A-E4:	val 2; act 2; dom  2;	(making excuses)
+A-F1:	val 2; act 2; dom  3;	()
+
+[32.3075 - 37.9600]	Ses01F_impro02_F003	neu	[2.0000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Neutral; Other;	(resigned)
+C-E4:	Neutral;	()
+C-F1:	Sadness; Fear;	()
+A-E3:	val 2; act 1; dom  2;	()
+A-E4:	val 2; act 3; dom  2;	(justifying, edgy)
+A-F1:	val 2; act 3; dom  4;	()
+
+[47.3400 - 53.1100]	Ses01F_impro02_F004	sad	[2.5000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness;	(false, bravery)
+A-E3:	val 3; act 1; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(mildly justifying)
+A-F1:	val 2; act 3; dom  4;	()
+
+[58.7500 - 61.3100]	Ses01F_impro02_F005	sad	[2.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness;	()
+A-E3:	val 2; act 1; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(guilty, resigned)
+A-F1:	val 2; act 3; dom  3;	()
+
+[64.2550 - 68.4700]	Ses01F_impro02_F006	neu	[2.5000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness; Anger;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(no longer justifying for herself, justifying for him)
+A-F1:	val 3; act 3; dom  3;	()
+
+[72.3900 - 78.5700]	Ses01F_impro02_F007	xxx	[2.0000, 3.5000, 3.0000]
+C-E1:	Sadness;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Frustration;	()
+C-F1:	Frustration; Sadness;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  4;	(sudenly hostile, defensive)
+A-F1:	val 2; act 4; dom  4;	()
+
+[87.2031 - 91.0900]	Ses01F_impro02_F008	sad	[1.5000, 2.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Frustration; Sadness; Anger;	()
+C-E4:	Neutral;	()
+C-F1:	Frustration; Sadness;	()
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 1; act 2; dom  2;	(apologetic, resigned)
+A-F1:	val 2; act 3; dom  3;	()
+
+[91.5500 - 95.8800]	Ses01F_impro02_F009	xxx	[1.5000, 1.5000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Other;	(resigned)
+C-E4:	Neutral;	()
+C-F1:	Neutral; Sadness;	()
+A-E3:	val 2; act 1; dom  1;	()
+A-E4:	val 1; act 2; dom  3;	(reflective, rueful)
+A-F1:	val 2; act 3; dom  2;	()
+
+[97.9400 - 102.1900]	Ses01F_impro02_F010	sad	[2.0000, 1.5000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Frustration;	()
+A-E3:	val 2; act 1; dom  1;	()
+A-E4:	val 2; act 2; dom  3;	(regretful)
+A-F1:	val 2; act 2; dom  2;	()
+
+[107.6800 - 111.0153]	Ses01F_impro02_F011	xxx	[2.5000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Neutral;	()
+C-E4:	Frustration;	()
+C-F1:	Sadness;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(tense, defending)
+A-F1:	val 3; act 2; dom  3;	()
+
+[117.8300 - 120.8605]	Ses01F_impro02_F012	sad	[3.5000, 2.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Neutral;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 4; act 2; dom  2;	(apologetic, attempt at cheerful)
+A-F1:	val 3; act 3; dom  4;	()
+
+[127.8200 - 133.9455]	Ses01F_impro02_F013	sad	[1.5000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness; Fear;	()
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 1; act 2; dom  3;	(anxious, sad)
+A-F1:	val 1; act 4; dom  3;	()
+
+[139.0300 - 146.4300]	Ses01F_impro02_F014	sad	[1.5000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness; Happiness;	(hopefulness)
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 1; act 2; dom  3;	(hopeful, resigned, sad, repressing grief)
+A-F1:	val 1; act 3; dom  3;	()
+
+[151.4221 - 155.0100]	Ses01F_impro02_F015	sad	[2.0000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness;	()
+A-E3:	val 2; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(encouraging, repressing emotion)
+A-F1:	val 1; act 3; dom  3;	()
+
+[163.5400 - 165.7300]	Ses01F_impro02_F016	neu	[2.0000, 1.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness;	()
+A-E3:	val 2; act 1; dom  2;	()
+A-E4:	val 2; act 1; dom  3;	(turns apathetic, logical, dead)
+A-F1:	val 2; act 2; dom  4;	()
+
+[169.3600 - 176.0150]	Ses01F_impro02_F017	sad	[3.5000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness; Fear;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 4; act 4; dom  3;	(attempts to be cheerful through threatening hysterics)
+A-F1:	val 4; act 4; dom  5;	()
+
+[176.0800 - 179.1300]	Ses01F_impro02_F018	neu	[2.5000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness;	(determined)
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(comforting)
+A-F1:	val 3; act 3; dom  4;	()
+
+[182.8300 - 185.8894]	Ses01F_impro02_F019	sad	[2.5000, 1.5000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness; Fear;	()
+A-E3:	val 3; act 1; dom  1;	()
+A-E4:	val 2; act 2; dom  3;	(resigned, hollow comfort)
+A-F1:	val 2; act 2; dom  4;	()
+
+[186.5800 - 191.1100]	Ses01F_impro02_F020	sad	[4.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness; Fear;	()
+A-E3:	val 4; act 2; dom  2;	()
+A-E4:	val 4; act 2; dom  3;	(slightly hopeful)
+A-F1:	val 2; act 3; dom  4;	()
+
+[17.6000 - 20.6264]	Ses01F_impro02_M000	xxx	[2.0000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Frustration;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(in denial, upset, not committed)
+A-M1:	val 2; act 3; dom  3;	()
+
+[21.7600 - 27.5558]	Ses01F_impro02_M001	sad	[2.0000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Neutral;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(accusing, upset)
+A-M1:	val 2; act 3; dom  3;	()
+
+[38.8500 - 45.0900]	Ses01F_impro02_M002	xxx	[2.5000, 3.0000, 2.5000]
+C-E1:	Frustration; Sadness;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Neutral;	()
+C-M1:	Sadness;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 4; dom  3;	(bitter, stubborn)
+A-M1:	val 1; act 2; dom  2;	()
+
+[52.7100 - 59.0534]	Ses01F_impro02_M003	fru	[2.0000, 3.0000, 3.0000]
+C-E1:	Anger;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Frustration;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 2; dom  3;	()
+A-E4:	val 2; act 4; dom  3;	(disbelief, appalled)
+A-M1:	val 2; act 3; dom  2;	()
+
+[61.7500 - 65.0550]	Ses01F_impro02_M004	xxx	[2.0000, 3.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Frustration;	()
+C-M1:	Frustration; Sadness;	()
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 2; act 4; dom  3;	(bitter, feels slighted)
+A-M1:	val 2; act 2; dom  2;	()
+
+[69.3400 - 74.2900]	Ses01F_impro02_M005	sad	[2.0000, 3.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Other;	(confused)
+C-M1:	Frustration; Sadness;	()
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 2; act 4; dom  2;	(accusing, annoyed, edgy)
+A-M1:	val 2; act 3; dom  2;	()
+
+[80.0300 - 86.9900]	Ses01F_impro02_M006	xxx	[2.0000, 3.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Frustration;	()
+C-M1:	Frustration;	()
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 2; act 4; dom  2;	(apologetic, evasive, denial)
+A-M1:	val 1; act 2; dom  2;	()
+
+[103.2700 - 107.1000]	Ses01F_impro02_M007	xxx	[2.0000, 3.0000, 2.5000]
+C-E1:	Anger;	()
+C-E3:	Frustration; Disgust; Anger;	()
+C-E4:	Frustration;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(bitter, blaming)
+A-M1:	val 1; act 3; dom  2;	()
+
+[110.5653 - 113.2000]	Ses01F_impro02_M008	fru	[2.5000, 1.5000, 2.0000]
+C-E1:	Frustration;	()
+C-E3:	Neutral;	()
+C-E4:	Frustration;	()
+C-M1:	Sadness;	()
+A-E3:	val 3; act 1; dom  1;	()
+A-E4:	val 2; act 2; dom  3;	(resigned, conceding)
+A-M1:	val 2; act 3; dom  2;	()
+
+[114.1775 - 117.8500]	Ses01F_impro02_M009	sad	[2.0000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Frustration;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 1; dom  2;	()
+A-E4:	val 2; act 2; dom  3;	(feels victimized again, bitter)
+A-M1:	val 2; act 2; dom  2;	()
+
+[120.4105 - 124.6300]	Ses01F_impro02_M010	sad	[2.0000, 2.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness; Fear;	()
+C-E4:	Frustration;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 1; dom  1;	()
+A-E4:	val 2; act 3; dom  2;	(worried, anxious, self)
+A-M1:	val 2; act 2; dom  2;	()
+
+[133.8800 - 137.1000]	Ses01F_impro02_M011	sad	[2.5000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E3:	Sadness;	()
+C-E4:	Neutral;	()
+C-M1:	Sadness;	()
+A-E3:	val 3; act 1; dom  2;	()
+A-E4:	val 2; act 2; dom  3;	(evasive, bitter, apathetic)
+A-M1:	val 2; act 2; dom  1;	()
+
+[147.0300 - 151.7101]	Ses01F_impro02_M012	neu	[2.5000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Sadness;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 2; act 2; dom  3;	(sardonic, wry)
+A-M1:	val 1; act 2; dom  2;	()
+
+[157.9800 - 162.7100]	Ses01F_impro02_M013	sad	[1.5000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E3:	Sadness; Fear;	()
+C-E4:	Sadness;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 1; act 2; dom  3;	(depressed, stressed, self)
+A-M1:	val 1; act 2; dom  1;	()
+
+[164.8850 - 169.5000]	Ses01F_impro02_M014	sad	[1.5000, 3.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Fear;	()
+C-E4:	Sadness;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 1; act 3; dom  1;	(self)
+A-M1:	val 1; act 2; dom  1;	()
+
+[175.4700 - 176.7200]	Ses01F_impro02_M015	neu	[3.0000, 3.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E3:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Sadness;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 3; act 4; dom  2;	(severely on edge)
+A-M1:	val 2; act 2; dom  2;	()
+
+[195.1047 - 199.5200]	Ses01F_impro02_M016	fru	[2.0000, 1.5000, 2.5000]
+C-E1:	Anger; Fear;	()
+C-E3:	Frustration; Sadness;	()
+C-E4:	Frustration;	()
+C-M1:	Sadness;	()
+A-E3:	val 2; act 1; dom  2;	()
+A-E4:	val 2; act 2; dom  3;	(bitter)
+A-M1:	val 2; act 2; dom  1;	()
+

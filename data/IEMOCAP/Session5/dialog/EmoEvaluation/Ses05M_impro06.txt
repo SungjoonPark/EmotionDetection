@@ -1,0 +1,268 @@
+% [START_TIME - END_TIME] TURN_NAME EMOTION [V, A, D]
+
+[3.6700 - 6.5700]	Ses05M_impro06_F000	xxx	[2.0000, 2.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Other;	(concern)
+A-E1:	val 2; act 3; dom  2;	(concerned, worried)
+A-E2:	val 2; act 1; dom  1;	()
+
+[15.2600 - 17.1900]	Ses05M_impro06_F001	xxx	[2.0000, 3.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Other;	(concern)
+A-E1:	val 2; act 4; dom  2;	(very concerned for friend)
+A-E2:	val 2; act 2; dom  1;	()
+
+[25.3800 - 28.0200]	Ses05M_impro06_F002	sad	[2.0000, 2.5000, 1.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Other;	(concern)
+A-E1:	val 2; act 4; dom  2;	(sorry, sad)
+A-E2:	val 2; act 1; dom  1;	()
+
+[33.1700 - 34.8800]	Ses05M_impro06_F003	sad	[2.0000, 3.0000, 1.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Surprise;	()
+A-E1:	val 2; act 4; dom  2;	(sad, stunned)
+A-E2:	val 2; act 2; dom  1;	()
+
+[64.2500 - 65.9400]	Ses05M_impro06_F004	sad	[2.5000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+A-E1:	val 2; act 3; dom  3;	(sympathetic, encouraging good memories for friend)
+A-E2:	val 3; act 1; dom  1;	()
+
+[89.5600 - 91.5800]	Ses05M_impro06_F005	sad	[2.0000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	(sympathetic, mild)
+A-E2:	val 2; act 1; dom  1;	()
+
+[116.6200 - 118.7400]	Ses05M_impro06_F006	sad	[2.0000, 2.5000, 1.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+A-E1:	val 2; act 4; dom  2;	(starts to offer comfort, sympathetic, concerned)
+A-E2:	val 2; act 1; dom  1;	()
+
+[147.8100 - 149.7900]	Ses05M_impro06_F007	sad	[2.0000, 2.5000, 1.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 4; dom  2;	(feeling helpless, very sorry)
+A-E2:	val 2; act 1; dom  1;	()
+
+[169.9892 - 177.1000]	Ses05M_impro06_F008	sad	[2.0000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+A-E1:	val 2; act 4; dom  3;	(trying to comfort him with logic and reason, cautious)
+A-E2:	val 2; act 2; dom  2;	()
+
+[188.8700 - 193.3500]	Ses05M_impro06_F009	sad	[2.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+A-E1:	val 2; act 3; dom  3;	(encouraging, comforting, agreeing)
+A-E2:	val 2; act 1; dom  2;	()
+
+[197.8800 - 201.0100]	Ses05M_impro06_F010	sad	[2.0000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Other;	(concern)
+A-E1:	val 2; act 4; dom  3;	(wants to comfort, sorry)
+A-E2:	val 2; act 2; dom  2;	()
+
+[10.9000 - 14.8600]	Ses05M_impro06_M000	sad	[2.0000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Neutral;	()
+A-E1:	val 2; act 3; dom  3;	(vague, distracted)
+A-E2:	val 2; act 1; dom  1;	()
+A-M5:	val 2; act 2; dom  3;	()
+
+[19.9600 - 25.5800]	Ses05M_impro06_M001	sad	[2.0000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	(bitter, more forceful, serious)
+A-E2:	val 2; act 1; dom  1;	()
+A-M5:	val 2; act 3; dom  3;	()
+
+[27.4600 - 33.6700]	Ses05M_impro06_M002	sad	[1.5000, 2.0000, 2.0000]
+C-E1:	Sadness; Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Sadness;	()
+A-E1:	val 1; act 2; dom  3;	(losing apathetic mask, giving in to feelings, still trying to suppress)
+A-E2:	val 2; act 2; dom  1;	()
+A-M5:	val 2; act 3; dom  3;	()
+
+[34.3600 - 45.1000]	Ses05M_impro06_M003	sad	[1.5000, 2.0000, 2.0000]
+C-E1:	Sadness; Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Frustration;	()
+A-E1:	val 1; act 3; dom  3;	(disbelief, amazed, impressed, horrified)
+A-E2:	val 2; act 1; dom  1;	()
+A-M5:	val 2; act 3; dom  4;	()
+
+[45.1100 - 58.4800]	Ses05M_impro06_M004	sad	[1.5000, 2.5000, 2.5000]
+C-E1:	Sadness; Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Frustration; Sadness;	()
+A-E1:	val 1; act 3; dom  3;	(depressed, all his hopes have crashed)
+A-E2:	val 2; act 2; dom  2;	()
+A-M5:	val 2; act 4; dom  4;	()
+
+[58.6900 - 65.6800]	Ses05M_impro06_M005	sad	[1.5000, 3.0000, 2.5000]
+C-E1:	Sadness; Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Excited;	()
+C-M5:	Frustration; Happiness;	()
+A-E1:	val 1; act 4; dom  3;	(impressed, praising, depressed)
+A-E2:	val 2; act 2; dom  2;	()
+A-M5:	val 4; act 4; dom  4;	()
+
+[65.7000 - 75.5700]	Ses05M_impro06_M006	sad	[2.0000, 3.5000, 2.5000]
+C-E1:	Sadness; Other;	(melancolia)
+C-E2:	Sadness;	()
+C-E4:	Excited;	()
+C-M5:	Frustration;	()
+A-E1:	val 1; act 4; dom  3;	(impressed, praising, admiring)
+A-E2:	val 3; act 3; dom  2;	()
+A-M5:	val 3; act 4; dom  4;	()
+
+[75.5800 - 81.5100]	Ses05M_impro06_M007	sad	[2.0000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Excited;	()
+C-M5:	Frustration; Sadness;	()
+A-E1:	val 1; act 4; dom  3;	(admiring, depressed)
+A-E2:	val 3; act 2; dom  2;	()
+A-M5:	val 3; act 3; dom  4;	()
+
+[81.5200 - 89.9600]	Ses05M_impro06_M008	sad	[1.5000, 3.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Frustration;	()
+A-E1:	val 1; act 3; dom  3;	(stunned, depressed, disbelief)
+A-E2:	val 2; act 3; dom  1;	()
+A-M5:	val 2; act 3; dom  3;	()
+
+[91.9800 - 99.6100]	Ses05M_impro06_M009	sad	[1.5000, 3.0000, 2.0000]
+C-E1:	Frustration; Surprise;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Frustration;	()
+A-E1:	val 1; act 4; dom  3;	(shocked, stunned, sad)
+A-E2:	val 2; act 2; dom  1;	()
+A-M5:	val 2; act 3; dom  3;	()
+
+[101.0100 - 114.7500]	Ses05M_impro06_M010	sad	[1.5000, 3.0000, 2.5000]
+C-E1:	Frustration; Disgust;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Sadness;	()
+A-E1:	val 1; act 4; dom  3;	(on the verge of tears, missing, feels bereft)
+A-E2:	val 2; act 2; dom  2;	()
+A-M5:	val 2; act 4; dom  4;	()
+
+[116.5400 - 128.9700]	Ses05M_impro06_M011	sad	[1.5000, 3.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Frustration; Sadness;	()
+A-E1:	val 1; act 4; dom  3;	(feels bereft, stunned)
+A-E2:	val 2; act 2; dom  1;	()
+A-M5:	val 2; act 4; dom  3;	()
+
+[129.1900 - 136.1500]	Ses05M_impro06_M012	sad	[1.5000, 3.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration; Sadness;	()
+C-M5:	Frustration;	()
+A-E1:	val 1; act 4; dom  3;	(disillusioned, depressed, bitter)
+A-E2:	val 2; act 2; dom  1;	()
+A-M5:	val 2; act 4; dom  4;	()
+
+[137.1500 - 147.2300]	Ses05M_impro06_M013	sad	[1.0000, 3.5000, 2.5000]
+C-E1:	Frustration; Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration; Sadness;	()
+C-M5:	Sadness; Anger;	()
+A-E1:	val 1; act 5; dom  3;	(working hard to hold back emotion, disillusioned, depressed)
+A-E2:	val 1; act 2; dom  2;	()
+A-M5:	val 1; act 4; dom  4;	()
+
+[148.2300 - 155.7751]	Ses05M_impro06_M014	sad	[1.5000, 3.0000, 2.5000]
+C-E1:	Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration; Sadness;	()
+C-M5:	Frustration; Sadness;	()
+A-E1:	val 1; act 4; dom  3;	(disappointed, depressed, disillusioned, empty)
+A-E2:	val 2; act 2; dom  2;	()
+A-M5:	val 2; act 3; dom  4;	()
+
+[155.7851 - 165.2100]	Ses05M_impro06_M015	xxx	[1.5000, 3.0000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration;	()
+C-M5:	Anger;	()
+A-E1:	val 1; act 4; dom  4;	(bitter)
+A-E2:	val 2; act 2; dom  3;	()
+A-M5:	val 1; act 4; dom  4;	()
+
+[165.2200 - 170.8900]	Ses05M_impro06_M016	xxx	[1.5000, 3.0000, 3.0000]
+C-E1:	Frustration; Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration; Anger;	()
+C-M5:	Sadness; Anger;	()
+A-E1:	val 1; act 4; dom  4;	(sadness turns to anger)
+A-E2:	val 2; act 2; dom  2;	()
+A-M5:	val 1; act 5; dom  4;	()
+
+[176.5500 - 179.9800]	Ses05M_impro06_M017	sad	[2.0000, 2.5000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-M5:	Sadness;	()
+A-E1:	val 1; act 3; dom  3;	(snaps back to being reasonable, no longer angry, conceding)
+A-E2:	val 3; act 2; dom  1;	()
+A-M5:	val 2; act 3; dom  3;	()
+
+[180.7300 - 191.4300]	Ses05M_impro06_M018	sad	[2.0000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Sadness;	()
+A-E1:	val 1; act 4; dom  3;	(feels stuck, lost, on edge)
+A-E2:	val 3; act 2; dom  2;	()
+A-M5:	val 2; act 3; dom  3;	()
+
+[194.8000 - 197.3500]	Ses05M_impro06_M019	sad	[1.5000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-M5:	Sadness;	()
+A-E1:	val 1; act 3; dom  3;	(blunt, miserable)
+A-E2:	val 2; act 1; dom  1;	()
+A-M5:	val 1; act 3; dom  3;	()
+
+[200.9700 - 203.1100]	Ses05M_impro06_M020	sad	[1.5000, 2.5000, 1.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-M5:	;	()
+A-E1:	val 1; act 4; dom  2;	(devoid of hope)
+A-E2:	val 2; act 1; dom  1;	()
+A-M5:	val 2; act 2; dom  2;	()
+

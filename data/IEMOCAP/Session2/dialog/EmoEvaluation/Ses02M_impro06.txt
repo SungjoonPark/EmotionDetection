@@ -1,0 +1,341 @@
+% [START_TIME - END_TIME] TURN_NAME EMOTION [V, A, D]
+
+[5.1150 - 8.0522]	Ses02M_impro06_F000	xxx	[2.5000, 2.0000, 2.5000]
+C-E1:	Fear;	()
+C-E2:	Neutral;	()
+C-E4:	Other;	(concern)
+C-F2:	Other;	(concern)
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F2:	val 3; act 2; dom  1;	()
+
+[13.4307 - 18.4542]	Ses02M_impro06_F001	sur	[1.5000, 2.5000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Surprise;	()
+C-E4:	Surprise;	()
+C-F2:	Sadness; Surprise;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 1; act 2; dom  5;	()
+A-F2:	val 2; act 2; dom  2;	()
+
+[36.8400 - 40.9300]	Ses02M_impro06_F002	sad	[1.5000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Other;	(concern)
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 1; act 1; dom  3;	()
+A-F2:	val 2; act 1; dom  2;	()
+
+[49.8500 - 53.6810]	Ses02M_impro06_F003	sad	[1.5000, 2.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F2:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 1; act 1; dom  4;	()
+A-F2:	val 2; act 2; dom  1;	()
+
+[69.6811 - 74.4200]	Ses02M_impro06_F004	sad	[2.0000, 2.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F2:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 2; dom  4;	()
+A-F2:	val 1; act 2; dom  2;	()
+
+[98.4900 - 100.0300]	Ses02M_impro06_F005	sad	[2.0000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 1; act 2; dom  4;	()
+A-F2:	val 2; act 2; dom  2;	()
+
+[107.9600 - 110.1500]	Ses02M_impro06_F006	sad	[2.5000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 1; dom  3;	()
+A-F2:	val 2; act 2; dom  1;	()
+
+[117.4822 - 118.2464]	Ses02M_impro06_F007	sad	[2.5000, 1.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 3; act 1; dom  1;	()
+A-E2:	val 2; act 1; dom  3;	()
+A-F2:	val 2; act 1; dom  1;	()
+
+[135.4980 - 140.6869]	Ses02M_impro06_F008	sad	[2.0000, 2.5000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F2:	val 2; act 2; dom  3;	()
+
+[145.7747 - 148.7923]	Ses02M_impro06_F009	sad	[2.5000, 2.5000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Sadness; Other;	(supportive)
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F2:	val 2; act 3; dom  3;	()
+
+[156.5503 - 158.1019]	Ses02M_impro06_F010	sad	[3.5000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Sadness;	()
+A-E1:	val 4; act 2; dom  2;	()
+A-E2:	val 3; act 2; dom  4;	()
+A-F2:	val 4; act 3; dom  2;	()
+
+[166.6705 - 168.5463]	Ses02M_impro06_F011	sad	[2.5000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Other;	(supportive)
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 1; dom  3;	()
+A-F2:	val 2; act 2; dom  2;	()
+
+[173.6388 - 178.3072]	Ses02M_impro06_F012	sad	[3.0000, 2.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Sadness; Other;	(hopeful)
+A-E1:	val 4; act 2; dom  3;	()
+A-E2:	val 2; act 2; dom  4;	()
+A-F2:	val 4; act 2; dom  3;	()
+
+[186.3551 - 188.9257]	Ses02M_impro06_F013	sad	[2.5000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Other;	(concern)
+C-F2:	Other;	(concern)
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F2:	val 2; act 2; dom  3;	()
+
+[220.4210 - 223.2463]	Ses02M_impro06_F014	sad	[2.0000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Sadness; Other;	(supportive)
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 1; act 1; dom  3;	()
+A-F2:	val 3; act 3; dom  3;	()
+
+[233.1349 - 235.1265]	Ses02M_impro06_F015	sad	[2.5000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Other;	(supportive)
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 1; dom  3;	()
+A-F2:	val 3; act 1; dom  1;	()
+
+[236.4697 - 238.2529]	Ses02M_impro06_F016	sad	[2.5000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 1; dom  3;	()
+A-F2:	val 3; act 2; dom  3;	()
+
+[243.9962 - 246.0341]	Ses02M_impro06_F017	sad	[2.5000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Other;	(supportive)
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F2:	val 2; act 2; dom  1;	()
+
+[252.1016 - 254.1164]	Ses02M_impro06_F018	sad	[2.5000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F2:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  4;	()
+A-F2:	val 2; act 2; dom  1;	()
+
+[11.5200 - 13.4781]	Ses02M_impro06_M000	sad	[2.0000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 2; act 1; dom  3;	()
+
+[18.6500 - 23.1000]	Ses02M_impro06_M001	sad	[1.5000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 1; act 3; dom  3;	()
+
+[24.0800 - 39.1144]	Ses02M_impro06_M002	sad	[1.5000, 2.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 1; act 2; dom  4;	()
+
+[41.1400 - 49.1100]	Ses02M_impro06_M003	sad	[1.5000, 2.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 1; act 2; dom  4;	()
+
+[51.6000 - 68.5200]	Ses02M_impro06_M004	sad	[1.5000, 1.5000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 1; act 1; dom  5;	()
+
+[75.8700 - 85.2200]	Ses02M_impro06_M005	sad	[1.5000, 2.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 1; act 2; dom  4;	()
+
+[85.8500 - 98.7934]	Ses02M_impro06_M006	sad	[1.5000, 2.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 1; act 2; dom  4;	()
+
+[99.8200 - 106.3000]	Ses02M_impro06_M007	sad	[2.0000, 2.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 1; dom  4;	()
+
+[110.6000 - 117.5764]	Ses02M_impro06_M008	sad	[1.5000, 2.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 1; act 2; dom  4;	()
+
+[118.1717 - 135.9394]	Ses02M_impro06_M009	sad	[2.0000, 3.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 2; act 2; dom  4;	()
+
+[141.8896 - 145.6285]	Ses02M_impro06_M010	sad	[2.5000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[148.7303 - 156.1400]	Ses02M_impro06_M011	sad	[2.5000, 2.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 2; dom  4;	()
+
+[156.1700 - 159.0500]	Ses02M_impro06_M012	sad	[3.0000, 2.0000, 3.5000]
+C-E1:	Sadness; Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 4; act 2; dom  3;	()
+A-E2:	val 2; act 2; dom  4;	()
+
+[159.1100 - 165.0540]	Ses02M_impro06_M013	sad	[2.0000, 1.5000, 3.0000]
+C-E1:	Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 1; act 1; dom  4;	()
+
+[168.1400 - 172.8868]	Ses02M_impro06_M014	sad	[3.0000, 2.5000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[179.1531 - 186.6204]	Ses02M_impro06_M015	sad	[2.0000, 1.5000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 2; act 1; dom  4;	()
+
+[187.1193 - 199.2080]	Ses02M_impro06_M016	sad	[1.0000, 3.5000, 4.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 1; act 4; dom  4;	()
+A-E2:	val 1; act 3; dom  5;	()
+
+[199.2311 - 214.1921]	Ses02M_impro06_M017	sad	[1.5000, 3.0000, 4.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 3; dom  4;	()
+A-E2:	val 1; act 3; dom  5;	()
+
+[215.2678 - 217.8787]	Ses02M_impro06_M018	sad	[1.5000, 2.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 1; act 3; dom  4;	()
+
+[223.9257 - 233.6212]	Ses02M_impro06_M019	sad	[2.0000, 2.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  4;	()
+A-E2:	val 2; act 2; dom  4;	()
+
+[234.8486 - 236.6781]	Ses02M_impro06_M020	sad	[2.5000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[238.2546 - 243.8107]	Ses02M_impro06_M021	sad	[2.0000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 1; act 2; dom  4;	()
+
+[246.2650 - 248.3433]	Ses02M_impro06_M022	sad	[2.5000, 3.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[249.1373 - 252.0553]	Ses02M_impro06_M023	sad	[2.5000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 3; dom  3;	()
+

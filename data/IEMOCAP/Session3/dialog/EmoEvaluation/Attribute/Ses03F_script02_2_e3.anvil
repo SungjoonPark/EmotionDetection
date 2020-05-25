@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<annotation>
+  <head>
+    <specification src="C:\Anvil\spec\Mocap2.xml" />
+    <video src="C:\Mocap\Videos\Ses03F_script02_2.avi" />
+    <info key="coder" type="String">
+      Carlos Busso
+    </info>
+
+  </head>
+
+  <body>
+    <track name="Female.Emotion" type="primary">
+      <el index="0" start="8.5564" end="11.2227">
+      </el>
+      <el index="1" start="12.8467" end="15.925">
+      </el>
+      <el index="2" start="21.5" end="29.1595">
+      </el>
+      <el index="3" start="30.3957" end="39.7762">
+      </el>
+      <el index="4" start="41.3517" end="44.527">
+      </el>
+      <el index="5" start="50.8534" end="57.2675">
+      </el>
+      <el index="6" start="58.6826" end="66.7057">
+      </el>
+      <el index="7" start="77.4436" end="80.7886">
+      </el>
+      <el index="8" start="85.8303" end="90.9205">
+      </el>
+      <el index="9" start="92.7384" end="96.859">
+      </el>
+      <el index="10" start="97.7559" end="100.1798">
+      </el>
+      <el index="11" start="100.2767" end="106.4819">
+      </el>
+      <el index="12" start="106.5325" end="114.0475">
+      </el>
+      <el index="13" start="115.3925" end="117.7773">
+      </el>
+      <el index="14" start="118.1651" end="128.2485">
+      </el>
+      <el index="15" start="134.4075" end="137.9684">
+      </el>
+      <el index="16" start="164.07381" end="169.21249">
+      </el>
+      <el index="17" start="169.2852" end="172.4847">
+      </el>
+      <el index="18" start="172.6059" end="176.3145">
+      </el>
+      <el index="19" start="176.405" end="183.1256">
+      </el>
+      <el index="20" start="183.19749" end="189.5732">
+      </el>
+      <el index="21" start="189.6702" end="195.99651">
+      </el>
+      <el index="22" start="196.09351" end="202.08051">
+      </el>
+      <el index="23" start="205.0619" end="210.27499">
+      </el>
+      <el index="24" start="224.04111" end="227.19209">
+      </el>
+      <el index="25" start="227.2925" end="229.9796">
+      </el>
+      <el index="26" start="234.94859" end="237.74361">
+      </el>
+      <el index="27" start="239.21471" end="241.12959">
+      </el>
+      <el index="28" start="242.4142" end="245.0563">
+      </el>
+      <el index="29" start="246.147" end="248.54671">
+      </el>
+      <el index="30" start="250.27" end="252.1098">
+      </el>
+      <el index="31" start="253.0551" end="255.16389">
+      </el>
+      <el index="32" start="256.2305" end="258.13589">
+      </el>
+      <el index="33" start="264.5325" end="268.6651">
+      </el>
+      <el index="34" start="303.86011" end="307.7868">
+      </el>
+      <el index="35" start="308.41699" end="312.78">
+      </el>
+      <el index="36" start="313.38599" end="318.23499">
+      </el>
+      <el index="37" start="320.90009" end="326.28119">
+      </el>
+      <el index="38" start="326.4993" end="330.3533">
+      </el>
+      <el index="39" start="332.02579" end="344.26651">
+      </el>
+      <el index="40" start="347.15091" end="349.39499">
+      </el>
+      <el index="41" start="352.07751" end="357.45251">
+      </el>
+      <el index="42" start="358.0343" end="367.75409">
+      </el>
+      <el index="43" start="373.47449" end="381.54611">
+      </el>
+      <el index="44" start="390.39331" end="394.24731">
+      </el>
+      <el index="45" start="394.3443" end="398.07709">
+      </el>
+      <el index="46" start="398.271" end="401.89999">
+      </el>
+      <el index="47" start="406.2699" end="409.20279">
+      </el>
+      <el index="48" start="410.77829" end="414.48691">
+      </el>
+      <el index="49" start="421.3223" end="428.23041">
+      </el>
+      <el index="50" start="428.5213" end="433.1994">
+      </el>
+      <el index="51" start="433.9993" end="437.00491">
+      </el>
+      <el index="52" start="442.38599" end="445.05231">
+      </el>
+    </track>
+
+    <track name="Female.Primitives" type="span" ref="Female.Emotion">
+      <el index="0" start="0" end="0">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="1" start="1" end="1">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="2" start="2" end="2">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="3" start="3" end="3">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="4" start="4" end="4">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="5" start="5" end="5">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="6" start="6" end="6">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="7" start="7" end="7">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="8" start="8" end="8">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="9" start="9" end="9">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="10" start="10" end="10">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="11" start="11" end="11">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="12" start="12" end="12">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="13" start="13" end="13">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="14" start="14" end="14">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="15" start="15" end="15">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="16" start="16" end="16">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="17" start="17" end="17">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="18" start="18" end="18">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="19" start="19" end="19">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="20" start="20" end="20">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="21" start="21" end="21">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="22" start="22" end="22">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="23" start="23" end="23">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="24" start="24" end="24">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="25" start="25" end="25">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="26" start="26" end="26">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="27" start="27" end="27">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="28" start="28" end="28">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="29" start="29" end="29">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="30" start="30" end="30">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="31" start="31" end="31">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="32" start="32" end="32">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="33" start="33" end="33">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="34" start="34" end="34">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="35" start="35" end="35">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="36" start="36" end="36">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="37" start="37" end="37">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="38" start="38" end="38">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="39" start="39" end="39">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="40" start="40" end="40">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="41" start="41" end="41">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="42" start="42" end="42">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="43" start="43" end="43">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="44" start="44" end="44">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="45" start="45" end="45">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="46" start="46" end="46">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="47" start="47" end="47">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="48" start="48" end="48">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="49" start="49" end="49">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="50" start="50" end="50">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="51" start="51" end="51">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="52" start="52" end="52">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+    </track>
+
+    <track name="Male.Emotion" type="primary">
+      <el index="0" start="5.65" end="9.49">
+      </el>
+      <el index="1" start="10.3501" end="13.5496">
+      </el>
+      <el index="2" start="14.9555" end="22.0332">
+      </el>
+      <el index="3" start="28.3112" end="31.6319">
+      </el>
+      <el index="4" start="38.7097" end="41.9475">
+      </el>
+      <el index="5" start="43.6787" end="51.4836">
+      </el>
+      <el index="6" start="56.775" end="59.7491">
+      </el>
+      <el index="7" start="65.8574" end="78.3647">
+      </el>
+      <el index="8" start="82.9701" end="86.2908">
+      </el>
+      <el index="9" start="90.1206" end="93.9988">
+      </el>
+      <el index="10" start="95.8168" end="98.4346">
+      </el>
+      <el index="11" start="113.2931" end="115.8875">
+      </el>
+      <el index="12" start="130.26041" end="135.9565">
+      </el>
+      <el index="13" start="136.0777" end="142.7919">
+      </el>
+      <el index="14" start="142.8647" end="157.62621">
+      </el>
+      <el index="15" start="157.6747" end="165.50391">
+      </el>
+      <el index="16" start="202.29871" end="205.983">
+      </el>
+      <el index="17" start="209.73" end="219.41141">
+      </el>
+      <el index="18" start="219.4841" end="224.5258">
+      </el>
+      <el index="19" start="228.9373" end="235.7">
+      </el>
+      <el index="20" start="237.13499" end="239.74789">
+      </el>
+      <el index="21" start="240.3539" end="242.8748">
+      </el>
+      <el index="22" start="242.9232" end="248.0619">
+      </el>
+      <el index="23" start="248.52251" end="254.7034">
+      </el>
+      <el index="24" start="254.8004" end="256.95761">
+      </el>
+      <el index="25" start="257.23499" end="259.939">
+      </el>
+      <el index="26" start="259.98749" end="265.97449">
+      </el>
+      <el index="27" start="267.08951" end="270.19211">
+      </el>
+      <el index="28" start="270.2406" end="279.76651">
+      </el>
+      <el index="29" start="279.815" end="295.11249">
+      </el>
+      <el index="30" start="295.155" end="304.1752">
+      </el>
+      <el index="31" start="306.74451" end="309.1442">
+      </el>
+      <el index="32" start="312.05289" end="313.7981">
+      </el>
+      <el index="33" start="317.4097" end="321.65149">
+      </el>
+      <el index="34" start="329.55341" end="333.04379">
+      </el>
+      <el index="35" start="344.14529" end="348.09631">
+      </el>
+      <el index="36" start="348.9689" end="352.82291">
+      </el>
+      <el index="37" start="356.5799" end="359.125">
+      </el>
+      <el index="38" start="367.31781" end="372.50491">
+      </el>
+      <el index="39" start="381.49759" end="388.72079">
+      </el>
+      <el index="40" start="403.2157" end="406.65771">
+      </el>
+      <el index="41" start="408.13629" end="411.84479">
+      </el>
+      <el index="42" start="416.3775" end="421.1041">
+      </el>
+      <el index="43" start="435.2355" end="438.3381">
+      </el>
+      <el index="44" start="438.53201" end="441.5675">
+      </el>
+      <el index="45" start="445.24619" end="447.10141">
+      </el>
+    </track>
+
+    <track name="Male.Primitives" type="span" ref="Male.Emotion">
+      <el index="0" start="0" end="0">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="1" start="1" end="1">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="2" start="2" end="2">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="3" start="3" end="3">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="4" start="4" end="4">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="5" start="5" end="5">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="6" start="6" end="6">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="7" start="7" end="7">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="8" start="8" end="8">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="9" start="9" end="9">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="10" start="10" end="10">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="11" start="11" end="11">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="12" start="12" end="12">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="13" start="13" end="13">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="14" start="14" end="14">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="15" start="15" end="15">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="16" start="16" end="16">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="17" start="17" end="17">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="18" start="18" end="18">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="19" start="19" end="19">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="20" start="20" end="20">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="21" start="21" end="21">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="22" start="22" end="22">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="23" start="23" end="23">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="24" start="24" end="24">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="25" start="25" end="25">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="26" start="26" end="26">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="27" start="27" end="27">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="28" start="28" end="28">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="29" start="29" end="29">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="30" start="30" end="30">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 4</attribute>
+      </el>
+      <el index="31" start="31" end="31">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="32" start="32" end="32">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="33" start="33" end="33">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="34" start="34" end="34">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="35" start="35" end="35">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="36" start="36" end="36">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="37" start="37" end="37">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="38" start="38" end="38">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="39" start="39" end="39">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="40" start="40" end="40">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="41" start="41" end="41">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="42" start="42" end="42">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="43" start="43" end="43">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="44" start="44" end="44">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="45" start="45" end="45">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+    </track>
+
+  </body>
+</annotation>

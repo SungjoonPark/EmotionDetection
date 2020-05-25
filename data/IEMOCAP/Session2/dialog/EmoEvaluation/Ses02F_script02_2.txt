@@ -1,0 +1,653 @@
+% [START_TIME - END_TIME] TURN_NAME EMOTION [V, A, D]
+
+[6.3300 - 7.7200]	Ses02F_script02_2_F000	neu	[2.5000, 2.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[9.5015 - 11.2600]	Ses02F_script02_2_F001	fru	[2.5000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[14.8100 - 21.4500]	Ses02F_script02_2_F002	xxx	[2.5000, 3.5000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[22.9600 - 34.9800]	Ses02F_script02_2_F003	xxx	[2.5000, 4.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 2; act 5; dom  4;	()
+
+[36.0100 - 38.9700]	Ses02F_script02_2_F004	xxx	[2.5000, 3.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[45.2100 - 52.6500]	Ses02F_script02_2_F005	ang	[1.5000, 4.5000, 4.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Anger;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 5; dom  5;	()
+
+[53.2000 - 57.7000]	Ses02F_script02_2_F006	ang	[2.0000, 4.0000, 4.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Anger;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[67.3100 - 70.9800]	Ses02F_script02_2_F007	fru	[1.5000, 4.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Anger;	()
+A-E1:	val 2; act 4; dom  3;	()
+A-E2:	val 1; act 4; dom  4;	()
+
+[71.7500 - 75.2300]	Ses02F_script02_2_F008	fru	[2.0000, 4.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[76.8900 - 79.7300]	Ses02F_script02_2_F009	fru	[2.0000, 3.5000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[80.7700 - 86.1500]	Ses02F_script02_2_F010	fru	[2.0000, 4.0000, 4.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  5;	()
+
+[86.1600 - 99.7100]	Ses02F_script02_2_F011	ang	[1.5000, 5.0000, 5.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 5; dom  5;	()
+A-E2:	val 1; act 5; dom  5;	()
+
+[101.2800 - 103.8100]	Ses02F_script02_2_F012	fru	[2.0000, 3.5000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[104.9300 - 111.9000]	Ses02F_script02_2_F013	fru	[1.5000, 4.0000, 4.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 4; dom  5;	()
+
+[113.2500 - 116.2300]	Ses02F_script02_2_F014	xxx	[1.0000, 4.5000, 5.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration; Anger;	()
+A-E1:	val 1; act 4; dom  5;	()
+A-E2:	val 1; act 5; dom  5;	()
+
+[143.6900 - 149.7200]	Ses02F_script02_2_F015	sad	[2.5000, 3.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[149.7400 - 159.7600]	Ses02F_script02_2_F016	sad	[4.0000, 4.0000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 4; act 4; dom  4;	()
+A-E2:	val 4; act 4; dom  3;	()
+
+[159.7833 - 169.3200]	Ses02F_script02_2_F017	sad	[3.5000, 4.0000, 4.5000]
+C-E1:	Sadness;	()
+C-E2:	Happiness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 4; act 4; dom  5;	()
+
+[169.3400 - 178.1700]	Ses02F_script02_2_F018	sad	[4.0000, 4.5000, 4.0000]
+C-E1:	Sadness; Anger;	()
+C-E2:	Happiness;	()
+C-E4:	Sadness;	()
+A-E1:	val 4; act 5; dom  4;	()
+A-E2:	val 4; act 4; dom  4;	()
+
+[178.7800 - 183.3300]	Ses02F_script02_2_F019	sad	[4.0000, 4.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Happiness;	()
+C-E4:	Sadness;	()
+A-E1:	val 4; act 4; dom  4;	()
+A-E2:	val 4; act 4; dom  4;	()
+
+[196.7300 - 202.0100]	Ses02F_script02_2_F020	sad	[2.5000, 3.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[206.4100 - 207.5500]	Ses02F_script02_2_F021	sad	[2.5000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[208.7400 - 209.7200]	Ses02F_script02_2_F022	sad	[2.5000, 2.5000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 3; dom  2;	()
+
+[210.6800 - 211.8300]	Ses02F_script02_2_F023	xxx	[2.0000, 3.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  2;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[213.2000 - 214.0700]	Ses02F_script02_2_F024	sad	[2.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[215.2100 - 216.2000]	Ses02F_script02_2_F025	fru	[2.5000, 2.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[217.4100 - 218.6800]	Ses02F_script02_2_F026	fru	[2.0000, 3.5000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[218.9300 - 220.1400]	Ses02F_script02_2_F027	fru	[2.0000, 4.0000, 4.0000]
+C-E1:	Anger;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  3;	()
+A-E2:	val 2; act 4; dom  5;	()
+
+[225.5700 - 229.1700]	Ses02F_script02_2_F028	xxx	[1.0000, 4.5000, 4.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration; Anger;	()
+A-E1:	val 1; act 4; dom  4;	()
+A-E2:	val 1; act 5; dom  5;	()
+
+[269.0000 - 274.0600]	Ses02F_script02_2_F029	xxx	[1.5000, 4.0000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  3;	()
+A-E2:	val 1; act 4; dom  4;	()
+
+[274.8500 - 280.4500]	Ses02F_script02_2_F030	xxx	[1.5000, 4.0000, 4.5000]
+C-E1:	Frustration; Sadness;	()
+C-E2:	Anger;	()
+C-E4:	Frustration; Sadness;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 4; dom  5;	()
+
+[281.5765 - 286.6000]	Ses02F_script02_2_F031	sad	[1.5000, 4.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  3;	()
+A-E2:	val 1; act 4; dom  4;	()
+
+[288.2400 - 302.7400]	Ses02F_script02_2_F032	xxx	[1.5000, 3.5000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration; Sadness;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 3; dom  4;	()
+
+[305.3800 - 308.7200]	Ses02F_script02_2_F033	sad	[2.5000, 3.5000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[308.7500 - 324.1000]	Ses02F_script02_2_F034	sad	[1.5000, 3.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Sadness; Happiness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 2; dom  3;	()
+
+[327.1500 - 328.7700]	Ses02F_script02_2_F035	sad	[2.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[332.8400 - 337.1400]	Ses02F_script02_2_F036	xxx	[2.0000, 3.5000, 3.5000]
+C-E1:	Sadness; Surprise;	()
+C-E2:	Happiness;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 1; act 4; dom  4;	()
+
+[338.7300 - 341.9900]	Ses02F_script02_2_F037	xxx	[3.0000, 3.5000, 3.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Surprise;	()
+A-E1:	val 4; act 4; dom  3;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[342.0800 - 350.2000]	Ses02F_script02_2_F038	sad	[1.5000, 3.0000, 4.5000]
+C-E1:	Excited; Happiness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 2; dom  5;	()
+
+[357.0600 - 364.8300]	Ses02F_script02_2_F039	xxx	[3.5000, 3.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 4; dom  3;	()
+A-E2:	val 4; act 2; dom  3;	()
+
+[370.6400 - 377.7300]	Ses02F_script02_2_F040	xxx	[4.0000, 2.5000, 3.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 4; act 2; dom  4;	()
+
+[379.8700 - 382.7600]	Ses02F_script02_2_F041	hap	[4.0000, 4.0000, 3.5000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Surprise; Happiness;	()
+A-E1:	val 4; act 4; dom  3;	()
+A-E2:	val 4; act 4; dom  4;	()
+
+[383.7000 - 387.6000]	Ses02F_script02_2_F042	hap	[4.0000, 3.0000, 3.5000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 4; act 3; dom  4;	()
+
+[393.4100 - 402.2600]	Ses02F_script02_2_F043	hap	[4.0000, 3.0000, 3.5000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 5; act 3; dom  4;	()
+
+[405.9300 - 408.2600]	Ses02F_script02_2_F044	sad	[2.5000, 3.5000, 3.5000]
+C-E1:	Happiness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[412.1500 - 413.9200]	Ses02F_script02_2_F045	hap	[4.0000, 2.5000, 2.5000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 4; act 2; dom  2;	()
+A-E2:	val 4; act 3; dom  3;	()
+
+[4.2700 - 6.3631]	Ses02F_script02_2_M000	exc	[3.5000, 3.5000, 3.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Excited;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 4; act 4; dom  4;	()
+
+[7.7600 - 9.0700]	Ses02F_script02_2_M001	neu	[3.0000, 3.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[11.4400 - 15.5300]	Ses02F_script02_2_M002	neu	[2.5000, 3.5000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[21.2400 - 23.6600]	Ses02F_script02_2_M003	neu	[2.5000, 3.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[34.6900 - 36.9000]	Ses02F_script02_2_M004	xxx	[2.5000, 3.0000, 2.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Other;	(confused)
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 2; act 3; dom  2;	()
+
+[38.7300 - 45.5600]	Ses02F_script02_2_M005	neu	[3.0000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 3; dom  2;	()
+
+[51.7900 - 53.5100]	Ses02F_script02_2_M006	fru	[2.5000, 3.5000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 5; dom  5;	()
+
+[57.5500 - 67.7200]	Ses02F_script02_2_M007	neu	[2.5000, 4.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[70.6700 - 72.0900]	Ses02F_script02_2_M008	fru	[2.5000, 3.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[75.0400 - 77.4500]	Ses02F_script02_2_M009	neu	[2.0000, 3.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 2; act 3; dom  2;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[79.4000 - 81.1300]	Ses02F_script02_2_M010	neu	[2.5000, 3.5000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[99.6700 - 101.5000]	Ses02F_script02_2_M011	fru	[2.5000, 2.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 3; dom  3;	()
+
+[103.5800 - 105.1700]	Ses02F_script02_2_M012	fru	[1.5000, 3.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 1; act 4; dom  5;	()
+
+[111.4600 - 114.7500]	Ses02F_script02_2_M013	neu	[2.5000, 3.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[115.9200 - 124.0800]	Ses02F_script02_2_M014	fru	[2.0000, 4.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Other;	(confused)
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[124.1000 - 134.0900]	Ses02F_script02_2_M015	xxx	[2.5000, 4.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Other;	(confused)
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[134.1000 - 138.8100]	Ses02F_script02_2_M016	neu	[3.0000, 4.0000, 4.0000]
+C-E1:	Neutral;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 3; act 4; dom  4;	()
+
+[138.8600 - 144.9200]	Ses02F_script02_2_M017	neu	[3.0000, 4.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[177.5600 - 179.3800]	Ses02F_script02_2_M018	neu	[4.0000, 3.5000, 3.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 4; act 4; dom  3;	()
+A-E2:	val 4; act 3; dom  4;	()
+
+[183.1800 - 192.2200]	Ses02F_script02_2_M019	neu	[3.0000, 4.0000, 4.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 3; act 4; dom  4;	()
+
+[192.2500 - 197.0700]	Ses02F_script02_2_M020	neu	[3.0000, 4.0000, 4.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 3; act 4; dom  4;	()
+
+[201.3200 - 206.7400]	Ses02F_script02_2_M021	neu	[3.0000, 3.5000, 3.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 4; dom  4;	()
+
+[207.5100 - 209.4900]	Ses02F_script02_2_M022	neu	[3.0000, 3.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[209.5700 - 211.3200]	Ses02F_script02_2_M023	neu	[3.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[211.3900 - 213.9400]	Ses02F_script02_2_M024	fru	[2.0000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  2;	()
+
+[213.9900 - 215.8600]	Ses02F_script02_2_M025	fru	[3.0000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[215.9000 - 218.3600]	Ses02F_script02_2_M026	fru	[2.0000, 3.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[218.4100 - 219.7400]	Ses02F_script02_2_M027	fru	[2.0000, 3.5000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[219.7500 - 226.5400]	Ses02F_script02_2_M028	fru	[2.0000, 4.0000, 4.0000]
+C-E1:	Frustration; Anger;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration; Anger;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 1; act 4; dom  4;	()
+
+[228.2000 - 238.9600]	Ses02F_script02_2_M029	ang	[2.0000, 4.5000, 4.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration; Anger;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 2; act 5; dom  5;	()
+
+[239.3100 - 250.8600]	Ses02F_script02_2_M030	xxx	[2.0000, 4.0000, 4.0000]
+C-E1:	Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[250.8900 - 266.4300]	Ses02F_script02_2_M031	sad	[2.5000, 3.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[266.4400 - 269.3900]	Ses02F_script02_2_M032	fru	[2.0000, 3.5000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[273.8200 - 275.0800]	Ses02F_script02_2_M033	neu	[3.0000, 2.5000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 3; act 3; dom  3;	()
+
+[280.1300 - 281.2200]	Ses02F_script02_2_M034	neu	[2.5000, 2.5000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 3; dom  5;	()
+
+[286.3300 - 288.2900]	Ses02F_script02_2_M035	sad	[2.5000, 3.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 3; dom  3;	()
+
+[302.9300 - 305.0600]	Ses02F_script02_2_M036	sad	[2.0000, 2.5000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[325.0600 - 327.9300]	Ses02F_script02_2_M037	sad	[2.0000, 2.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 2; act 3; dom  4;	()
+
+[328.3800 - 333.7100]	Ses02F_script02_2_M038	sad	[2.0000, 3.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 4; dom  3;	()
+A-E2:	val 2; act 2; dom  3;	()
+
+[337.8400 - 339.0300]	Ses02F_script02_2_M039	sur	[3.0000, 2.5000, 3.0000]
+C-E1:	Surprise;	()
+C-E2:	Happiness;	()
+C-E4:	Surprise;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 3; act 3; dom  4;	()
+
+[350.5661 - 355.2400]	Ses02F_script02_2_M040	xxx	[3.0000, 2.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 2; dom  3;	()
+
+[364.8100 - 370.5600]	Ses02F_script02_2_M041	hap	[4.0000, 3.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 4; act 3; dom  3;	()
+
+[378.2800 - 380.2100]	Ses02F_script02_2_M042	hap	[4.0000, 3.5000, 3.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 4; act 4; dom  4;	()
+
+[382.4300 - 384.0800]	Ses02F_script02_2_M043	hap	[4.0000, 3.0000, 3.0000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 4; act 3; dom  3;	()
+
+[388.8800 - 392.0800]	Ses02F_script02_2_M044	xxx	[3.0000, 2.5000, 2.5000]
+C-E1:	Happiness;	()
+C-E2:	Neutral;	()
+C-E4:	Other;	(concern)
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 3; act 2; dom  3;	()
+
+[407.0800 - 411.6900]	Ses02F_script02_2_M045	hap	[3.5000, 2.5000, 3.5000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 4; act 2; dom  4;	()
+
+[414.0500 - 415.6400]	Ses02F_script02_2_M046	hap	[4.0000, 3.0000, 2.5000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 4; act 3; dom  2;	()
+A-E2:	val 4; act 3; dom  3;	()
+

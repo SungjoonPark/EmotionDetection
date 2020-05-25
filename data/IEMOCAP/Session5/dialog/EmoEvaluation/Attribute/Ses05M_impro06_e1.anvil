@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<annotation>
+  <head>
+    <specification src="C:\Anvil\spec\Mocap2.xml" />
+    <video src="C:\Mocap\Videos\Ses05M_impro06.avi" />
+    <info key="coder" type="String">
+      Carlos Busso
+    </info>
+
+  </head>
+
+  <body>
+    <track name="Female.Emotion" type="primary">
+      <el index="0" start="3.67" end="6.57">
+      </el>
+      <el index="1" start="15.26" end="17.19">
+      </el>
+      <el index="2" start="25.38" end="28.02">
+      </el>
+      <el index="3" start="33.17" end="34.88">
+      </el>
+      <el index="4" start="64.25" end="65.94">
+      </el>
+      <el index="5" start="89.56" end="91.58">
+      </el>
+      <el index="6" start="116.62" end="118.74">
+      </el>
+      <el index="7" start="147.81" end="149.78999">
+      </el>
+      <el index="8" start="169.9892" end="177.10001">
+      </el>
+      <el index="9" start="188.87" end="193.35001">
+      </el>
+      <el index="10" start="197.88" end="201.00999">
+      </el>
+    </track>
+
+    <track name="Female.Primitives" type="span" ref="Female.Emotion">
+      <el index="0" start="0" end="0">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+        <comment>
+          concerned, worried
+        </comment>
+      </el>
+      <el index="1" start="1" end="1">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+        <comment>
+          very concerned for friend
+        </comment>
+      </el>
+      <el index="2" start="2" end="2">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+        <comment>
+          sorry, sad
+        </comment>
+      </el>
+      <el index="3" start="3" end="3">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+        <comment>
+          sad, stunned
+        </comment>
+      </el>
+      <el index="4" start="4" end="4">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          sympathetic, encouraging good memories for friend
+        </comment>
+      </el>
+      <el index="5" start="5" end="5">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          sympathetic, mild
+        </comment>
+      </el>
+      <el index="6" start="6" end="6">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+        <comment>
+          starts to offer comfort, sympathetic, concerned
+        </comment>
+      </el>
+      <el index="7" start="7" end="7">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+        <comment>
+          feeling helpless, very sorry
+        </comment>
+      </el>
+      <el index="8" start="8" end="8">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          trying to comfort him with logic and reason, cautious
+        </comment>
+      </el>
+      <el index="9" start="9" end="9">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          encouraging, comforting, agreeing
+        </comment>
+      </el>
+      <el index="10" start="10" end="10">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          wants to comfort, sorry
+        </comment>
+      </el>
+    </track>
+
+    <track name="Male.Emotion" type="primary">
+      <el index="0" start="10.9" end="14.86">
+      </el>
+      <el index="1" start="19.96" end="25.58">
+      </el>
+      <el index="2" start="27.46" end="33.67">
+      </el>
+      <el index="3" start="34.36" end="45.1">
+      </el>
+      <el index="4" start="45.11" end="58.48">
+      </el>
+      <el index="5" start="58.69" end="65.68">
+      </el>
+      <el index="6" start="65.7" end="75.57">
+      </el>
+      <el index="7" start="75.58" end="81.51">
+      </el>
+      <el index="8" start="81.52" end="89.96">
+      </el>
+      <el index="9" start="91.98" end="99.61">
+      </el>
+      <el index="10" start="101.01" end="114.75">
+      </el>
+      <el index="11" start="116.54" end="128.97">
+      </el>
+      <el index="12" start="129.19" end="136.14999">
+      </el>
+      <el index="13" start="137.14999" end="147.23">
+      </el>
+      <el index="14" start="148.23" end="155.7751">
+      </el>
+      <el index="15" start="155.7851" end="165.21001">
+      </el>
+      <el index="16" start="165.22" end="170.89">
+      </el>
+      <el index="17" start="176.55" end="179.98">
+      </el>
+      <el index="18" start="180.73" end="191.42999">
+      </el>
+      <el index="19" start="194.8" end="197.35001">
+      </el>
+      <el index="20" start="200.97" end="203.11">
+      </el>
+    </track>
+
+    <track name="Male.Primitives" type="span" ref="Male.Emotion">
+      <el index="0" start="0" end="0">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          vague, distracted
+        </comment>
+      </el>
+      <el index="1" start="1" end="1">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          bitter, more forceful, serious
+        </comment>
+      </el>
+      <el index="2" start="2" end="2">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          losing apathetic mask, giving in to feelings, still trying to suppress
+        </comment>
+      </el>
+      <el index="3" start="3" end="3">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          disbelief, amazed, impressed, horrified
+        </comment>
+      </el>
+      <el index="4" start="4" end="4">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          depressed, all his hopes have crashed
+        </comment>
+      </el>
+      <el index="5" start="5" end="5">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          impressed, praising, depressed
+        </comment>
+      </el>
+      <el index="6" start="6" end="6">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          impressed, praising, admiring
+        </comment>
+      </el>
+      <el index="7" start="7" end="7">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          admiring, depressed
+        </comment>
+      </el>
+      <el index="8" start="8" end="8">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          stunned, depressed, disbelief
+        </comment>
+      </el>
+      <el index="9" start="9" end="9">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          shocked, stunned, sad
+        </comment>
+      </el>
+      <el index="10" start="10" end="10">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          on the verge of tears, missing, feels bereft
+        </comment>
+      </el>
+      <el index="11" start="11" end="11">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          feels bereft, stunned
+        </comment>
+      </el>
+      <el index="12" start="12" end="12">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          disillusioned, depressed, bitter
+        </comment>
+      </el>
+      <el index="13" start="13" end="13">
+        <attribute name="Activation">act 1</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          working hard to hold back emotion, disillusioned, depressed
+        </comment>
+      </el>
+      <el index="14" start="14" end="14">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          disappointed, depressed, disillusioned, empty
+        </comment>
+      </el>
+      <el index="15" start="15" end="15">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 4</attribute>
+        <comment>
+          bitter
+        </comment>
+      </el>
+      <el index="16" start="16" end="16">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 4</attribute>
+        <comment>
+          sadness turns to anger
+        </comment>
+      </el>
+      <el index="17" start="17" end="17">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          snaps back to being reasonable, no longer angry, conceding
+        </comment>
+      </el>
+      <el index="18" start="18" end="18">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          feels stuck, lost, on edge
+        </comment>
+      </el>
+      <el index="19" start="19" end="19">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+        <comment>
+          blunt, miserable
+        </comment>
+      </el>
+      <el index="20" start="20" end="20">
+        <attribute name="Activation">act 2</attribute>
+        <attribute name="Valence">val 5</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+        <comment>
+          devoid of hope
+        </comment>
+      </el>
+    </track>
+
+  </body>
+</annotation>

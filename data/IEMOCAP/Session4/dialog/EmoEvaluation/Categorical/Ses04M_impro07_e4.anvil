@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<annotation>
+  <head>
+    <specification src="C:\Anvil\spec\Mocap2.xml" />
+    <video src="C:\Mocap\Videos\Ses04M_impro07.avi" />
+    <info key="coder" type="String">
+      Jeremy
+    </info>
+
+  </head>
+
+  <body>
+    <track name="Female.Emotion" type="primary">
+      <el index="0" start="20.2813" end="21.08545">
+        <attribute name="Surprise">true</attribute>
+      </el>
+      <el index="1" start="21.52408" end="21.94182">
+        <attribute name="Excited">true</attribute>
+        <attribute name="Surprise">true</attribute>
+      </el>
+      <el index="2" start="23.30992" end="25.99211">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="3" start="25.99211" end="26.6928">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="4" start="44.2596" end="52.58308">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="5" start="59.7891" end="60.53059">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="6" start="67.31888" end="67.84105">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="7" start="68.5721" end="69.04205">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="8" start="70.03419" end="72.04979">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="9" start="78.8694" end="81.27141">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="10" start="81.75181" end="82.72306">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="11" start="92.92637" end="94.96285">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="12" start="99.32824" end="100.47703">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="13" start="109.28091" end="111.38005">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="14" start="112.52884" end="116.78979">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="15" start="121.05074" end="123.52586">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="16" start="126.5127" end="128.82072">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="17" start="130.51257" end="131.6718">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="18" start="144.89328" end="145.49901">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="19" start="148.76782" end="152.31862">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="20" start="156.4438" end="159.31578">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="21" start="164.32866" end="167.05441">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="22" start="171.55557" end="173.41452">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="23" start="178.96002" end="181.22626">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="24" start="186.61511" end="191.04317">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="25" start="192.23372" end="197.94632">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="26" start="199.49196" end="201.01671">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="27" start="203.27252" end="207.05307">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="28" start="209.60129" end="210.66652">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="29" start="217.40259" end="218.86469">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="30" start="222.55124" end="224.02377">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="31" start="224.79659" end="230.60318">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="32" start="231.17758" end="234.15398">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="33" start="235.12523" end="239.62637">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="34" start="240.99448" end="241.47488">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="35" start="244.27374" end="245.8716">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="36" start="251.47977" end="252.55545">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="37" start="260.09567" end="260.38809">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="38" start="262.05905" end="266.84216">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="39" start="268.92044" end="270.78983">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+    </track>
+
+    <track name="Female.Primitives" type="span" ref="Female.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+      <el index="18" start="18" end="18">
+      </el>
+      <el index="19" start="19" end="19">
+      </el>
+      <el index="20" start="20" end="20">
+      </el>
+      <el index="21" start="21" end="21">
+      </el>
+      <el index="22" start="22" end="22">
+      </el>
+      <el index="23" start="23" end="23">
+      </el>
+      <el index="24" start="24" end="24">
+      </el>
+      <el index="25" start="25" end="25">
+      </el>
+      <el index="26" start="26" end="26">
+      </el>
+      <el index="27" start="27" end="27">
+      </el>
+      <el index="28" start="28" end="28">
+      </el>
+      <el index="29" start="29" end="29">
+      </el>
+      <el index="30" start="30" end="30">
+      </el>
+      <el index="31" start="31" end="31">
+      </el>
+      <el index="32" start="32" end="32">
+      </el>
+      <el index="33" start="33" end="33">
+      </el>
+      <el index="34" start="34" end="34">
+      </el>
+      <el index="35" start="35" end="35">
+      </el>
+      <el index="36" start="36" end="36">
+      </el>
+      <el index="37" start="37" end="37">
+      </el>
+      <el index="38" start="38" end="38">
+      </el>
+      <el index="39" start="39" end="39">
+      </el>
+    </track>
+
+    <track name="Male.Emotion" type="primary">
+      <el index="0" start="8.14594" end="20.18731">
+        <attribute name="Excited">true</attribute>
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="1" start="21.12722" end="21.45097">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="2" start="21.97315" end="23.20548">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="3" start="25.99211" end="26.6928">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="4" start="26.6928" end="32.40622">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="5" start="32.60464" end="44.1865">
+        <attribute name="Excited">true</attribute>
+        <attribute name="Happiness">true</attribute>
+      </el>
+      <el index="6" start="53.07393" end="59.00584">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="7" start="60.61414" end="67.12045">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="8" start="67.95593" end="68.38412">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="9" start="69.1256" end="69.98197">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="10" start="72.13334" end="78.84386">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="11" start="78.84386" end="81.51314">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="12" start="81.6466" end="82.78105">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="13" start="82.78105" end="92.87415">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="14" start="95.2866" end="102.40908">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="15" start="102.47174" end="109.17648">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="16" start="111.45316" end="112.30952">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="17" start="116.89423" end="120.94631">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="18" start="123.9436" end="126.41871">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="19" start="128.89285" end="131.6956">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="20" start="131.6956" end="139.89084">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="21" start="140.0475" end="144.78885">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="22" start="145.54079" end="148.65295">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="23" start="152.45439" end="156.34982">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="24" start="159.35754" end="164.24512">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="25" start="168.35985" end="171.43025">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="26" start="173.49806" end="178.8347">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="27" start="181.28893" end="186.52112">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="28" start="191.1476" end="192.06662">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="29" start="197.99854" end="199.42931">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="30" start="201.10027" end="202.80255">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="31" start="203.82602" end="205.58054">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="32" start="207.20972" end="209.51773">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="33" start="210.85451" end="217.35037">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="34" start="219.18843" end="222.45724">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="35" start="224.10732" end="224.71304">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="36" start="230.62407" end="231.1358">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="37" start="234.24797" end="235.07301">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="38" start="240.11722" end="240.94226">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="39" start="241.54799" end="244.24242">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="40" start="246.07002" end="251.39621">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="41" start="252.70166" end="260.00168">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="42" start="260.45074" end="261.99637">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="43" start="266.91528" end="268.48181">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+    </track>
+
+    <track name="Male.Primitives" type="span" ref="Male.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+      <el index="18" start="18" end="18">
+      </el>
+      <el index="19" start="19" end="19">
+      </el>
+      <el index="20" start="20" end="20">
+      </el>
+      <el index="21" start="21" end="21">
+      </el>
+      <el index="22" start="22" end="22">
+      </el>
+      <el index="23" start="23" end="23">
+      </el>
+      <el index="24" start="24" end="24">
+      </el>
+      <el index="25" start="25" end="25">
+      </el>
+      <el index="26" start="26" end="26">
+      </el>
+      <el index="27" start="27" end="27">
+      </el>
+      <el index="28" start="28" end="28">
+      </el>
+      <el index="29" start="29" end="29">
+      </el>
+      <el index="30" start="30" end="30">
+      </el>
+      <el index="31" start="31" end="31">
+      </el>
+      <el index="32" start="32" end="32">
+      </el>
+      <el index="33" start="33" end="33">
+      </el>
+      <el index="34" start="34" end="34">
+      </el>
+      <el index="35" start="35" end="35">
+      </el>
+      <el index="36" start="36" end="36">
+      </el>
+      <el index="37" start="37" end="37">
+      </el>
+      <el index="38" start="38" end="38">
+      </el>
+      <el index="39" start="39" end="39">
+      </el>
+      <el index="40" start="40" end="40">
+      </el>
+      <el index="41" start="41" end="41">
+      </el>
+      <el index="42" start="42" end="42">
+      </el>
+      <el index="43" start="43" end="43">
+      </el>
+    </track>
+
+  </body>
+</annotation>

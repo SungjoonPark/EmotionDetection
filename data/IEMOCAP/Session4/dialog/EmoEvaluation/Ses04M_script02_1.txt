@@ -1,0 +1,394 @@
+% [START_TIME - END_TIME] TURN_NAME EMOTION [V, A, D]
+
+[21.1400 - 22.9100]	Ses04M_script02_1_F000	neu	[2.5000, 1.5000, 2.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 1; dom  1;	()
+A-E4:	val 2; act 2; dom  3;	(lying)
+
+[43.1400 - 44.6000]	Ses04M_script02_1_F001	xxx	[2.5000, 2.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Other; Disgust;	(annoyed)
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  4;	(accusing)
+
+[46.6500 - 48.5800]	Ses04M_script02_1_F002	ang	[2.0000, 2.5000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Anger;	()
+A-E3:	val 2; act 2; dom  3;	()
+A-E4:	val 2; act 3; dom  4;	(miffed)
+
+[49.5200 - 52.2700]	Ses04M_script02_1_F003	ang	[2.0000, 3.5000, 3.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Anger;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  4;	(very angry with him)
+
+[52.8900 - 58.0000]	Ses04M_script02_1_F004	ang	[2.0000, 4.0000, 3.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Anger;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 5; dom  4;	(unnecessarily emotional)
+
+[72.6800 - 74.0500]	Ses04M_script02_1_F005	ang	[2.5000, 2.5000, 3.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Other;	(annoyed)
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  4;	(purposefully unhelpful)
+
+[105.9200 - 107.5000]	Ses04M_script02_1_F006	xxx	[2.5000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 1; dom  2;	()
+A-E4:	val 2; act 2; dom  3;	(spectacularly disinterested in what he)
+
+[108.1900 - 110.4921]	Ses04M_script02_1_F007	ang	[2.0000, 3.0000, 2.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(upset)
+
+[115.2100 - 117.3800]	Ses04M_script02_1_F008	ang	[2.5000, 3.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E6:	Anger;	()
+A-E3:	val 3; act 2; dom  3;	()
+A-E4:	val 2; act 4; dom  4;	(frustrated, angry)
+
+[117.5100 - 118.9223]	Ses04M_script02_1_F009	fru	[2.5000, 2.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 2; dom  4;	()
+
+[120.0700 - 121.8587]	Ses04M_script02_1_F010	ang	[2.5000, 2.5000, 2.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(bad logic)
+
+[129.0100 - 131.7097]	Ses04M_script02_1_F011	fru	[2.0000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  3;	(very annoyed)
+
+[132.7516 - 135.5500]	Ses04M_script02_1_F012	ang	[2.0000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E6:	Anger;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  3;	(negative)
+
+[149.0700 - 156.2800]	Ses04M_script02_1_F013	ang	[2.0000, 4.0000, 3.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Anger;	()
+A-E3:	val 2; act 4; dom  2;	()
+A-E4:	val 2; act 4; dom  4;	(almost vehement about)
+
+[176.8200 - 179.0200]	Ses04M_script02_1_F014	neu	[2.0000, 3.0000, 3.0000]
+C-E1:	Neutral;	()
+C-E2:	Neutral;	()
+C-E6:	Neutral;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 3; dom  4;	(incredulous, annoyed)
+
+[179.0500 - 183.7200]	Ses04M_script02_1_F015	fru	[2.0000, 3.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  4;	(negative attitude)
+
+[200.8100 - 203.1767]	Ses04M_script02_1_F016	fru	[2.5000, 2.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(resigned)
+
+[204.0766 - 205.5448]	Ses04M_script02_1_F017	ang	[2.5000, 3.5000, 3.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 3; dom  3;	()
+A-E4:	val 2; act 4; dom  3;	(very annoyed)
+
+[218.7400 - 228.8935]	Ses04M_script02_1_F018	ang	[2.5000, 3.5000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E6:	Anger;	()
+A-E3:	val 3; act 3; dom  3;	()
+A-E4:	val 2; act 4; dom  4;	(bitter, angry, still very negative)
+
+[230.9900 - 233.9600]	Ses04M_script02_1_F019	fru	[2.0000, 3.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 3; dom  4;	(restraining herself, points out that he is stupid, patronizing tone)
+
+[309.3591 - 311.8692]	Ses04M_script02_1_F020	fru	[2.5000, 2.5000, 2.5000]
+C-E1:	Frustration; Sadness;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(not impressed by a long shot, still annoyed)
+
+[313.7000 - 315.4500]	Ses04M_script02_1_F021	fru	[2.0000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E6:	Frustration;	()
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 2; act 4; dom  4;	(so negative)
+
+[6.7900 - 15.2400]	Ses04M_script02_1_M000	xxx	[4.0000, 2.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Excited;	()
+C-E6:	Happiness;	()
+A-E3:	val 4; act 2; dom  2;	()
+A-E4:	val 4; act 3; dom  3;	(anxious, but content)
+
+[15.2900 - 21.5900]	Ses04M_script02_1_M001	exc	[3.5000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 4; act 3; dom  3;	(concedes, plan isn)
+
+[22.8751 - 34.9200]	Ses04M_script02_1_M002	exc	[4.0000, 4.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Neutral;	()
+A-E3:	val 4; act 3; dom  2;	()
+A-E4:	val 4; act 5; dom  3;	(excited, anticipation)
+
+[35.1100 - 43.5700]	Ses04M_script02_1_M003	exc	[3.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Other;	(annoyed)
+A-E3:	val 4; act 3; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(frustrated at himself)
+
+[44.2500 - 47.1400]	Ses04M_script02_1_M004	xxx	[2.5000, 3.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 4; dom  4;	(condescending, unhappy, frustrated)
+
+[48.3551 - 50.0000]	Ses04M_script02_1_M005	neu	[2.5000, 2.0000, 2.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 2; act 2; dom  3;	(suddenly confused)
+
+[51.8400 - 53.3280]	Ses04M_script02_1_M006	fru	[2.5000, 2.5000, 2.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 2; act 3; dom  3;	(condescending, humoring her)
+
+[56.9600 - 68.4600]	Ses04M_script02_1_M007	xxx	[2.5000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E6:	Frustration; Other;	(sarcastic)
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  3;	(patronizing)
+
+[68.7200 - 73.4000]	Ses04M_script02_1_M008	exc	[3.5000, 2.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 4; act 3; dom  3;	(excited and curious)
+
+[73.7877 - 82.3600]	Ses04M_script02_1_M009	neu	[3.0000, 2.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Neutral; Other;	(sarcastic)
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 3; act 3; dom  3;	(concerned, frustrated again)
+
+[82.6482 - 99.1256]	Ses04M_script02_1_M010	xxx	[4.0000, 2.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Happiness;	()
+C-E6:	Neutral;	()
+A-E3:	val 4; act 2; dom  2;	()
+A-E4:	val 4; act 3; dom  3;	(nonchalant, laughs at self)
+
+[101.1500 - 106.5500]	Ses04M_script02_1_M011	xxx	[3.5000, 2.5000, 2.0000]
+C-E1:	Frustration;	()
+C-E2:	Happiness;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 4; act 3; dom  3;	(curious)
+
+[106.8300 - 108.6900]	Ses04M_script02_1_M012	neu	[3.0000, 2.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 3; act 3; dom  3;	(maybe concerned, maybe just trying to keep her quiet)
+
+[110.2000 - 115.5000]	Ses04M_script02_1_M013	fru	[2.0000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Surprise;	()
+C-E6:	Frustration;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  3;	(scandalized, shocked)
+
+[117.1100 - 118.0100]	Ses04M_script02_1_M014	neu	[3.0000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 3; act 3; dom  3;	(satisfied, relieved she understood)
+
+[118.5500 - 120.8200]	Ses04M_script02_1_M015	neu	[2.5000, 2.5000, 2.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 2; act 3; dom  3;	(suddenly confused)
+
+[121.6219 - 129.4000]	Ses04M_script02_1_M016	fru	[2.5000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(explains, incredulous that she wouldn)
+
+[130.9519 - 133.2200]	Ses04M_script02_1_M017	xxx	[2.5000, 2.0000, 1.5000]
+C-E1:	Frustration;	()
+C-E2:	Surprise;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 2; act 2; dom  2;	(incredulous)
+
+[135.3091 - 149.4000]	Ses04M_script02_1_M018	exc	[2.5000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Excited;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  3;	(fervid gratitude)
+
+[155.7300 - 167.0880]	Ses04M_script02_1_M019	fru	[3.0000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Excited;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 3; act 3; dom  3;	(explaining, frustrated)
+
+[167.6000 - 170.9900]	Ses04M_script02_1_M020	exc	[3.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 3; act 3; dom  3;	(awed)
+
+[173.0554 - 177.2232]	Ses04M_script02_1_M021	exc	[3.5000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Excited;	()
+A-E3:	val 4; act 2; dom  2;	()
+A-E4:	val 3; act 3; dom  3;	()
+
+[183.1200 - 193.3300]	Ses04M_script02_1_M022	exc	[3.0000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Excited;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 3; act 4; dom  3;	(persuading)
+
+[193.3900 - 201.3200]	Ses04M_script02_1_M023	exc	[2.5000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 2; act 3; dom  3;	(incredulous of female, impressed by fish)
+
+[202.4663 - 204.3134]	Ses04M_script02_1_M024	sur	[2.5000, 3.0000, 2.0000]
+C-E1:	Frustration;	()
+C-E2:	Surprise;	()
+C-E6:	Surprise;	()
+A-E3:	val 2; act 2; dom  1;	()
+A-E4:	val 3; act 4; dom  3;	(confused, incredulous)
+
+[205.8300 - 219.1500]	Ses04M_script02_1_M025	xxx	[3.0000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E6:	Surprise;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 3; act 3; dom  3;	(attitude, he doesn)
+
+[228.4199 - 231.5300]	Ses04M_script02_1_M026	xxx	[2.5000, 2.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E6:	Frustration;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 2; act 2; dom  4;	(defensive)
+
+[233.5100 - 244.1910]	Ses04M_script02_1_M027	xxx	[2.0000, 3.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E6:	Frustration;	()
+A-E3:	val 2; act 3; dom  3;	()
+A-E4:	val 2; act 4; dom  3;	(defensive, and then excited for fish)
+
+[244.3200 - 258.6359]	Ses04M_script02_1_M028	exc	[3.5000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 4; act 4; dom  3;	(excited, then frustrated at girl)
+
+[258.7307 - 271.7548]	Ses04M_script02_1_M029	exc	[3.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Neutral;	()
+A-E3:	val 3; act 2; dom  2;	()
+A-E4:	val 3; act 4; dom  3;	(awed, impressed)
+
+[271.7969 - 281.7952]	Ses04M_script02_1_M030	exc	[3.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 3; act 3; dom  3;	(awed)
+
+[281.8500 - 291.4900]	Ses04M_script02_1_M031	exc	[3.5000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-E4:	val 4; act 4; dom  3;	(excited, amazed)
+
+[291.5700 - 309.6906]	Ses04M_script02_1_M032	exc	[3.5000, 4.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E6:	Excited;	()
+A-E3:	val 4; act 3; dom  2;	()
+A-E4:	val 3; act 5; dom  3;	(enthusiastic, then content)
+
+[311.3956 - 314.0951]	Ses04M_script02_1_M033	exc	[3.0000, 2.5000, 1.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E6:	Excited;	()
+A-E3:	val 3; act 2; dom  1;	()
+A-E4:	val 3; act 3; dom  2;	(anxious for reaction)
+

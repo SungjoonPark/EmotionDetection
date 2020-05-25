@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<annotation>
+  <head>
+    <specification src="C:\Anvil\spec\Mocap2.xml" />
+    <video src="C:\Mocap\Videos\Ses01F_impro06.avi" />
+    <info key="coder" type="String">
+      Jeremy
+    </info>
+
+  </head>
+
+  <body>
+    <track name="Female.Emotion" type="primary">
+      <el index="0" start="15.4025" end="17.1875">
+      </el>
+      <el index="1" start="24.235" end="25.43">
+      </el>
+      <el index="2" start="26.22568" end="27.3525">
+      </el>
+      <el index="3" start="34.73401" end="35.6125">
+      </el>
+      <el index="4" start="36.2625" end="37.8575">
+      </el>
+      <el index="5" start="39.6025" end="45.9475">
+      </el>
+      <el index="6" start="47.8875" end="59.275">
+      </el>
+      <el index="7" start="59.4525" end="67.4525">
+      </el>
+      <el index="8" start="67.5775" end="69.295">
+      </el>
+      <el index="9" start="70.40226" end="87.41892">
+      </el>
+      <el index="10" start="88.25307" end="93.2475">
+      </el>
+      <el index="11" start="102.0275" end="116.91">
+      </el>
+      <el index="12" start="117.24" end="125.62299">
+      </el>
+      <el index="13" start="132.9575" end="134.49001">
+      </el>
+      <el index="14" start="136.145" end="137.26772">
+      </el>
+      <el index="15" start="138.06851" end="140.17056">
+      </el>
+      <el index="16" start="142.035" end="149.4375">
+      </el>
+      <el index="17" start="157.99001" end="162.6875">
+      </el>
+      <el index="18" start="167.96445" end="174.57091">
+      </el>
+      <el index="19" start="176.59" end="177.36">
+      </el>
+      <el index="20" start="182.825" end="197.605">
+      </el>
+      <el index="21" start="197.755" end="214.45">
+      </el>
+      <el index="22" start="216.58" end="221.9325">
+      </el>
+      <el index="23" start="223.3625" end="227.1825">
+      </el>
+      <el index="24" start="229.19749" end="235.85001">
+      </el>
+      <el index="25" start="237.59" end="255.9875">
+      </el>
+      <el index="26" start="259.14999" end="260.69751">
+      </el>
+      <el index="27" start="265.535" end="280.94501">
+      </el>
+      <el index="28" start="282.32001" end="310.33749">
+      </el>
+    </track>
+
+    <track name="Female.Primitives" type="span" ref="Female.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+      <el index="18" start="18" end="18">
+      </el>
+      <el index="19" start="19" end="19">
+      </el>
+      <el index="20" start="20" end="20">
+      </el>
+      <el index="21" start="21" end="21">
+      </el>
+      <el index="22" start="22" end="22">
+      </el>
+      <el index="23" start="23" end="23">
+      </el>
+      <el index="24" start="24" end="24">
+      </el>
+      <el index="25" start="25" end="25">
+      </el>
+      <el index="26" start="26" end="26">
+      </el>
+      <el index="27" start="27" end="27">
+      </el>
+      <el index="28" start="28" end="28">
+      </el>
+    </track>
+
+    <track name="Male.Emotion" type="primary">
+      <el index="0" start="12.13" end="14.0775">
+        <attribute name="Sadness">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="1" start="19.895" end="24.42391">
+        <attribute name="Sadness">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="2" start="25.32479" end="26.45924">
+        <attribute name="Sadness">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="3" start="29.1125" end="34.9125">
+        <attribute name="Other">true</attribute>
+        <attribute name="Overlap">1</attribute>
+        <comment>
+          empathy
+        </comment>
+      </el>
+      <el index="4" start="56.3625" end="57.2575">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="5" start="87.35219" end="88.315">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="6" start="107.9325" end="109.0275">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="7" start="125.665" end="127.025">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="8" start="134.5325" end="136.30011">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="9" start="137.22749" end="138.075">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="10" start="144.255" end="145.3875">
+        <attribute name="Other">true</attribute>
+        <attribute name="Overlap">1</attribute>
+        <comment>
+          empathy
+        </comment>
+      </el>
+      <el index="11" start="155.2375" end="158.18822">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="12" start="166.1525" end="167.9978">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="13" start="174.47749" end="176.77307">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="14" start="219.8275" end="220.8075">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="15" start="255.4675" end="256.63251">
+        <attribute name="Surprise">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="16" start="264.01999" end="266.17499">
+        <attribute name="Neutral state">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+      <el index="17" start="308.63751" end="309.94">
+        <attribute name="Happiness">true</attribute>
+        <attribute name="Overlap">1</attribute>
+      </el>
+    </track>
+
+    <track name="Male.Primitives" type="span" ref="Male.Emotion">
+      <el index="0" start="0" end="0">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 3</attribute>
+      </el>
+      <el index="1" start="1" end="1">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="2" start="2" end="2">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="3" start="3" end="3">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="4" start="4" end="4">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="5" start="5" end="5">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="6" start="6" end="6">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="7" start="7" end="7">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="8" start="8" end="8">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 2</attribute>
+      </el>
+      <el index="9" start="9" end="9">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="10" start="10" end="10">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="11" start="11" end="11">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="12" start="12" end="12">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="13" start="13" end="13">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="14" start="14" end="14">
+        <attribute name="Activation">act 5</attribute>
+        <attribute name="Valence">val 4</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="15" start="15" end="15">
+        <attribute name="Activation">act 4</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="16" start="16" end="16">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 3</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+      <el index="17" start="17" end="17">
+        <attribute name="Activation">act 3</attribute>
+        <attribute name="Valence">val 2</attribute>
+        <attribute name="Dominance">dom 1</attribute>
+      </el>
+    </track>
+
+  </body>
+</annotation>
