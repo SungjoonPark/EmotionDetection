@@ -294,6 +294,7 @@ class ISEARLoader(EmotionDatasetLoader):
         for s_name, s_data in zip(self.split_names, splits):
             text = s_data[self.data_types[0]].to_list()
             labels = s_data[self.data_types[1]].to_list()
+            labels = [self.labels.index(l) for l in labels]
             data[s_name] = {}
             for name, d in zip(self.data_types, [text, labels]):
                 data[s_name][name] = d

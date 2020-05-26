@@ -1,5 +1,9 @@
 import numpy as np
 from scipy.stats import pearsonr
+from sklearn.metrics import (
+    classification_report,
+    jaccard_score
+)
 
 import torch
 from torch import nn
@@ -142,6 +146,9 @@ class Trainer():
     def compute_loss(self, logits, labels):
         if self.args['task'] == 'vad-regression':
             logits = F.relu(logits)
+        if self.args['task'] == 'category-classification':
+            if self.args['dataset'] == 'semeval' or self.args['dataset'] == 'ssec': # multi-labeled
+                labels = labels.type_as(logits)
         return self.loss(logits, labels)
 
     # https://huggingface.co/transformers/migration.html?highlight=forsequenceclassification
@@ -209,7 +216,34 @@ class Trainer():
             #predictions =            # vad 
             pass
         elif self.args['task'] == 'category-classification':
-            pass
+            if self.args['dataset'] == 'semeval': # multi-labeled
+                report = classification_report(
+                    labels, 
+                    predictions, 
+                    digits=4,
+                    zero_division='warn')
+                metrics['classification'] = report
+                metrics['jaccard_score'] = {}
+                metrics['jaccard_score']['samples'] = jaccard_score(labels, predictions, average='samples')
+                metrics['jaccard_score']['macro'] = jaccard_score(labels, predictions, average='macro')
+                metrics['jaccard_score']['micro'] = jaccard_score(labels, predictions, average='micro')
+            elif self.args['dataset'] == 'ssec': # multi-labeled
+                report = classification_report(
+                    labels, 
+                    predictions, 
+                    digits=4,
+                    zero_division='warn')
+                metrics['classification'] = report
+                metrics['jaccard_score'] = {}
+                metrics['jaccard_score']['samples'] = jaccard_score(labels, predictions, average='samples')
+                metrics['jaccard_score']['macro'] = jaccard_score(labels, predictions, average='macro')
+                metrics['jaccard_score']['micro'] = jaccard_score(labels, predictions, average='micro')
+            elif self.args['dataset'] == 'isear': # single-labeled
+                metrics = classification_report(
+                    labels, 
+                    predictions, 
+                    digits=4,
+                    zero_division='warn')
 
         return metrics
 
@@ -243,16 +277,19 @@ class Trainer():
                 if self.args['task'] == 'vad-regression':
                     predictions = F.relu(logits) # vads
                 elif self.args['task'] == 'vad-from-categories':
-                    #predictions =            # vad 
                     pass
                 elif self.args['task'] == 'category-classification':
                     assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
                     if self.args['dataset'] == 'semeval': # multi-labeled
-                        predictions = self.sigmoid(logits)
+                        predictions = self.sigmoid(logits) >= 0.5
+                        predictions = torch.squeeze(predictions.float()) 
                     elif self.args['dataset'] == 'ssec': # multi-labeled
-                        predictions = self.sigmoid(logits)
+                        predictions = self.sigmoid(logits) >= 0.5
+                        predictions = torch.squeeze(predictions.float()) 
                     elif self.args['dataset'] == 'isear': # single-labeled
                         predictions = self.softmax(logits)
+                        predictions = torch.max(predictions, 1)[1] # argmax along dim=1
+
                 total_predictions.append(predictions)
 
         total_predictions = torch.cat(total_predictions, 0)

@@ -22,7 +22,7 @@ from models import (
     Trainer,
 )
 
-pp = pprint.PrettyPrinter(indent=4)
+pp = pprint.PrettyPrinter(indent=1, width=90)
 
 
 class SingleDatasetTrainer():
@@ -144,22 +144,22 @@ class SingleDatasetTrainer():
 
     def train(self):
         # 1. build dataset for train/valid/test
-        print("build dataset for train/valid/test")
+        print("build dataset for train/valid/test", flush=True)
         tokenizer = self.load_tokenizer()
         dataset = self.dataset.build_datasets(tokenizer)
         train_loader, valid_loader, test_loader = self.dataset.build_dataloaders(dataset)
 
         # 2. build/load models
-        print("build/load models")
+        print("build/load models", flush=True)
         model, config = self.load_model()
         #print(model)
-        print(config)
+        print(config, flush=True)
         #print(config.args["labels"])
         optimizer, lr_scheduler = self.set_optimizer(model)
         optimizer.zero_grad()
         self.set_train_vars()
 
-        while self.n_updates != self.args['total_n_updates']: 
+        while self.n_updates != self.args['total_n_updates'] or self.n_epoch == self.args['max_epoch']: 
 
             for it, train_batch in enumerate(train_loader):
                 model.train()
@@ -189,7 +189,7 @@ class SingleDatasetTrainer():
 
                 # evaluation
                 if it == 0 and self.n_updates != 0 : # eval every epoch
-                    self.n_epoch += 1; print("Epoch:", self.n_epoch)
+                    self.n_epoch += 1; print("Epoch:", self.n_epoch, flush=True)
                     valid_loss, valid_metrics, valid_size = self.trainer.evaluate(model, valid_loader)
                     test_loss, test_metrics, test_size = self.trainer.evaluate(model, test_loader)
                     pp.pprint([
@@ -202,6 +202,7 @@ class SingleDatasetTrainer():
                         test_metrics,
                         test_size
                         ])
+                    print("", flush=True)
 
                 if self.n_updates == self.args['total_n_updates']: break
                 if self.n_epoch == self.args['max_epoch']: break
@@ -211,18 +212,14 @@ def main():
 
     args = {
 
-        'CUDA_VISIBLE_DEVICES': "3",
-        # 0 bert true
-        # 1 bert false
-        # 2 roberta true
-        # 3 roberta false
+        'CUDA_VISIBLE_DEVICES': "1",
 
         # task and models
-        'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']
-        'label-type': 'dimensional', # ['category', 'dimensional']
+        'task': 'category-classification', # ['category-classification', 'vad-regression', 'vad-from-categories']
+        'label-type': 'categorical', # ['categorical', 'dimensional']
         'model': 'roberta', # ['bert', 'roberta'],
-        'load_pretrained_lm_weights': False,
-        'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec']
+        'load_pretrained_lm_weights': True, # if false, only using architecture, randomly init weights.
+        'dataset': 'isear', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
         
         # memory-args
@@ -234,8 +231,8 @@ def main():
         # optim-args
         'optimizer_type' : 'legacy', # ['legacy', 'trans']
         'learning_rate': 2e-05,
-        'total_n_updates': 10000
-        'max_epoch': 30,
+        'total_n_updates': 10000,
+        'max_epoch': 40,
         'warmup_proportion': 0.1,
 
         # etc
