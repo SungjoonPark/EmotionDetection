@@ -99,6 +99,80 @@ class EMDLoss(torch.nn.Module):
         return loss
 
 
+
+class PredcitVADandClassfromLogit(torch.nn.Module):
+    
+    def __init__(self, args, label_type):
+        """
+        this loss is designed for the task type: "vad-from-categories"
+        """
+        super(PredcitVADandClassfromLogit, self).__init__()
+        self.args = args
+        self.label_type = label_type
+        self._check_args()
+
+        if label_type == 'single':
+            self.activation = nn.Softmax(dim=1)
+        else: # 'multi'
+            self.activation = nn.Sigmoid()
+
+        self.category_label_vads = self.args['label_vads']
+        self.category_label_names = self.args['label_names']
+        self._sort_labels()
+
+
+    def _check_args(self):
+        assert self.args['task'] == 'vad-from-categories'
+        assert self.label_type in ['single', 'multi']
+        assert self.args['label_vads'] is not None
+        assert self.args['label_names'] is not None
+
+
+    def _sort_labels(self):
+        v_scores = [self.category_label_vads[key][0] for key in self.category_label_names]
+        self.v_sorted_idxs = torch.tensor(np.argsort(v_scores).tolist()).to(self.args['device'])
+        self.v_sorted_values = torch.tensor(np.sort(v_scores).tolist()).to(self.args['device'])
+
+        a_scores = [self.category_label_vads[key][1] for key in self.category_label_names]
+        self.a_sorted_idxs = torch.tensor(np.argsort(a_scores).tolist()).to(self.args['device'])
+        self.a_sorted_values = torch.tensor(np.sort(a_scores).tolist()).to(self.args['device'])
+
+        d_scores = [self.category_label_vads[key][2] for key in self.category_label_names]
+        self.d_sorted_idxs = torch.tensor(np.argsort(d_scores).tolist()).to(self.args['device'])
+        self.d_sorted_values = torch.tensor(np.sort(d_scores).tolist()).to(self.args['device'])
+
+
+    def forward(self, logits):
+        """
+        logits : (batch_size, 3*n_labels) # 3 for each (v, a, d)
+        labels : (batch_size, n_labels) # only categorical labels
+        """
+        # 1. compute (sparse) p(v), p(a), p(d)
+        v_logit, a_logit, d_logit = torch.split(logits, len(self.category_label_names), dim=1) # logits for sorted (v, a, d)
+        v_probs = self.activation(v_logit)
+        a_probs = self.activation(a_logit)
+        d_probs = self.activation(d_logit)
+
+        # 1. compute (v, a, d) == expected values
+        e_v = v_probs * self.v_sorted_values
+        e_a = a_probs * self.a_sorted_values
+        e_d = d_probs * self.d_sorted_values
+
+        # 2. compute argmax(classes)
+        v_probs_origin = torch.index_select(v_probs, 1, self.v_sorted_idxs)
+        a_probs_origin = torch.index_select(a_probs, 1, self.a_sorted_idxs)
+        d_probs_origin = torch.index_select(d_probs, 1, self.d_sorted_idxs)
+        class_probs = v_probs_origin * a_probs_origin * d_probs_origin
+        if self.label_type == 'multi':
+            class_predictions = class_probs >= 0.5**3
+            class_predictions = torch.squeeze(class_predictions.float()) 
+        else: # single 
+            class_predictions = torch.max(class_probs, 1)[1] # argmax along dim=1
+
+        return (e_v, e_a, e_d), class_predictions
+
+
+
 class Trainer():
 
     def __init__(self, args):
@@ -106,6 +180,8 @@ class Trainer():
         self.args['device'] = self.set_device()
         self._set_eval_layers()
         self._set_loss()
+        if self.args['task'] == vad-from-categories:
+            self._set_prediction()
 
     # https://mccormickml.com/2019/07/22/BERT-fine-tuning/
     def set_device(self):
@@ -141,6 +217,16 @@ class Trainer():
                 self.loss = EMDLoss(self.args, label_type='multi')
             elif self.args['dataset'] == 'isear': # single-labeled
                 self.loss = EMDLoss(self.args, label_type='single')
+
+
+    def _set_prediction(self):
+        assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
+        if self.args['dataset'] == 'semeval': # multi-labeled
+            self.prediction = PredcitVADandClassfromLogit(self.args, label_type='multi')
+        elif self.args['dataset'] == 'ssec': # multi-labeled
+            self.prediction = PredcitVADandClassfromLogit(self.args, label_type='multi')
+        elif self.args['dataset'] == 'isear': # single-labeled
+            self.prediction = PredcitVADandClassfromLogit(self.args, label_type='single')
 
 
     def compute_loss(self, logits, labels):
@@ -202,32 +288,54 @@ class Trainer():
         self.sigmoid = nn.Sigmoid()
 
 
-    def compute_eval_metric(self, predictions, labels):
+    def compute_eval_metric(self, predictions, labels, eval_type=None):
         assert predictions.size() == labels.size()
 
         predictions = predictions.cpu().detach().numpy()
         labels = labels.cpu().detach().numpy()
         metrics = {}
 
+        # 1. vad-regression
         if self.args['task'] == 'vad-regression': # corrleations between v, a, d
             for x, y, name in zip(predictions.T, labels.T, ["v_cor", 'a_cor', 'd_cor']):
                 metrics[name] = pearsonr(x, y)
+        
+        # 2. vad-from-categories
         elif self.args['task'] == 'vad-from-categories':
-            #predictions =            # vad 
-            pass
+            assert eval_type in ['vad', 'cat']
+
+            vad_predictions, cat_predictions = torch.split(
+                predictions,
+                len(self.args['label_names']),
+                dim = 1
+                )  # [batch_size, 3(vad) + num_classes]
+
+            if eval_type == 'vad':
+                for x, y, name in zip(vad_predictions.T, labels.T, ["v_cor", 'a_cor', 'd_cor']):
+                    metrics[name] = pearsonr(x, y)
+
+            else: # eval_type == 'cat':
+                if self.args['dataset'] in ['semeval', 'ssec']: # multi-labeled
+                    report = classification_report(
+                        labels, 
+                        cat_predictions, 
+                        digits=4,
+                        zero_division='warn')
+                    metrics['classification'] = report
+                    metrics['jaccard_score'] = {}
+                    metrics['jaccard_score']['samples'] = jaccard_score(labels, cat_predictions, average='samples')
+                    metrics['jaccard_score']['macro'] = jaccard_score(labels, cat_predictions, average='macro')
+                    metrics['jaccard_score']['micro'] = jaccard_score(labels, cat_predictions, average='micro')
+                elif self.args['dataset'] == 'isear': # single-labeled
+                    metrics = classification_report(
+                        labels, 
+                        cat_predictions, 
+                        digits=4,
+                        zero_division='warn')               
+        
+        # 3. category-classification
         elif self.args['task'] == 'category-classification':
-            if self.args['dataset'] == 'semeval': # multi-labeled
-                report = classification_report(
-                    labels, 
-                    predictions, 
-                    digits=4,
-                    zero_division='warn')
-                metrics['classification'] = report
-                metrics['jaccard_score'] = {}
-                metrics['jaccard_score']['samples'] = jaccard_score(labels, predictions, average='samples')
-                metrics['jaccard_score']['macro'] = jaccard_score(labels, predictions, average='macro')
-                metrics['jaccard_score']['micro'] = jaccard_score(labels, predictions, average='micro')
-            elif self.args['dataset'] == 'ssec': # multi-labeled
+            if self.args['dataset'] in ['semeval', 'ssec']: # multi-labeled
                 report = classification_report(
                     labels, 
                     predictions, 
@@ -277,7 +385,8 @@ class Trainer():
                 if self.args['task'] == 'vad-regression':
                     predictions = F.relu(logits) # vads
                 elif self.args['task'] == 'vad-from-categories':
-                    pass
+                    vad_predictions, cat_predictions = self.prediction(logits)         # vad 
+                    predictions = torch.cat([vad_predictions, cat_predictions], 1)     # [batch_size, 3(vad) + num_classes]
                 elif self.args['task'] == 'category-classification':
                     assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
                     if self.args['dataset'] == 'semeval': # multi-labeled
@@ -304,6 +413,7 @@ class Trainer():
         total_predictions, total_labels, total_losses = predictions
 
         eval_loss = torch.mean(total_losses)
-        eval_metrics = self.compute_eval_metric(total_predictions, total_labels)
+        eval_metrics = self.compute_eval_metric(total_predictions, total_labels, eval_type='cat')
+        #eval_metrics = self.compute_eval_metric(total_predictions, total_labels, eval_type='vad')
 
         return eval_loss, eval_metrics, total_predictions.size()

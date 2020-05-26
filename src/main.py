@@ -188,7 +188,8 @@ class SingleDatasetTrainer():
                     lr_scheduler)
 
                 # evaluation
-                if it == 0 and self.n_updates != 0 : # eval every epoch
+                #if it == 0 and self.n_updates != 0 : # eval every epoch
+                if it == 0: # testing evals
                     self.n_epoch += 1; print("Epoch:", self.n_epoch, flush=True)
                     valid_loss, valid_metrics, valid_size = self.trainer.evaluate(model, valid_loader)
                     test_loss, test_metrics, test_size = self.trainer.evaluate(model, test_loader)
