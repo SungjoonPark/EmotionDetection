@@ -1,0 +1,650 @@
+% [START_TIME - END_TIME] TURN_NAME EMOTION [V, A, D]
+
+[7.2915 - 9.6563]	Ses03F_impro07_F000	xxx	[4.0000, 2.0000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Happiness;	()
+C-F3:	Happiness;	()
+A-E1:	val 4; act 2; dom  3;	(subdued)
+A-E3:	val 4; act 2; dom  1;	()
+A-F3:	val 5; act 4; dom  4;	()
+
+[10.4226 - 13.5866]	Ses03F_impro07_F001	hap	[4.0000, 2.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 2; dom  3;	(growing enthusiasm)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 5; act 4; dom  4;	()
+
+[14.3749 - 15.5682]	Ses03F_impro07_F002	xxx	[3.5000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Happiness;	()
+C-F3:	Happiness;	()
+A-E1:	val 3; act 4; dom  3;	(hesitant)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 5; act 3; dom  3;	()
+
+[16.3565 - 20.2650]	Ses03F_impro07_F003	sur	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Frustration; Surprise;	()
+C-E4:	Surprise;	()
+C-F3:	Surprise;	()
+A-E1:	val 4; act 4; dom  3;	(amused, surprirsed)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 5; act 5; dom  3;	()
+
+[24.6223 - 27.0419]	Ses03F_impro07_F004	hap	[4.0000, 3.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Frustration;	()
+A-E1:	val 4; act 3; dom  3;	(being serious)
+A-E3:	val 4; act 3; dom  3;	()
+A-F3:	val 5; act 3; dom  4;	()
+
+[27.1514 - 30.9950]	Ses03F_impro07_F005	hap	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	(excited, anticipating)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 4; act 3; dom  4;	()
+
+[32.4612 - 37.2017]	Ses03F_impro07_F006	xxx	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Happiness;	()
+C-F3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(not subtley hinting at what she wants)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 4; act 3; dom  4;	()
+
+[40.4095 - 44.5589]	Ses03F_impro07_F007	exc	[4.5000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited; Happiness;	()
+A-E1:	val 5; act 4; dom  3;	(happy, proud, excited)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 5; act 5; dom  4;	()
+
+[45.8836 - 49.4527]	Ses03F_impro07_F008	exc	[4.5000, 3.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Excited; Happiness;	()
+C-F3:	Surprise;	()
+A-E1:	val 4; act 4; dom  4;	(jokingly offended, still excited, miffed but happy)
+A-E3:	val 5; act 3; dom  2;	()
+A-F3:	val 5; act 5; dom  3;	()
+
+[49.4855 - 61.4190]	Ses03F_impro07_F009	exc	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 5; dom  3;	(babbling)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 5; act 4; dom  4;	()
+
+[61.4409 - 67.6047]	Ses03F_impro07_F010	xxx	[3.5000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 3; act 5; dom  3;	(narrates memories)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 4; act 4; dom  4;	()
+
+[67.6266 - 70.5826]	Ses03F_impro07_F011	exc	[3.5000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	()
+A-E3:	val 3; act 3; dom  2;	()
+A-F3:	val 4; act 4; dom  4;	()
+
+[70.6125 - 72.7503]	Ses03F_impro07_F012	hap	[4.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Happiness;	()
+A-E1:	val 4; act 4; dom  3;	(excited, proud)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 5; act 4; dom  3;	()
+
+[75.4764 - 80.6658]	Ses03F_impro07_F013	hap	[4.5000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Excited; Happiness;	()
+A-E1:	val 5; act 3; dom  3;	(excited, elated)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 5; act 4; dom  3;	()
+
+[81.1366 - 83.7094]	Ses03F_impro07_F014	exc	[5.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 5; act 4; dom  3;	(excited)
+A-E3:	val 5; act 3; dom  2;	()
+A-F3:	val 5; act 5; dom  3;	()
+
+[84.0050 - 86.5888]	Ses03F_impro07_F015	neu	[4.5000, 3.0000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F3:	Happiness;	()
+A-E1:	val 5; act 3; dom  3;	(nonchalant)
+A-E3:	val 4; act 3; dom  1;	()
+A-F3:	val 5; act 3; dom  3;	()
+
+[89.9498 - 97.2632]	Ses03F_impro07_F016	exc	[4.5000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Excited; Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 5; act 2; dom  3;	(so excited, happy)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 5; act 3; dom  4;	()
+
+[97.6125 - 99.7000]	Ses03F_impro07_F017	hap	[4.5000, 2.5000, 2.5000]
+C-E1:	Excited; Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Happiness;	()
+A-E1:	val 5; act 2; dom  3;	(subduing her happiness and pride)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 4; act 3; dom  3;	()
+
+[100.9400 - 101.9425]	Ses03F_impro07_F018	xxx	[4.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Happiness;	()
+C-F3:	Other;	(proud)
+A-E1:	val 4; act 4; dom  3;	(smug, chipper)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 5; act 2; dom  1;	()
+
+[103.2409 - 105.8246]	Ses03F_impro07_F019	hap	[4.0000, 3.0000, 2.5000]
+C-E1:	Other;	(proud)
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Other;	(proud)
+A-E1:	val 4; act 3; dom  3;	(smug, proud, excited)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 5; act 3; dom  3;	()
+
+[108.9339 - 114.0576]	Ses03F_impro07_F020	exc	[4.0000, 3.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Other;	(Hopeful)
+A-E1:	val 4; act 4; dom  3;	(not insulted, excited, little worried about friend)
+A-E3:	val 4; act 3; dom  1;	()
+A-F3:	val 5; act 4; dom  3;	()
+
+[116.5538 - 120.1338]	Ses03F_impro07_F021	exc	[4.5000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 5; act 3; dom  3;	(happy for friend, excited not to separate)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 5; act 4; dom  3;	()
+
+[122.5534 - 126.7125]	Ses03F_impro07_F022	exc	[4.0000, 2.0000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 2; dom  3;	(remembers past dilemmas)
+A-E3:	val 4; act 2; dom  1;	()
+A-F3:	val 5; act 3; dom  3;	()
+
+[132.2534 - 135.5707]	Ses03F_impro07_F023	hap	[4.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Happiness;	()
+A-E1:	val 4; act 4; dom  3;	(happily overwhelmed)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 5; act 4; dom  1;	()
+
+[135.6035 - 140.1689]	Ses03F_impro07_F024	xxx	[4.0000, 3.0000, 2.5000]
+C-E1:	Happiness;	()
+C-E2:	Excited;	()
+C-E4:	Excited; Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	(pleased, excited)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 4; act 3; dom  4;	()
+
+[140.2075 - 142.6103]	Ses03F_impro07_F025	hap	[4.0000, 2.5000, 2.5000]
+C-E1:	Happiness;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 3; dom  3;	(content, excited)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 5; act 3; dom  4;	()
+
+[144.3400 - 152.4965]	Ses03F_impro07_F026	exc	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	(excited)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 5; act 4; dom  4;	()
+
+[152.5300 - 154.8175]	Ses03F_impro07_F027	exc	[4.0000, 3.0000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Other;	(hopeful)
+A-E1:	val 4; act 4; dom  3;	(hopeful)
+A-E3:	val 4; act 2; dom  1;	()
+A-F3:	val 5; act 3; dom  5;	()
+
+[155.9342 - 157.6640]	Ses03F_impro07_F028	exc	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Neutral;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 5; dom  3;	(babbling again in excitement)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 4; act 3; dom  4;	()
+
+[157.7525 - 161.5600]	Ses03F_impro07_F029	exc	[4.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-F3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	(amused)
+A-E3:	val 4; act 2; dom  2;	()
+A-F3:	val 5; act 3; dom  4;	()
+
+[162.6892 - 168.1304]	Ses03F_impro07_F030	xxx	[4.0000, 4.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Other;	(annoyed)
+C-E4:	Happiness;	()
+C-F3:	Surprise;	()
+A-E1:	val 4; act 4; dom  3;	(amused but firm)
+A-E3:	val 4; act 4; dom  2;	()
+A-F3:	val 5; act 4; dom  2;	()
+
+[168.3494 - 171.4587]	Ses03F_impro07_F031	neu	[4.0000, 2.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(jokes back at him)
+A-E3:	val 4; act 2; dom  3;	()
+A-F3:	val 4; act 2; dom  4;	()
+
+[171.6557 - 177.8524]	Ses03F_impro07_F032	hap	[4.0000, 4.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Surprise;	()
+A-E1:	val 4; act 4; dom  4;	(kind of offended, still amused)
+A-E3:	val 4; act 4; dom  2;	()
+A-F3:	val 5; act 4; dom  2;	()
+
+[178.1699 - 180.8225]	Ses03F_impro07_F033	xxx	[3.5000, 2.0000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Other;	(offended)
+C-E4:	Neutral;	()
+C-F3:	Other;	(annoyed)
+A-E1:	val 4; act 2; dom  2;	(anxious, bantering)
+A-E3:	val 3; act 2; dom  2;	()
+A-F3:	val 4; act 4; dom  4;	()
+
+[181.6076 - 184.0490]	Ses03F_impro07_F034	hap	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Happiness;	()
+A-E1:	val 4; act 4; dom  3;	(joking, bantering)
+A-E3:	val 4; act 3; dom  2;	()
+A-F3:	val 5; act 4; dom  4;	()
+
+[190.1909 - 192.1616]	Ses03F_impro07_F035	hap	[5.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-F3:	Happiness;	()
+A-E1:	val 5; act 3; dom  3;	(subdued jubilance)
+A-E3:	val 5; act 3; dom  2;	()
+A-F3:	val 5; act 5; dom  4;	()
+
+[5.1689 - 7.6856]	Ses03F_impro07_M000	neu	[4.0000, 2.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 3; dom  3;	(excited to see someone familiar)
+A-E3:	val 4; act 2; dom  1;	()
+A-M3:	val 5; act 3; dom  4;	()
+
+[9.2840 - 11.0248]	Ses03F_impro07_M001	neu	[4.0000, 2.0000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 2; dom  3;	(nonchalant)
+A-E3:	val 4; act 2; dom  1;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[13.3020 - 14.8785]	Ses03F_impro07_M002	xxx	[4.0000, 2.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Surprise;	()
+C-E4:	Neutral;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 3; dom  3;	(excited)
+A-E3:	val 4; act 2; dom  1;	()
+A-M3:	val 4; act 3; dom  4;	()
+
+[15.0537 - 16.7835]	Ses03F_impro07_M003	neu	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Other;	(mischeivious)
+A-E1:	val 4; act 3; dom  3;	(teasing, joking)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[19.8052 - 21.9510]	Ses03F_impro07_M004	neu	[4.0000, 2.0000, 2.0000]
+C-E1:	Other;	(amused)
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Other;	(mischeivious)
+A-E1:	val 4; act 2; dom  3;	(wry, teasing)
+A-E3:	val 4; act 2; dom  1;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[26.2317 - 27.6002]	Ses03F_impro07_M005	xxx	[4.0000, 2.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Surprise; Happiness;	()
+C-E4:	Neutral;	()
+C-M3:	Surprise;	()
+A-E1:	val 4; act 3; dom  3;	(jocular)
+A-E3:	val 4; act 2; dom  1;	()
+A-M3:	val 5; act 4; dom  4;	()
+
+[30.6767 - 32.7240]	Ses03F_impro07_M006	xxx	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+C-M3:	Other;	(witty)
+A-E1:	val 4; act 3; dom  3;	(teasing)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[36.5449 - 39.8074]	Ses03F_impro07_M007	xxx	[4.5000, 4.5000, 2.5000]
+C-E1:	Other;	(shocked)
+C-E2:	Surprise;	()
+C-E4:	Excited;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 5; dom  3;	(very happy for his friend, shocked)
+A-E3:	val 5; act 4; dom  2;	()
+A-M3:	val 5; act 5; dom  4;	()
+
+[39.8402 - 41.3511]	Ses03F_impro07_M008	exc	[4.0000, 3.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Excited;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 4; dom  3;	(curious, encouraging)
+A-E3:	val 4; act 3; dom  1;	()
+A-M3:	val 5; act 3; dom  3;	()
+
+[41.7343 - 43.3984]	Ses03F_impro07_M009	sur	[4.0000, 3.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Surprise;	()
+C-E4:	Surprise;	()
+C-M3:	Surprise;	()
+A-E1:	val 4; act 4; dom  3;	(happy, surprised)
+A-E3:	val 4; act 3; dom  1;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[43.5407 - 46.3725]	Ses03F_impro07_M010	xxx	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited; Surprise;	()
+C-E4:	Surprise;	()
+C-M3:	Surprise;	()
+A-E1:	val 4; act 4; dom  3;	(teasing, surprised)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 5; act 4; dom  3;	()
+
+[48.4564 - 50.2191]	Ses03F_impro07_M011	exc	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Excited;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 4; dom  3;	(happy, impressed)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 5; act 4; dom  3;	()
+
+[67.3201 - 68.6995]	Ses03F_impro07_M012	neu	[4.0000, 2.5000, 2.0000]
+C-E1:	Happiness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Neutral; Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(understanding)
+A-E3:	val 4; act 2; dom  1;	()
+A-M3:	val 4; act 3; dom  2;	()
+
+[72.0606 - 76.4727]	Ses03F_impro07_M013	exc	[4.0000, 2.5000, 2.0000]
+C-E1:	Excited;	()
+C-E2:	Surprise;	()
+C-E4:	Excited;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(impressed, amazed, surprised)
+A-E3:	val 4; act 2; dom  1;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[79.0345 - 81.3884]	Ses03F_impro07_M014	exc	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 3; dom  3;	(hopeful)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 4; dom  3;	()
+
+[81.8154 - 84.4101]	Ses03F_impro07_M015	exc	[4.5000, 3.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Excited;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	(excited)
+A-E3:	val 5; act 3; dom  3;	()
+A-M3:	val 5; act 5; dom  3;	()
+
+[85.4830 - 88.9645]	Ses03F_impro07_M016	xxx	[4.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Happiness;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(indifferent, nonchalant, happy)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 5; act 3; dom  3;	()
+
+[92.1833 - 94.5481]	Ses03F_impro07_M017	sur	[4.0000, 3.0000, 2.5000]
+C-E1:	Other;	(impressed)
+C-E2:	Excited; Surprise;	()
+C-E4:	Surprise;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(amazed, disbelieving)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 5; act 4; dom  4;	()
+
+[96.1027 - 104.0948]	Ses03F_impro07_M018	sur	[4.0000, 2.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Surprise;	()
+C-E4:	Surprise;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 2; dom  3;	(admiring, encouraging)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[104.9378 - 109.3828]	Ses03F_impro07_M019	exc	[4.0000, 3.0000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(teasing, impressed)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[110.0068 - 111.9775]	Ses03F_impro07_M020	xxx	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(joking)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[113.5431 - 116.9675]	Ses03F_impro07_M021	neu	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Other;	(pride)
+A-E1:	val 4; act 3; dom  3;	(proud)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[119.4441 - 123.1555]	Ses03F_impro07_M022	exc	[4.0000, 2.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Neutral;	()
+C-M3:	Other;	(cocky)
+A-E1:	val 4; act 3; dom  3;	(flippant, buoyant)
+A-E3:	val 4; act 2; dom  3;	()
+A-M3:	val 4; act 3; dom  4;	()
+
+[126.2319 - 127.9070]	Ses03F_impro07_M023	neu	[4.0000, 2.5000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Disgust;	()
+A-E1:	val 4; act 3; dom  3;	(mocking, joking)
+A-E3:	val 4; act 2; dom  3;	()
+A-M3:	val 3; act 3; dom  4;	()
+
+[128.4325 - 132.5819]	Ses03F_impro07_M024	xxx	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Happiness;	()
+C-M3:	Disgust; Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(joking, light)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  4;	()
+
+[141.4389 - 144.6125]	Ses03F_impro07_M025	neu	[4.0000, 2.5000, 2.5000]
+C-E1:	Happiness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Neutral; Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(friendly advice)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[154.3796 - 158.0034]	Ses03F_impro07_M026	exc	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Excited;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	(teasing, excited)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 4; act 4; dom  3;	()
+
+[158.3319 - 159.5033]	Ses03F_impro07_M027	exc	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(emphasizing)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[161.0689 - 163.7621]	Ses03F_impro07_M028	exc	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-M3:	Other;	(playful)
+A-E1:	val 4; act 3; dom  3;	(teasing)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 4; act 3; dom  3;	()
+
+[165.9846 - 167.3093]	Ses03F_impro07_M029	exc	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Excited;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	(joking, teasing, )
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 5; act 5; dom  3;	()
+
+[171.1083 - 175.6950]	Ses03F_impro07_M030	xxx	[4.0000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Happiness;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 4; dom  3;	(teasing, joking, not really offended)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 5; act 3; dom  3;	()
+
+[176.2977 - 179.0238]	Ses03F_impro07_M031	xxx	[4.0000, 3.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+C-M3:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	(bantering, teasing)
+A-E3:	val 4; act 3; dom  3;	()
+A-M3:	val 5; act 3; dom  3;	()
+
+[179.1661 - 180.2391]	Ses03F_impro07_M032	exc	[4.0000, 3.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Excited;	()
+C-E4:	Happiness;	()
+C-M3:	Excited;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E3:	val 4; act 3; dom  3;	()
+A-M3:	val 5; act 3; dom  4;	()
+
+[180.5347 - 182.2754]	Ses03F_impro07_M033	neu	[4.0000, 2.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M3:	Other;	(playful)
+A-E1:	val 4; act 3; dom  3;	(still teasing)
+A-E3:	val 4; act 2; dom  2;	()
+A-M3:	val 5; act 3; dom  3;	()
+
+[183.7534 - 185.6803]	Ses03F_impro07_M034	hap	[4.5000, 3.5000, 2.5000]
+C-E1:	Excited;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-M3:	Other; ;	(playful)
+A-E1:	val 5; act 4; dom  3;	(happy, joking)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 5; act 4; dom  3;	()
+
+[191.7127 - 194.0118]	Ses03F_impro07_M035	hap	[4.0000, 3.5000, 2.5000]
+C-E1:	Other; Happiness;	(amused)
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+C-M3:	;	()
+A-E1:	val 4; act 4; dom  3;	(serious but pleased)
+A-E3:	val 4; act 3; dom  2;	()
+A-M3:	val 6; act 6; dom ;	()
+

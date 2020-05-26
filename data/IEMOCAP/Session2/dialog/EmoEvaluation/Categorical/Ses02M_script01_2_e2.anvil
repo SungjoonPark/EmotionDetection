@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<annotation>
+  <head>
+    <specification src="C:\Anvil\spec\Mocap2.xml" />
+    <video src="C:\Mocap\Videos\Ses02M_script01_2.avi" />
+    <info key="coder" type="String">
+      Jeremy
+    </info>
+
+  </head>
+
+  <body>
+    <track name="Female.Emotion" type="primary">
+      <el index="0" start="6.31712" end="8.05923">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="1" start="9.58162" end="12.90889">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="2" start="15.32588" end="18.0646">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="3" start="28.737" end="30.3614">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="4" start="32.15845" end="33.76715">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="5" start="37.14936" end="38.813">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="6" start="39.95087" end="42.74452">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="7" start="44.55726" end="53.25998">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="8" start="55.48862" end="63.61848">
+        <attribute name="Sadness">true</attribute>
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="9" start="67.33028" end="74.02407">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="10" start="75.2561" end="82.64046">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="11" start="83.47227" end="88.6123">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="12" start="88.75355" end="95.35317">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="13" start="96.31839" end="99.63783">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="14" start="100.21562" end="105.04082">
+        <attribute name="Excited">true</attribute>
+      </el>
+      <el index="15" start="106.93949" end="108.88456">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="16" start="111.6255" end="113.36357">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="17" start="118.33509" end="119.57708">
+        <attribute name="Sadness">true</attribute>
+      </el>
+    </track>
+
+    <track name="Female.Primitives" type="span" ref="Female.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+    </track>
+
+    <track name="Male.Emotion" type="primary">
+      <el index="0" start="8.56931" end="9.54238">
+        <attribute name="Surprise">true</attribute>
+      </el>
+      <el index="1" start="12.96382" end="15.28664">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="2" start="18.70809" end="23.4165">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="3" start="25.06444" end="28.13276">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="4" start="30.55759" end="32.1349">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="5" start="36.05858" end="37.05519">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="6" start="38.85224" end="39.8567">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="7" start="43.03487" end="44.34538">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="8" start="53.68373" end="55.24535">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="9" start="65.16441" end="67.29104">
+        <attribute name="Neutral state">true</attribute>
+      </el>
+      <el index="10" start="74.07899" end="75.20901">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="11" start="83.05637" end="83.44089">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="12" start="95.4081" end="96.25562">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="13" start="99.66958" end="100.19421">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="14" start="105.08722" end="106.90737">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="15" start="108.90598" end="110.77966">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="16" start="113.58842" end="115.37288">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="17" start="116.46497" end="118.31725">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="18" start="119.60564" end="123.73846">
+        <attribute name="Frustration">true</attribute>
+      </el>
+    </track>
+
+    <track name="Male.Primitives" type="span" ref="Male.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+      <el index="18" start="18" end="18">
+      </el>
+    </track>
+
+  </body>
+</annotation>

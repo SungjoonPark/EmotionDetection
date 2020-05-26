@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<annotation>
+  <head>
+    <specification src="C:\Anvil\spec\Mocap2.xml" />
+    <video src="C:\Mocap\Videos\Ses03M_script01_2.avi" />
+    <info key="coder" type="String">
+      Jeremy
+    </info>
+
+  </head>
+
+  <body>
+    <track name="Female.Emotion" type="primary">
+      <el index="0" start="7.785" end="9.72">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="1" start="11.64473" end="16.683">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="2" start="18.38467" end="21.78">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="3" start="31.1975" end="33.2825">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="4" start="37.305" end="40.87">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="5" start="43.6325" end="45.705">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="6" start="47.27962" end="50.7675">
+        <attribute name="Frustration">true</attribute>
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="7" start="56.045" end="68.1725">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="8" start="71.06958" end="73.405">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="9" start="73.9925" end="78.475">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="10" start="79.7575" end="84.33">
+        <attribute name="Frustration">true</attribute>
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="11" start="85.2775" end="91.6325">
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="12" start="97.6275" end="106.3175">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="13" start="106.9775" end="114.1875">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="14" start="115.3025" end="123.155">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="15" start="123.225" end="137.1525">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="16" start="137.9875" end="140.71249">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="17" start="144.60825" end="154.1525">
+        <attribute name="Sadness">true</attribute>
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="18" start="158.3475" end="161.39">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="19" start="166.69653" end="168.0925">
+        <attribute name="Sadness">true</attribute>
+      </el>
+    </track>
+
+    <track name="Female.Primitives" type="span" ref="Female.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+      <el index="18" start="18" end="18">
+      </el>
+      <el index="19" start="19" end="19">
+      </el>
+    </track>
+
+    <track name="Male.Emotion" type="primary">
+      <el index="0" start="9.82" end="11.64473">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="1" start="15.88222" end="18.7325">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="2" start="21.85473" end="27.295">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="3" start="27.355" end="30.89">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="4" start="33.8275" end="37.2325">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="5" start="40.77325" end="42.205">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="6" start="45.61132" end="47.3425">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="7" start="53.5575" end="55.9075">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="8" start="68.13337" end="71.19">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="9" start="93.4325" end="97.905">
+        <attribute name="Frustration">true</attribute>
+        <attribute name="Sadness">true</attribute>
+      </el>
+      <el index="10" start="105.5025" end="108.325">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="11" start="113.8575" end="115.18">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="12" start="131.1125" end="135.8725">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="13" start="141.705" end="144.7525">
+        <attribute name="Frustration">true</attribute>
+      </el>
+      <el index="14" start="149.5275" end="157.7">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="15" start="161.15778" end="164.33">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="16" start="164.755" end="166.845">
+        <attribute name="Anger">true</attribute>
+      </el>
+      <el index="17" start="168.03117" end="173.2">
+        <attribute name="Anger">true</attribute>
+      </el>
+    </track>
+
+    <track name="Male.Primitives" type="span" ref="Male.Emotion">
+      <el index="0" start="0" end="0">
+      </el>
+      <el index="1" start="1" end="1">
+      </el>
+      <el index="2" start="2" end="2">
+      </el>
+      <el index="3" start="3" end="3">
+      </el>
+      <el index="4" start="4" end="4">
+      </el>
+      <el index="5" start="5" end="5">
+      </el>
+      <el index="6" start="6" end="6">
+      </el>
+      <el index="7" start="7" end="7">
+      </el>
+      <el index="8" start="8" end="8">
+      </el>
+      <el index="9" start="9" end="9">
+      </el>
+      <el index="10" start="10" end="10">
+      </el>
+      <el index="11" start="11" end="11">
+      </el>
+      <el index="12" start="12" end="12">
+      </el>
+      <el index="13" start="13" end="13">
+      </el>
+      <el index="14" start="14" end="14">
+      </el>
+      <el index="15" start="15" end="15">
+      </el>
+      <el index="16" start="16" end="16">
+      </el>
+      <el index="17" start="17" end="17">
+      </el>
+    </track>
+
+  </body>
+</annotation>

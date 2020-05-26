@@ -1,0 +1,425 @@
+% [START_TIME - END_TIME] TURN_NAME EMOTION [V, A, D]
+
+[14.7939 - 18.1700]	Ses01F_impro06_F000	xxx	[3.5000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 4; act 2; dom  4;	()
+A-F1:	val 2; act 1; dom  2;	()
+
+[24.0200 - 25.6900]	Ses01F_impro06_F001	xxx	[2.0000, 2.0000, 2.0000]
+C-E1:	Frustration;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 2; act 2; dom  1;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F1:	val 3; act 2; dom  3;	()
+
+[26.0700 - 27.6500]	Ses01F_impro06_F002	sad	[2.0000, 1.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 2; act 1; dom  3;	()
+A-F1:	val 2; act 1; dom  2;	()
+
+[34.4500 - 35.7800]	Ses01F_impro06_F003	neu	[3.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 4; act 2; dom  3;	()
+A-F1:	val 3; act 1; dom  2;	()
+
+[36.0700 - 38.0400]	Ses01F_impro06_F004	neu	[3.5000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 4; act 2; dom  3;	()
+A-F1:	val 2; act 1; dom  2;	()
+
+[39.6025 - 46.2900]	Ses01F_impro06_F005	sad	[2.0000, 2.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 2; act 2; dom  4;	()
+A-E2:	val 2; act 2; dom  4;	()
+A-F1:	val 2; act 3; dom  3;	()
+
+[47.3400 - 59.3800]	Ses01F_impro06_F006	sad	[3.5000, 3.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Sadness;	()
+C-F1:	Neutral;	()
+A-E1:	val 4; act 3; dom  4;	()
+A-E2:	val 3; act 3; dom  4;	()
+A-F1:	val 3; act 3; dom  4;	()
+
+[59.4525 - 67.4525]	Ses01F_impro06_F007	sad	[3.5000, 3.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness; Happiness;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 4; act 3; dom  4;	()
+A-F1:	val 4; act 3; dom  3;	()
+
+[70.2200 - 80.1300]	Ses01F_impro06_F008	sad	[2.5000, 3.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F1:	val 2; act 2; dom  2;	()
+
+[80.1600 - 87.7400]	Ses01F_impro06_F009	neu	[2.5000, 3.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F1:	val 3; act 3; dom  4;	()
+
+[87.8300 - 93.6700]	Ses01F_impro06_F010	sad	[2.0000, 2.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral; Disgust;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 2; dom  4;	()
+A-F1:	val 2; act 2; dom  2;	()
+
+[101.8300 - 116.9100]	Ses01F_impro06_F011	sad	[2.0000, 3.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness; Disgust;	()
+A-E1:	val 2; act 3; dom  4;	()
+A-E2:	val 2; act 3; dom  4;	()
+A-F1:	val 2; act 2; dom  2;	()
+
+[117.0700 - 126.0400]	Ses01F_impro06_F012	sad	[2.0000, 3.5000, 4.5000]
+C-E1:	Frustration;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Neutral;	(emphatic.)
+A-E1:	val 2; act 3; dom  4;	()
+A-E2:	val 2; act 4; dom  5;	()
+A-F1:	val 2; act 3; dom  3;	()
+
+[132.9575 - 134.4900]	Ses01F_impro06_F013	sad	[2.0000, 2.0000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 2; act 2; dom  1;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F1:	val 2; act 1; dom  1;	()
+
+[135.9600 - 137.9500]	Ses01F_impro06_F014	sad	[3.0000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Sadness;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 3; dom  2;	()
+A-F1:	val 2; act 2; dom  2;	()
+
+[138.0685 - 141.0500]	Ses01F_impro06_F015	sad	[2.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 2; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F1:	val 3; act 2; dom  2;	()
+
+[141.8400 - 149.4375]	Ses01F_impro06_F016	neu	[4.0000, 3.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral; Sadness; Happiness;	()
+A-E1:	val 4; act 3; dom  4;	()
+A-E2:	val 4; act 3; dom  3;	()
+A-F1:	val 4; act 3; dom  3;	()
+
+[158.0800 - 163.3500]	Ses01F_impro06_F017	xxx	[4.0000, 3.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness; Happiness;	()
+A-E1:	val 4; act 2; dom  3;	()
+A-E2:	val 4; act 4; dom  4;	()
+A-F1:	val 4; act 3; dom  3;	()
+
+[167.6400 - 174.8400]	Ses01F_impro06_F018	neu	[4.0000, 3.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 4; act 3; dom  4;	()
+A-E2:	val 4; act 3; dom  3;	()
+A-F1:	val 3; act 3; dom  2;	()
+
+[176.3500 - 178.0100]	Ses01F_impro06_F019	neu	[2.5000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F1:	val 2; act 2; dom  1;	()
+
+[182.5600 - 197.7300]	Ses01F_impro06_F020	sad	[2.5000, 3.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 2; act 3; dom  4;	()
+A-F1:	val 2; act 3; dom  4;	()
+
+[197.7550 - 214.3400]	Ses01F_impro06_F021	sad	[2.0000, 3.0000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness;	()
+A-E1:	val 2; act 3; dom  4;	()
+A-E2:	val 2; act 3; dom  4;	()
+A-F1:	val 2; act 3; dom  3;	()
+
+[217.5000 - 222.4100]	Ses01F_impro06_F022	sad	[4.0000, 3.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Excited; Sadness; Happiness;	()
+A-E1:	val 4; act 2; dom  3;	()
+A-E2:	val 4; act 4; dom  4;	()
+A-F1:	val 4; act 4; dom  3;	()
+
+[223.5200 - 227.5500]	Ses01F_impro06_F023	sad	[2.5000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F1:	val 3; act 2; dom  3;	()
+
+[229.0800 - 235.9800]	Ses01F_impro06_F024	sad	[1.5000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Neutral; Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 1; act 2; dom  3;	()
+A-F1:	val 3; act 3; dom  3;	()
+
+[237.5300 - 256.4800]	Ses01F_impro06_F025	sad	[3.0000, 3.5000, 4.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Excited; Sadness; Happiness;	()
+A-E1:	val 4; act 4; dom  4;	()
+A-E2:	val 2; act 3; dom  5;	()
+A-F1:	val 4; act 4; dom  3;	()
+
+[266.5500 - 275.3100]	Ses01F_impro06_F026	sad	[3.0000, 3.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+C-F1:	Sadness;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 3; act 4; dom  4;	()
+A-F1:	val 2; act 1; dom  2;	()
+
+[275.3800 - 281.6000]	Ses01F_impro06_F027	neu	[2.0000, 2.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F1:	Neutral;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 2; act 2; dom  4;	()
+A-F1:	val 3; act 2; dom  2;	()
+
+[282.0100 - 311.1400]	Ses01F_impro06_F028	sad	[3.0000, 3.5000, 4.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-F1:	Excited; Sadness; Happiness;	()
+A-E1:	val 2; act 3; dom  4;	()
+A-E2:	val 4; act 4; dom  4;	()
+A-F1:	val 4; act 4; dom  4;	()
+
+[11.4600 - 14.7400]	Ses01F_impro06_M000	sad	[2.5000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-M1:	Sadness;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-M1:	val 2; act 2; dom  3;	()
+
+[18.4900 - 24.9100]	Ses01F_impro06_M001	neu	[2.5000, 3.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Sadness;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 3; act 3; dom  4;	()
+A-M1:	val 2; act 3; dom  2;	()
+
+[25.1200 - 26.5600]	Ses01F_impro06_M002	neu	[2.5000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 3; act 2; dom  3;	()
+A-M1:	val 3; act 1; dom  1;	()
+
+[28.9700 - 35.0200]	Ses01F_impro06_M003	sad	[2.5000, 2.0000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-M1:	Other;	(empathy)
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 3; act 2; dom  4;	()
+A-M1:	val 2; act 2; dom  2;	()
+
+[56.1700 - 57.4900]	Ses01F_impro06_M004	neu	[3.0000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 2; dom  1;	()
+A-E2:	val 3; act 4; dom  4;	()
+A-M1:	val 3; act 1; dom  1;	()
+
+[86.9600 - 88.6300]	Ses01F_impro06_M005	neu	[3.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 3; act 2; dom  3;	()
+A-M1:	val 2; act 2; dom  1;	()
+
+[107.7800 - 109.2700]	Ses01F_impro06_M006	neu	[3.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 3; act 2; dom  3;	()
+A-M1:	val 2; act 1; dom  1;	()
+
+[125.4700 - 127.1900]	Ses01F_impro06_M007	sad	[3.0000, 2.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 3; act 2; dom  3;	()
+A-M1:	val 2; act 1; dom  1;	()
+
+[134.4000 - 136.4900]	Ses01F_impro06_M008	neu	[3.0000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 2; dom  2;	()
+A-M1:	val 3; act 2; dom  2;	()
+
+[137.0900 - 138.4400]	Ses01F_impro06_M009	neu	[3.0000, 2.5000, 2.5000]
+C-E1:	Neutral;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 3; act 2; dom  3;	()
+A-M1:	val 3; act 1; dom  1;	()
+
+[144.0900 - 145.6800]	Ses01F_impro06_M010	neu	[3.0000, 2.5000, 3.0000]
+C-E1:	Neutral;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Other;	(empathy)
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 3; act 3; dom  4;	()
+A-M1:	val 3; act 2; dom  1;	()
+
+[155.0700 - 158.3800]	Ses01F_impro06_M011	neu	[3.0000, 2.0000, 3.0000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 3; act 2; dom  3;	()
+A-M1:	val 3; act 1; dom  1;	()
+
+[165.6100 - 168.1000]	Ses01F_impro06_M012	neu	[2.5000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 3; act 2; dom  2;	()
+A-M1:	val 3; act 2; dom  1;	()
+
+[174.3900 - 177.1500]	Ses01F_impro06_M013	neu	[3.0000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 2; dom  2;	()
+A-M1:	val 3; act 2; dom  1;	()
+
+[219.7300 - 221.0300]	Ses01F_impro06_M014	neu	[3.0000, 2.5000, 2.0000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 2; dom  1;	()
+A-E2:	val 3; act 3; dom  3;	()
+A-M1:	val 2; act 1; dom  1;	()
+
+[255.3500 - 257.3100]	Ses01F_impro06_M015	neu	[3.0000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Surprise;	()
+A-E1:	val 3; act 2; dom  1;	()
+A-E2:	val 3; act 4; dom  4;	()
+A-M1:	val 4; act 2; dom  1;	()
+
+[262.9900 - 266.1750]	Ses01F_impro06_M016	neu	[3.0000, 2.5000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-M1:	Neutral;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 3; act 3; dom  2;	()
+A-M1:	val 3; act 3; dom  1;	()
+
+[308.2400 - 310.0100]	Ses01F_impro06_M017	xxx	[4.0000, 3.0000, 2.5000]
+C-E1:	Sadness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+C-M1:	Happiness;	()
+A-E1:	val 4; act 2; dom  1;	()
+A-E2:	val 4; act 4; dom  4;	()
+A-M1:	val 4; act 3; dom  1;	()
+

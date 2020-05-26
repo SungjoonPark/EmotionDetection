@@ -1,0 +1,6 @@
+The time is measured in 10ms. There is a delay of 2 10ms. Therefore, if the value in 10ms want to be trasformed to seconds, the transformation is as follows
+
+t2=(t+2)/100;
+
+t -> in 10ms
+t2-> in seconds

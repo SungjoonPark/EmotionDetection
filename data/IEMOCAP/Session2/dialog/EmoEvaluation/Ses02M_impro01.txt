@@ -1,0 +1,388 @@
+% [START_TIME - END_TIME] TURN_NAME EMOTION [V, A, D]
+
+[5.3200 - 7.3580]	Ses02M_impro01_F000	neu	[4.0000, 3.0000, 3.0000]
+C-E1:	Happiness;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 4; act 3; dom  3;	()
+A-F2:	val 4; act 2; dom  2;	()
+
+[10.3710 - 11.6114]	Ses02M_impro01_F001	neu	[3.5000, 2.5000, 2.5000]
+C-E1:	Neutral;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 4; act 3; dom  3;	()
+A-F2:	val 3; act 2; dom  2;	()
+
+[11.6114 - 14.6855]	Ses02M_impro01_F002	neu	[3.0000, 3.0000, 3.0000]
+C-E1:	Neutral;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  3;	()
+
+[17.8190 - 24.7376]	Ses02M_impro01_F003	neu	[3.0000, 3.0000, 3.0000]
+C-E1:	Neutral;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  4;	()
+
+[27.9800 - 29.6220]	Ses02M_impro01_F004	neu	[3.0000, 3.0000, 3.0000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  3;	()
+
+[30.0939 - 36.9427]	Ses02M_impro01_F005	neu	[3.0000, 3.5000, 3.0000]
+C-E1:	Neutral;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 4; dom  3;	()
+A-E2:	val 3; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  4;	()
+
+[38.8667 - 44.0823]	Ses02M_impro01_F006	neu	[2.5000, 3.0000, 2.5000]
+C-E1:	Neutral;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Disgust;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  3;	()
+
+[53.1100 - 54.9300]	Ses02M_impro01_F007	fru	[2.5000, 2.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 2; act 3; dom  4;	()
+
+[54.9400 - 58.3100]	Ses02M_impro01_F008	fru	[2.5000, 3.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  3;	()
+
+[60.0864 - 61.5056]	Ses02M_impro01_F009	fru	[3.0000, 2.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 3; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  3;	()
+
+[63.2229 - 68.4976]	Ses02M_impro01_F010	fru	[2.5000, 2.5000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 3; dom  4;	()
+A-F2:	val 2; act 3; dom  4;	()
+
+[71.2864 - 74.6495]	Ses02M_impro01_F011	fru	[2.5000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 2; act 3; dom  4;	()
+
+[76.0075 - 82.1167]	Ses02M_impro01_F012	fru	[3.0000, 3.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Neutral;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 3; act 4; dom  3;	()
+A-F2:	val 3; act 3; dom  4;	()
+
+[87.4655 - 91.6580]	Ses02M_impro01_F013	fru	[2.5000, 3.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  4;	()
+
+[93.4266 - 97.4221]	Ses02M_impro01_F014	fru	[2.5000, 3.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 2; act 3; dom  4;	()
+
+[98.7147 - 100.1295]	Ses02M_impro01_F015	neu	[2.5000, 2.5000, 3.0000]
+C-E1:	Neutral;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 2; act 3; dom  4;	()
+
+[104.7414 - 106.0901]	Ses02M_impro01_F016	neu	[2.5000, 2.0000, 2.5000]
+C-E1:	Neutral;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 2; act 2; dom  3;	()
+A-F2:	val 3; act 3; dom  4;	()
+
+[111.7499 - 115.9590]	Ses02M_impro01_F017	fru	[2.5000, 2.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  3;	()
+
+[118.3825 - 120.5877]	Ses02M_impro01_F018	fru	[2.5000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  3;	()
+
+[122.8148 - 125.8060]	Ses02M_impro01_F019	fru	[2.5000, 3.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 2; act 3; dom  4;	()
+A-F2:	val 2; act 4; dom  4;	()
+
+[126.2997 - 130.8496]	Ses02M_impro01_F020	fru	[3.0000, 3.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 3; dom  4;	()
+A-E2:	val 3; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  4;	()
+
+[137.2469 - 138.7534]	Ses02M_impro01_F021	fru	[3.0000, 2.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Disgust;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 3; act 2; dom  3;	()
+A-F2:	val 3; act 3; dom  4;	()
+
+[141.3516 - 146.0022]	Ses02M_impro01_F022	fru	[3.0000, 3.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Disgust;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 3; dom  4;	()
+A-F2:	val 2; act 3; dom  4;	()
+
+[148.0459 - 153.3206]	Ses02M_impro01_F023	fru	[2.0000, 3.0000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()
+A-F2:	val 2; act 3; dom  4;	()
+
+[154.5392 - 157.0808]	Ses02M_impro01_F024	fru	[2.5000, 2.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Neutral;	()
+C-F2:	Frustration;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 2; act 3; dom  3;	()
+A-F2:	val 3; act 3; dom  4;	()
+
+[3.5000 - 6.4410]	Ses02M_impro01_M000	fru	[4.0000, 2.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 4; act 3; dom  2;	()
+A-E2:	val 4; act 2; dom  3;	()
+
+[7.3400 - 10.0000]	Ses02M_impro01_M001	neu	[3.5000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 2; dom  2;	()
+A-E2:	val 4; act 4; dom  3;	()
+
+[10.0100 - 12.2924]	Ses02M_impro01_M002	neu	[3.0000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[14.3252 - 17.6205]	Ses02M_impro01_M003	neu	[3.5000, 3.0000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 4; act 3; dom  2;	()
+A-E2:	val 3; act 3; dom  3;	()
+
+[24.5138 - 28.1500]	Ses02M_impro01_M004	neu	[3.0000, 3.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[28.2300 - 31.2973]	Ses02M_impro01_M005	neu	[2.5000, 3.5000, 2.5000]
+C-E1:	Frustration;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  2;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[36.8679 - 39.1999]	Ses02M_impro01_M006	fru	[3.0000, 3.5000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[44.2341 - 52.4300]	Ses02M_impro01_M007	ang	[1.5000, 4.0000, 4.0000]
+C-E1:	Anger;	()
+C-E2:	Surprise; Anger;	()
+C-E4:	Frustration; Anger;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 4; dom  4;	()
+
+[52.4400 - 54.5300]	Ses02M_impro01_M008	ang	[2.0000, 3.5000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[57.3791 - 64.1421]	Ses02M_impro01_M009	ang	[1.5000, 4.5000, 4.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 5; dom  4;	()
+
+[66.9831 - 73.6261]	Ses02M_impro01_M010	ang	[2.0000, 4.0000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[74.2423 - 76.2871]	Ses02M_impro01_M011	ang	[2.5000, 4.0000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[81.5927 - 88.7760]	Ses02M_impro01_M012	fru	[2.5000, 4.0000, 3.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  3;	()
+A-E2:	val 3; act 4; dom  3;	()
+
+[91.1995 - 93.9287]	Ses02M_impro01_M013	fru	[1.5000, 4.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 4; dom  4;	()
+
+[97.1601 - 99.5400]	Ses02M_impro01_M014	fru	[1.5000, 4.5000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 2; act 4; dom  4;	()
+A-E2:	val 1; act 5; dom  4;	()
+
+[99.9890 - 104.6996]	Ses02M_impro01_M015	fru	[2.5000, 4.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[105.4351 - 112.2472]	Ses02M_impro01_M016	xxx	[2.5000, 4.0000, 3.5000]
+C-E1:	Frustration; Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[115.4350 - 118.7100]	Ses02M_impro01_M017	fru	[2.5000, 4.0000, 3.0000]
+C-E1:	Anger;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 4; dom  3;	()
+A-E2:	val 2; act 4; dom  3;	()
+
+[119.1904 - 126.0898]	Ses02M_impro01_M018	ang	[2.0000, 4.5000, 4.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 5; dom  4;	()
+A-E2:	val 1; act 4; dom  4;	()
+
+[129.4304 - 137.7264]	Ses02M_impro01_M019	ang	[2.5000, 4.5000, 4.0000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 5; dom  4;	()
+
+[138.3822 - 141.7665]	Ses02M_impro01_M020	fru	[2.5000, 4.0000, 4.0000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 4; dom  4;	()
+A-E2:	val 2; act 4; dom  4;	()
+
+[149.4956 - 151.5261]	Ses02M_impro01_M021	fru	[2.0000, 4.5000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Frustration;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 4; dom  3;	()
+A-E2:	val 1; act 5; dom  4;	()
+
+[153.3165 - 155.0414]	Ses02M_impro01_M022	fru	[2.0000, 3.5000, 3.5000]
+C-E1:	Frustration;	()
+C-E2:	Anger;	()
+C-E4:	Frustration;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 1; act 4; dom  4;	()
+
