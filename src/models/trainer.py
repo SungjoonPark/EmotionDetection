@@ -16,7 +16,7 @@ from pytorch_pretrained_bert import BertAdam
 
 from data import EmotionDataset
 
-
+# figure 1-a, Computing Loss + Training
 class EMDLoss(torch.nn.Module):
     
     def __init__(self, args, label_type):
@@ -99,7 +99,7 @@ class EMDLoss(torch.nn.Module):
         return loss
 
 
-
+# figure 1-b, c, Predicting VAD scores / class predictions from our method
 class PredcitVADandClassfromLogit(torch.nn.Module):
     
     def __init__(self, args, label_type):
@@ -142,7 +142,8 @@ class PredcitVADandClassfromLogit(torch.nn.Module):
         self.d_sorted_values = torch.tensor(np.sort(d_scores).tolist()).to(self.args['device'])
 
 
-    def forward(self, logits):
+    def forward(self, logits, predict):
+        assert predict in ['vad', 'cat']
         """
         logits : (batch_size, 3*n_labels) # 3 for each (v, a, d)
         labels : (batch_size, n_labels) # only categorical labels
@@ -153,23 +154,24 @@ class PredcitVADandClassfromLogit(torch.nn.Module):
         a_probs = self.activation(a_logit)
         d_probs = self.activation(d_logit)
 
-        # 1. compute (v, a, d) == expected values
-        e_v = v_probs * self.v_sorted_values
-        e_a = a_probs * self.a_sorted_values
-        e_d = d_probs * self.d_sorted_values
+        if predict == "vad": # [ compute (v, a, d) == expected values ]
+            e_v = torch.sum(v_probs * self.v_sorted_values, dim=1)
+            e_a = torch.sum(a_probs * self.a_sorted_values, dim=1)
+            e_d = torch.sum(d_probs * self.d_sorted_values, dim=1)
+            predictions = torch.stack([e_v, e_a, e_d], dim=1)
 
-        # 2. compute argmax(classes)
-        v_probs_origin = torch.index_select(v_probs, 1, self.v_sorted_idxs)
-        a_probs_origin = torch.index_select(a_probs, 1, self.a_sorted_idxs)
-        d_probs_origin = torch.index_select(d_probs, 1, self.d_sorted_idxs)
-        class_probs = v_probs_origin * a_probs_origin * d_probs_origin
-        if self.label_type == 'multi':
-            class_predictions = class_probs >= 0.5**3
-            class_predictions = torch.squeeze(class_predictions.float()) 
-        else: # single 
-            class_predictions = torch.max(class_probs, 1)[1] # argmax along dim=1
+        else: #predict == 'cat': [ compute argmax(classes) ]
+            v_probs_origin = torch.index_select(v_probs, 1, self.v_sorted_idxs)
+            a_probs_origin = torch.index_select(a_probs, 1, self.a_sorted_idxs)
+            d_probs_origin = torch.index_select(d_probs, 1, self.d_sorted_idxs)
+            class_probs = v_probs_origin * a_probs_origin * d_probs_origin
+            if self.label_type == 'multi':
+                predictions = class_probs >= 0.5**3
+                predictions = torch.squeeze(predictions.float()) 
+            else: # single 
+                predictions = torch.max(predictions, 1)[1] # argmax along dim=1
 
-        return (e_v, e_a, e_d), class_predictions
+        return predictions
 
 
 
@@ -180,8 +182,9 @@ class Trainer():
         self.args['device'] = self.set_device()
         self._set_eval_layers()
         self._set_loss()
-        if self.args['task'] == vad-from-categories:
+        if self.args['task'] == 'vad-from-categories':
             self._set_prediction()
+
 
     # https://mccormickml.com/2019/07/22/BERT-fine-tuning/
     def set_device(self):
@@ -222,11 +225,16 @@ class Trainer():
     def _set_prediction(self):
         assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
         if self.args['dataset'] == 'semeval': # multi-labeled
-            self.prediction = PredcitVADandClassfromLogit(self.args, label_type='multi')
+            self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
         elif self.args['dataset'] == 'ssec': # multi-labeled
-            self.prediction = PredcitVADandClassfromLogit(self.args, label_type='multi')
+            self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
         elif self.args['dataset'] == 'isear': # single-labeled
-            self.prediction = PredcitVADandClassfromLogit(self.args, label_type='single')
+            self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='single')
+
+
+    def _set_eval_layers(self):
+        self.softmax = nn.Softmax(dim=1)
+        self.sigmoid = nn.Sigmoid()
 
 
     def compute_loss(self, logits, labels):
@@ -236,6 +244,7 @@ class Trainer():
             if self.args['dataset'] == 'semeval' or self.args['dataset'] == 'ssec': # multi-labeled
                 labels = labels.type_as(logits)
         return self.loss(logits, labels)
+
 
     # https://huggingface.co/transformers/migration.html?highlight=forsequenceclassification
     def set_optimizer(self, params):
@@ -254,6 +263,7 @@ class Trainer():
             
         return optimizer, lr_scheduler
     
+
     def set_legacy_optimizer(self, params):
         optimizer = BertAdam(
             params, 
@@ -283,83 +293,72 @@ class Trainer():
         return accumulated_loss, n_updates
 
 
-    def _set_eval_layers(self):
-        self.softmax = nn.Softmax(dim=1)
-        self.sigmoid = nn.Sigmoid()
+    def _compute_vad_eval_metrics(self, metrics, predictions, labels):
+        for x, y, name in zip(predictions.T, labels.T, ["v_cor", 'a_cor', 'd_cor']):
+            metrics[name] = pearsonr(x, y)
+        return metrics
+
+
+    def _compute_classification_eval_metrics(self, metrics, predictions, labels, add_jaccard_score):
+        report = classification_report(
+            labels, 
+            predictions, 
+            digits=4,
+            zero_division='warn')
+        metrics['classification'] = report
+        if add_jaccard_score:
+            metrics['jaccard_score'] = {}
+            metrics['jaccard_score']['samples'] = jaccard_score(labels, predictions, average='samples')
+            metrics['jaccard_score']['macro'] = jaccard_score(labels, predictions, average='macro')
+            metrics['jaccard_score']['micro'] = jaccard_score(labels, predictions, average='micro')
+        return metrics
 
 
     def compute_eval_metric(self, predictions, labels, eval_type=None):
         assert predictions.size() == labels.size()
-
         predictions = predictions.cpu().detach().numpy()
         labels = labels.cpu().detach().numpy()
         metrics = {}
 
-        # 1. vad-regression
+        # 1. vad-regression ---------------------------------------------------------
         if self.args['task'] == 'vad-regression': # corrleations between v, a, d
-            for x, y, name in zip(predictions.T, labels.T, ["v_cor", 'a_cor', 'd_cor']):
-                metrics[name] = pearsonr(x, y)
+            metrics = self._compute_vad_eval_metrics(metrics, predictions, labels)
         
-        # 2. vad-from-categories
+        # 2. vad-from-categories ----------------------------------------------------
         elif self.args['task'] == 'vad-from-categories':
             assert eval_type in ['vad', 'cat']
-
-            vad_predictions, cat_predictions = torch.split(
-                predictions,
-                len(self.args['label_names']),
-                dim = 1
-                )  # [batch_size, 3(vad) + num_classes]
-
             if eval_type == 'vad':
-                for x, y, name in zip(vad_predictions.T, labels.T, ["v_cor", 'a_cor', 'd_cor']):
-                    metrics[name] = pearsonr(x, y)
-
+                metrics = self._compute_vad_eval_metrics(metrics, predictions, labels)
             else: # eval_type == 'cat':
                 if self.args['dataset'] in ['semeval', 'ssec']: # multi-labeled
-                    report = classification_report(
-                        labels, 
-                        cat_predictions, 
-                        digits=4,
-                        zero_division='warn')
-                    metrics['classification'] = report
-                    metrics['jaccard_score'] = {}
-                    metrics['jaccard_score']['samples'] = jaccard_score(labels, cat_predictions, average='samples')
-                    metrics['jaccard_score']['macro'] = jaccard_score(labels, cat_predictions, average='macro')
-                    metrics['jaccard_score']['micro'] = jaccard_score(labels, cat_predictions, average='micro')
+                    add_jaccard_score = True
                 elif self.args['dataset'] == 'isear': # single-labeled
-                    metrics = classification_report(
-                        labels, 
-                        cat_predictions, 
-                        digits=4,
-                        zero_division='warn')               
+                    add_jaccard_score = False
+                metrics = self._compute_classification_eval_metrics(
+                    metrics, 
+                    predictions, 
+                    labels,
+                    add_jaccard_score=add_jaccard_score)             
         
-        # 3. category-classification
+        # 3. category-classification ------------------------------------------------
         elif self.args['task'] == 'category-classification':
             if self.args['dataset'] in ['semeval', 'ssec']: # multi-labeled
-                report = classification_report(
-                    labels, 
-                    predictions, 
-                    digits=4,
-                    zero_division='warn')
-                metrics['classification'] = report
-                metrics['jaccard_score'] = {}
-                metrics['jaccard_score']['samples'] = jaccard_score(labels, predictions, average='samples')
-                metrics['jaccard_score']['macro'] = jaccard_score(labels, predictions, average='macro')
-                metrics['jaccard_score']['micro'] = jaccard_score(labels, predictions, average='micro')
+                add_jaccard_score = True
             elif self.args['dataset'] == 'isear': # single-labeled
-                metrics = classification_report(
-                    labels, 
-                    predictions, 
-                    digits=4,
-                    zero_division='warn')
+                add_jaccard_score = False
+            metrics = self._compute_classification_eval_metrics(
+                metrics, 
+                predictions, 
+                labels,
+                add_jaccard_score=add_jaccard_score)             
 
         return metrics
 
 
-    def predict(self, model, dataloader):
+    def predict(self, model, dataloader, prediction_type=None, compute_loss=True):
         model.eval()
 
-        total_losses = []
+        total_losses = torch.tensor(0).to(torch.device(self.args['device'])).float()
         total_predictions = []
         total_labels = []
 
@@ -378,15 +377,20 @@ class Trainer():
                     attention_mask=attention_masks)
 
                 # 2. compute loss (objective)
-                eval_loss = self.compute_loss(logits, labels)
-                total_losses.append(eval_loss)
+                if compute_loss:
+                    eval_loss = self.compute_loss(logits, labels)
+                    total_losses += torch.sum(eval_loss)
                 
                 # 3. model predictions
                 if self.args['task'] == 'vad-regression':
                     predictions = F.relu(logits) # vads
+
                 elif self.args['task'] == 'vad-from-categories':
-                    vad_predictions, cat_predictions = self.prediction(logits)         # vad 
-                    predictions = torch.cat([vad_predictions, cat_predictions], 1)     # [batch_size, 3(vad) + num_classes]
+                    if prediction_type == 'vad':
+                        predictions = self.convert_logits_to_predictions(logits, predict='vad')         # vad 
+                    else: # prediction_type == 'cat':
+                        predictions = self.convert_logits_to_predictions(logits, predict='cat')         # vad 
+
                 elif self.args['task'] == 'category-classification':
                     assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
                     if self.args['dataset'] == 'semeval': # multi-labeled
@@ -403,17 +407,17 @@ class Trainer():
 
         total_predictions = torch.cat(total_predictions, 0)
         total_labels = torch.cat(total_labels, 0)
-        total_losses = torch.stack(total_losses, 0)
+        total_losses = total_losses / total_predictions.size()[0] # mean losses
 
         return total_predictions, total_labels, total_losses
 
 
-    def evaluate(self, model, dataloader):
-        predictions = self.predict(model, dataloader)
+    def evaluate(self, model, dataloader, prediction_type=None, compute_loss=True):
+        predictions = self.predict(model, dataloader, prediction_type, compute_loss)
         total_predictions, total_labels, total_losses = predictions
 
         eval_loss = torch.mean(total_losses)
-        eval_metrics = self.compute_eval_metric(total_predictions, total_labels, eval_type='cat')
-        #eval_metrics = self.compute_eval_metric(total_predictions, total_labels, eval_type='vad')
+        eval_metrics = self.compute_eval_metric(total_predictions, total_labels, eval_type=prediction_type)
 
         return eval_loss, eval_metrics, total_predictions.size()
+

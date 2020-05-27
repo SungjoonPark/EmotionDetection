@@ -1,0 +1,123 @@
+There are 1 GPU(s) available.
+We will use the GPU: Tesla V100-SXM2-32GB
+Build dataset for train/valid/test
+Dataset Loaded: semeval with labels: ['anger', 'anticipation', 'disgust', 'fear', 'joy', 'love', 'optimism', 'pessimism', 'sadness', 'surprise', 'trust']
+Build emobank for valid/test
+An empty sentence example encountered. (after preprocessing): skipping... ( train set )
+An empty sentence example encountered. (after preprocessing): skipping... ( valid set )
+Dataset Loaded: emobank with labels: ['V', 'A', 'D']
+build/load models
+Model Loading Info: {'missing_keys': [], 'unexpected_keys': [], 'error_msgs': []}
+RobertaConfig {
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "args": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "dataset": "semeval",
+    "device": "cuda",
+    "eval_batch_size": 32,
+    "eval_freq": null,
+    "label-type": "categorical",
+    "label_names": [
+      "anger",
+      "anticipation",
+      "disgust",
+      "fear",
+      "joy",
+      "love",
+      "optimism",
+      "pessimism",
+      "sadness",
+      "surprise",
+      "trust"
+    ],
+    "label_vads": {
+      "anger": [
+        0.167,
+        0.865,
+        0.657
+      ],
+      "anticipation": [
+        0.698,
+        0.539,
+        0.711
+      ],
+      "disgust": [
+        0.052,
+        0.775,
+        0.317
+      ],
+      "fear": [
+        0.073,
+        0.84,
+        0.293
+      ],
+      "joy": [
+        0.98,
+        0.824,
+        0.794
+      ],
+      "love": [
+        1.0,
+        0.519,
+        0.673
+      ],
+      "optimism": [
+        0.949,
+        0.565,
+        0.814
+      ],
+      "pessimism": [
+        0.083,
+        0.484,
+        0.264
+      ],
+      "sadness": [
+        0.052,
+        0.288,
+        0.164
+      ],
+      "surprise": [
+        0.875,
+        0.875,
+        0.562
+      ],
+      "trust": [
+        0.888,
+        0.547,
+        0.741
+      ]
+    },
+    "learning_rate": 1e-05,
+    "load_model": "pretrained_lm",
+    "load_pretrained_lm_weights": true,
+    "log_updates": false,
+    "max_epoch": 40,
+    "max_seq_len": 256,
+    "model": "roberta",
+    "optimizer_type": "legacy",
+    "task": "vad-from-categories",
+    "total_n_updates": 10000,
+    "train_batch_size": 32,
+    "update_freq": 2,
+    "warmup_proportion": 0.1
+  },
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 1,
+  "type_vocab_size": 1,
+  "vocab_size": 50265
+}
+
