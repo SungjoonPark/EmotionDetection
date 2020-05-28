@@ -116,7 +116,7 @@ class EMDLoss(torch.nn.Module):
                 ce_loss = self.ce_loss(logit, label)
                 losses += ce_loss
             loss = losses # (sum of 3 dim)
-            
+
         return loss
 
 

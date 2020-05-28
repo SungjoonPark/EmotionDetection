@@ -172,6 +172,45 @@ class SingleDatasetTrainer():
         print("", flush=True)
 
 
+    def save_model(self, model, optimizer):
+        ckpt_name = "-".join([
+            self.args['dataset'], 
+            self.args['task'],
+            str(self.n_updates),
+            str(self.n_epoch)]) + ".ckpt"
+        save_path = self.args['save_dir'] + ckpt_name
+        print("Saving Model to:", save_path)
+        save_state = {
+            'n_updates': self.n_updates,
+            'epoch': self.n_epoch,
+            'state_dict': model.state_dict(),
+            'optimizer': optimizer.state_dict(),
+        }
+        torch.save(save_state, save_path)
+        print("Saving Model to:", save_path, "...Finished.")
+
+
+    def load_model_from_ckeckpoint(self, n_updates, n_epoch, model, optimizer):
+        print("Loading Model from:", save_path)
+        ckpt_name = "-".join([
+            self.args['dataset'], 
+            self.args['task'],
+            str(n_updates),
+            str(n_epoch)]) + ".ckpt"
+        save_path = self.args['save_dir'] + ckpt_name
+        state = torch.load(save_path)
+
+        model.load_state_dict(state['state_dict'])
+        if self.args['load_optimizer']:
+            optimizer.load_state_dict(state['optimizer'])
+
+        self.n_updates = 0 # renewed
+        self.n_epoch = 0 # renewed
+
+        print("Loading Model from:", save_path, "...Finished.")
+        return model, optimizer
+
+
     def train(self):
         # 1. build dataset for train/valid/test
         print("Build dataset for train/valid/test", flush=True)
@@ -196,8 +235,15 @@ class SingleDatasetTrainer():
         print(config, flush=True)
         #print(config.args["labels"])
         optimizer, lr_scheduler = self.set_optimizer(model)
-        optimizer.zero_grad()
+
         self.set_train_vars()
+        if self.args['load_ckeckpoint']:
+            model, optimizer = self.load_model_from_ckeckpoint(
+                self.args['load_n_it'], 
+                self.args['load_n_epoch'], 
+                model, 
+                optimizer)
+        optimizer.zero_grad()
 
         while self.n_updates != self.args['total_n_updates'] and self.n_epoch != self.args['max_epoch']: 
 
@@ -229,7 +275,7 @@ class SingleDatasetTrainer():
 
                 # evaluation
                 #if it == 0  : # eval every epoch
-                if it == 0 and self.n_updates != 0 : # eval every epoch
+                if it == 0 and self.n_updates != 0 : # eval (and save) every epoch
                     self.n_epoch += 1; print("Epoch:", self.n_epoch, flush=True)
                     if self.args['task'] != 'vad-from-categories':
                         self.evaluate(
@@ -248,10 +294,13 @@ class SingleDatasetTrainer():
                             eb_test_loader,
                             prediction_type='vad',
                             compute_loss=False)
+                    
+                    if self.args['save_model']:
+                        self.save_model(model, optimizer)
 
                 if self.n_updates == self.args['total_n_updates']: break
                 if self.n_epoch == self.args['max_epoch']: break
-
+                
 
 def main():
 
@@ -264,9 +313,9 @@ def main():
         'label-type': 'categorical', # ['categorical', 'dimensional']
         'model': 'roberta', # ['bert', 'roberta'],
         'load_pretrained_lm_weights': True, # if false, only using architecture, randomly init weights.
-        'dataset': 'isear', # ['semeval', 'emobank', 'isear', 'ssec']
+        'dataset': 'semeval', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
-        'use_emd': True, # if False, use Cross-entropy loss
+        'use_emd': False, # if False, use Cross-entropy loss
 
         # memory-args
         'max_seq_len': 256,
@@ -282,8 +331,15 @@ def main():
         'warmup_proportion': 0.1,
         'clip_grad': 1.0,
 
+        # save & load args
+        'save_model': False,
+        'load_ckeckpoint': False,
+        'load_optimizer': False,
+        'load_n_epoch': None,
+        'load_n_it': None,
+        'save_dir': "/data/private/Emotion/ckpt/trained/",
+
         # etc
-        'eval_freq': None, # in terms of #batchs
         'log_updates': False,
     }
 
