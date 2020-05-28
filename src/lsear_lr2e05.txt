@@ -1,9 +1,0 @@
-There are 1 GPU(s) available.
-We will use the GPU: Tesla V100-SXM2-32GB
-Build dataset for train/valid/test
-Dataset Loaded: isear with labels: ['fear', 'anger', 'guilt', 'joy', 'disgust', 'shame', 'sadness']
-Build emobank for valid/test
-An empty sentence example encountered. (after preprocessing): skipping... ( train set )
-An empty sentence example encountered. (after preprocessing): skipping... ( valid set )
-Dataset Loaded: emobank with labels: ['V', 'A', 'D']
-build/load models

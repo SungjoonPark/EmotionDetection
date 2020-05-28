@@ -117,7 +117,7 @@ class SingleDatasetTrainer():
             batch_logit, 
             batch_labels)
         if reduce:
-            loss = torch.sum(loss)
+            loss = torch.mean(loss)
         return loss
 
 
@@ -199,7 +199,7 @@ class SingleDatasetTrainer():
         optimizer.zero_grad()
         self.set_train_vars()
 
-        while self.n_updates != self.args['total_n_updates'] or self.n_epoch == self.args['max_epoch']: 
+        while self.n_updates != self.args['total_n_updates'] and self.n_epoch != self.args['max_epoch']: 
 
             for it, train_batch in enumerate(train_loader):
                 model.train()
@@ -228,6 +228,7 @@ class SingleDatasetTrainer():
                     lr_scheduler)
 
                 # evaluation
+                #if it == 0  : # eval every epoch
                 if it == 0 and self.n_updates != 0 : # eval every epoch
                     self.n_epoch += 1; print("Epoch:", self.n_epoch, flush=True)
                     if self.args['task'] != 'vad-from-categories':
@@ -265,7 +266,8 @@ def main():
         'load_pretrained_lm_weights': True, # if false, only using architecture, randomly init weights.
         'dataset': 'isear', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
-        
+        'use_emd': True, # if False, use Cross-entropy loss
+
         # memory-args
         'max_seq_len': 256,
         'train_batch_size': 32,
@@ -278,6 +280,7 @@ def main():
         'total_n_updates': 10000,
         'max_epoch': 40,
         'warmup_proportion': 0.1,
+        'clip_grad': 1.0,
 
         # etc
         'eval_freq': None, # in terms of #batchs

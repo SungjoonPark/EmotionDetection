@@ -16,6 +16,8 @@ from pytorch_pretrained_bert import BertAdam
 
 from data import EmotionDataset
 
+
+
 # figure 1-a, Computing Loss + Training
 class EMDLoss(torch.nn.Module):
     
@@ -30,8 +32,10 @@ class EMDLoss(torch.nn.Module):
 
         if label_type == 'single':
             self.activation = nn.Softmax(dim=1)
+            self.ce_loss = torch.nn.CrossEntropyLoss()
         else: # 'multi'
             self.activation = nn.Sigmoid()
+            self.ce_loss = torch.nn.BCEWithLogitsLoss()
 
         self.category_label_vads = self.args['label_vads']
         self.category_label_names = self.args['label_names']
@@ -74,29 +78,47 @@ class EMDLoss(torch.nn.Module):
         normalized_label_probs = label_probs / (torch.sum(label_probs, keepdim=True, dim=1) + self.eps)   
         inter_emd_loss = torch.sum(
             torch.square(
-                torch.cumsum(normalized_input_probs, dim=1) - 
-                torch.cumsum(normalized_label_probs, dim=1),
+                torch.cumsum(normalized_input_probs, dim=1) - torch.cumsum(normalized_label_probs, dim=1),
             ), dim=1)
         return inter_emd_loss
 
 
-    def forward(self, logits, labels):
+    def forward(self, logits, labels, use_emd=True):
         """
         logits : (batch_size, 3*n_labels) # 3 for each (v, a, d)
         labels : (batch_size, n_labels) # only categorical labels
         """
-        loss = 0
+
+        if self.label_type == 'single':
+            label_one_hot = torch.eye(len(self.category_label_names)).to(self.args['device'])
+            labels = label_one_hot[labels]
 
         split_logits = torch.split(logits, len(self.category_label_names), dim=1) # logits for sorted (v, a, d)
         sorted_labels = self._sort_labels_by_vad_coordinates(labels)              # labels for sorted (v, a, d)
 
-        for logit, label in zip(split_logits, sorted_labels):
-            input_probs = self.activation(logit)
-            inter_emd_loss = self._inter_EMD_loss(input_probs, labels)
-            intra_emd_loss = self._intra_EMD_loss(input_probs, labels)
-            emd_loss = inter_emd_loss + intra_emd_loss
-            loss += emd_loss
+        if self.args['use_emd']:
+            losses = []
+            for logit, sorted_label in zip(split_logits, sorted_labels):
+                input_probs = self.activation(logit)
+                inter_emd_loss = self._inter_EMD_loss(input_probs, sorted_label)
+                intra_emd_loss = self._intra_EMD_loss(input_probs, sorted_label)
+                emd_loss = inter_emd_loss + intra_emd_loss
+                losses.append(emd_loss)
+            loss = torch.mean(torch.stack(losses, dim=1), dim=1)
+
+        else: # using ce loss
+            losses = torch.tensor(0.0).to(self.args['device'])
+            for logit, label in zip(split_logits, sorted_labels):
+                if self.label_type == 'single':
+                    label = torch.max(label, 1)[1] # argmax along dim=1
+                else:
+                    label = label.type_as(logit)
+                ce_loss = self.ce_loss(logit, label)
+                losses += ce_loss
+            loss = losses # (sum of 3 dim)
+            
         return loss
+
 
 
 # figure 1-b, c, Predicting VAD scores / class predictions from our method
@@ -113,8 +135,10 @@ class PredcitVADandClassfromLogit(torch.nn.Module):
 
         if label_type == 'single':
             self.activation = nn.Softmax(dim=1)
+            self.log_activation = nn.LogSoftmax(dim=1)
         else: # 'multi'
             self.activation = nn.Sigmoid()
+            self.log_activation = nn.LogSigmoid()
 
         self.category_label_vads = self.args['label_vads']
         self.category_label_names = self.args['label_names']
@@ -131,14 +155,17 @@ class PredcitVADandClassfromLogit(torch.nn.Module):
     def _sort_labels(self):
         v_scores = [self.category_label_vads[key][0] for key in self.category_label_names]
         self.v_sorted_idxs = torch.tensor(np.argsort(v_scores).tolist()).to(self.args['device'])
+        self.v_recover_idxs = torch.argsort(self.v_sorted_idxs)
         self.v_sorted_values = torch.tensor(np.sort(v_scores).tolist()).to(self.args['device'])
 
         a_scores = [self.category_label_vads[key][1] for key in self.category_label_names]
         self.a_sorted_idxs = torch.tensor(np.argsort(a_scores).tolist()).to(self.args['device'])
+        self.a_recover_idxs = torch.argsort(self.a_sorted_idxs)
         self.a_sorted_values = torch.tensor(np.sort(a_scores).tolist()).to(self.args['device'])
 
         d_scores = [self.category_label_vads[key][2] for key in self.category_label_names]
         self.d_sorted_idxs = torch.tensor(np.argsort(d_scores).tolist()).to(self.args['device'])
+        self.d_recover_idxs = torch.argsort(self.d_sorted_idxs)
         self.d_sorted_values = torch.tensor(np.sort(d_scores).tolist()).to(self.args['device'])
 
 
@@ -161,15 +188,19 @@ class PredcitVADandClassfromLogit(torch.nn.Module):
             predictions = torch.stack([e_v, e_a, e_d], dim=1)
 
         else: #predict == 'cat': [ compute argmax(classes) ]
-            v_probs_origin = torch.index_select(v_probs, 1, self.v_sorted_idxs)
-            a_probs_origin = torch.index_select(a_probs, 1, self.a_sorted_idxs)
-            d_probs_origin = torch.index_select(d_probs, 1, self.d_sorted_idxs)
-            class_probs = v_probs_origin * a_probs_origin * d_probs_origin
+            v_logits_origin = torch.index_select(v_logit, 1, self.v_recover_idxs)
+            a_logits_origin = torch.index_select(a_logit, 1, self.a_recover_idxs)
+            d_logits_origin = torch.index_select(d_logit, 1, self.d_recover_idxs)
+            class_logits_origin = v_logits_origin + a_logits_origin + d_logits_origin
             if self.label_type == 'multi':
-                predictions = class_probs >= 0.5**3
+                logprob = class_logits_origin - \
+                    torch.log(torch.exp(v_logits_origin) + 1) - \
+                    torch.log(torch.exp(a_logits_origin) + 1) - \
+                    torch.log(torch.exp(d_logits_origin) + 1)                    
+                predictions = torch.pow(torch.exp(logprob), 1/3) >= 0.5
                 predictions = torch.squeeze(predictions.float()) 
-            else: # single 
-                predictions = torch.max(predictions, 1)[1] # argmax along dim=1
+            else: 
+                predictions = torch.max(class_logits_origin, 1)[1] # argmax along dim=1
 
         return predictions
 
@@ -277,10 +308,10 @@ class Trainer():
 
     def backward_step(self, it, n_updates, model, loss, accumulated_loss, optimizer, lr_scheduler):
         loss.backward() #Backpropagating the gradients
+        torch.nn.utils.clip_grad_norm_(model.parameters(), self.args['clip_grad'])
 
         if (it + 1) % self.args['update_freq'] == 0:
             if self.args['optimizer_type'] == 'trans':
-                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
                 lr_scheduler.step()
             optimizer.step()
             if self.args['log_updates']:
