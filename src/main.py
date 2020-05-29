@@ -191,16 +191,24 @@ class SingleDatasetTrainer():
 
 
     def load_model_from_ckeckpoint(self, n_updates, n_epoch, model, optimizer):
-        print("Loading Model from:", save_path)
+        # 1. set path and load states
         ckpt_name = "-".join([
-            self.args['dataset'], 
-            self.args['task'],
+            self.args['load_dataset'], 
+            self.args['load_task'],
             str(n_updates),
             str(n_epoch)]) + ".ckpt"
         save_path = self.args['save_dir'] + ckpt_name
+        print("Loading Model from:", save_path)
         state = torch.load(save_path)
+        
+        # 2. load (override) pre-trained model (without head)
+        model_dict = model.state_dict()
+        ckpt__dict = state['state_dict']
+        ckpt__dict_head_removed = {k: v for k, v in ckpt__dict.items() if k not in ['head.bias', 'head.weight']}
+        model_dict.update(ckpt__dict_head_removed) 
+        model.load_state_dict(model_dict)
 
-        model.load_state_dict(state['state_dict'])
+        # 3. recover optim state
         if self.args['load_optimizer']:
             optimizer.load_state_dict(state['optimizer'])
 
@@ -309,13 +317,13 @@ def main():
         'CUDA_VISIBLE_DEVICES': "3",
 
         # task and models
-        'task': 'vad-from-categories', # ['category-classification', 'vad-regression', 'vad-from-categories']
-        'label-type': 'categorical', # ['categorical', 'dimensional']
+        'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']
+        'label-type': 'dimensional', # ['categorical', 'dimensional']
         'model': 'roberta', # ['bert', 'roberta'],
         'load_pretrained_lm_weights': True, # if false, only using architecture, randomly init weights.
-        'dataset': 'semeval', # ['semeval', 'emobank', 'isear', 'ssec']
+        'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
-        'use_emd': False, # if False, use Cross-entropy loss
+        'use_emd': False, # if False, use Cross-entropy loss (only valid for vad-from-categories)
 
         # memory-args
         'max_seq_len': 256,
@@ -325,7 +333,7 @@ def main():
 
         # optim-args
         'optimizer_type' : 'legacy', # ['legacy', 'trans']
-        'learning_rate': 2e-05,
+        'learning_rate': 1e-05,
         'total_n_updates': 10000,
         'max_epoch': 40,
         'warmup_proportion': 0.1,
@@ -333,10 +341,12 @@ def main():
 
         # save & load args
         'save_model': False,
-        'load_ckeckpoint': False,
+        'load_dataset': 'semeval',
+        'load_task': 'vad-from-categories',
+        'load_ckeckpoint': True,
         'load_optimizer': False,
-        'load_n_epoch': None,
-        'load_n_it': None,
+        'load_n_epoch': 11,
+        'load_n_it': 1177,
         'save_dir': "/data/private/Emotion/ckpt/trained/",
 
         # etc
