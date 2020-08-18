@@ -14,13 +14,17 @@ from data import (
     SemEvalLoader, 
     ISEARLoader, 
     SSECLoader,
-    EmotionDataset
+    EmotionDataset,
+    GOEMOTIONSLoader,
 )
 
 from models import (
     PretrainedLMModel,
     Trainer,
 )
+
+import logging
+logging.basicConfig(level=logging.ERROR)
 
 pp = pprint.PrettyPrinter(indent=1, width=90)
 
@@ -55,7 +59,7 @@ class SingleDatasetTrainer():
     def _check_args(self, args):
         assert args['task'] in ['category-classification', 'vad-regression', 'vad-from-categories']
         assert args['model'] in ['bert', 'roberta']
-        assert args['dataset'] in ['semeval', 'emobank', 'isear', 'ssec']
+        assert args['dataset'] in ['semeval', 'emobank', 'isear', 'ssec', 'goemotions']
         assert args['load_model'] in ['pretrained_lm', 'fine_tuned_lm']
         assert args['label-type'] in ['categorical', 'dimensional']
         assert args['optimizer_type'] in ['legacy', 'trans']
@@ -186,6 +190,8 @@ class SingleDatasetTrainer():
             'state_dict': model.state_dict(),
             'optimizer': optimizer.state_dict(),
         }
+        if not os.path.isfile(save_path):
+            f = open(save_path, "x")
         torch.save(save_state, save_path)
         print("Saving Model to:", save_path, "...Finished.")
 
@@ -314,40 +320,40 @@ def main():
 
     args = {
 
-        'CUDA_VISIBLE_DEVICES': "3",
+        'CUDA_VISIBLE_DEVICES': "4",
 
         # task and models
-        'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']
-        'label-type': 'dimensional', # ['categorical', 'dimensional']
+        'task': 'vad-from-categories', # ['category-classification', 'vad-regression', 'vad-from-categories']
+        'label-type': 'categorical', # ['categorical', 'dimensional']
         'model': 'roberta', # ['bert', 'roberta'],
         'load_pretrained_lm_weights': True, # if false, only using architecture, randomly init weights.
-        'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec']
+        'dataset': 'goemotions', # ['semeval', 'emobank', 'isear', 'ssec', 'goemotions']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
-        'use_emd': False, # if False, use Cross-entropy loss (only valid for vad-from-categories)
+        'use_emd': True, # if False, use Cross-entropy loss (only valid for vad-from-categories)
 
         # memory-args
-        'max_seq_len': 256,
-        'train_batch_size': 32,
-        'eval_batch_size': 32,
-        'update_freq': 2,
+        'max_seq_len': 128,
+        'train_batch_size': 12,
+        'eval_batch_size': 12,
+        'update_freq': 5,
 
         # optim-args
         'optimizer_type' : 'legacy', # ['legacy', 'trans']
-        'learning_rate': 1e-05,
-        'total_n_updates': 10000,
-        'max_epoch': 40,
+        'learning_rate': 2e-05,
+        'total_n_updates': 100000,
+        'max_epoch': 20,
         'warmup_proportion': 0.1,
         'clip_grad': 1.0,
 
         # save & load args
         'save_model': False,
-        'load_dataset': 'semeval',
+        'load_dataset': 'goemotions',
         'load_task': 'vad-from-categories',
-        'load_ckeckpoint': True,
+        'load_ckeckpoint': False,
         'load_optimizer': False,
-        'load_n_epoch': 11,
-        'load_n_it': 1177,
-        'save_dir': "/data/private/Emotion/ckpt/trained/",
+        'load_n_epoch': 18,
+        'load_n_it': 13014,
+        'save_dir': "./data/private/Emotion/ckpt/trained/",
 
         # etc
         'log_updates': False,

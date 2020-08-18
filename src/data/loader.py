@@ -599,49 +599,116 @@ class IEMOCAPVADLoader(EmotionDatasetLoader):
                 data[s_name][name] = d
         return data
 
+class GOEMOTIONSLoader(EmotionDatasetLoader):
+
+    def __init__(self):
+        emotion_labels = ['admiration', 'amusement', 'anger', 'annoyance', 'approval', 'caring', 'confusion', 'curiosity', 'desire', 'disappointment',
+                    'disapproval', 'disgust', 'embarrassment', 'excitement', 'fear', 'gratitude', 'grief', 'joy', 'love', 'nervousness', 'optimism',
+                    'pride', 'realization', 'relief', 'remorse', 'sadness', 'surprise', 'neutral']
+        super(GOEMOTIONSLoader, self).__init__(emotion_labels, 'cat')
+        self.path = os.path.join(self.rel_path, "./../../data/original/")
+
+    def _load_split_files(self):
+        splits = []
+        for s_name in self.split_names:
+            if s_name == 'test':
+                s_name = 'test'
+            if s_name == 'valid':
+                s_name = 'dev'
+            file_path = self.path + s_name + '.tsv'
+            split = pd.read_csv(file_path, sep='\t', names=['Text','Label','Alpha'])
+            splits.append(split)
+        return splits
+
+    def _convert_to_one_hot_label(self,label,label_list_len):
+        one_hot_label = [0] * label_list_len
+        for l in label:
+            l_int = int(l)
+            one_hot_label[l_int] = 1
+        return tuple(one_hot_label)
+
+    def _preprocessing_text(self, text):
+        """
+        strip " and whitespace for every text
+        """
+        cleaned_text = []
+        for t in text:
+            t = t.strip('\"').strip('\'').strip()
+            t = re.sub(r'([{}])'.format(string.punctuation), r' \1 ', t)
+            t = re.sub('\s{2,}', ' ', t)  # pad punctuations for bpe
+            t = t.strip()
+            cleaned_text.append(t)
+        return cleaned_text
+
+    def load_data(self, preprocessing=True):
+        data = {}
+        splits = self._load_split_files()
+        for s_name, s_data in zip(self.split_names, splits):
+            text = s_data['Text'].to_list()
+            if preprocessing:
+                text = self._preprocessing_text(text)
+
+            emotions = []
+            for e in s_data['Label']:
+                label_list = [int(s) for s in e.split(',')]
+                emotion = self._convert_to_one_hot_label(label_list, len(self.labels))
+                emotions.append(emotion)
+
+            data[s_name] = {}
+            for name, d in zip(self.data_types, [text, emotions]):
+                data[s_name][name] = d
+        return data
+
 
 def main():
 
-    print("---- EMOBANK ----")
-    emobank = EmobankLoader()
-    data = emobank.load_data()
-    # emobank.validate_splits()
-    emobank.check_number_of_data()
-    # print(data)
+    # print("---- EMOBANK ----")
+    # emobank = EmobankLoader()
+    # data = emobank.load_data()
+    # # emobank.validate_splits()
+    # emobank.check_number_of_data()
+    # # print(data)
 
     print("---- SEMEVAL 2018 E-c ----")
     semeval = SemEvalLoader()
     data = semeval.load_data()
     semeval.check_number_of_data()
     print(semeval.get_vad_coordinates_of_labels())
+    # print(data['test']['label'])
     # print(data)
 
-    print("---- ISEAR ----")
-    isear = ISEARLoader()
-    data = isear.load_data()
-    isear.check_number_of_data()
-    print(isear.get_vad_coordinates_of_labels())
-    # print(data)
+    # print("---- ISEAR ----")
+    # isear = ISEARLoader()
+    # data = isear.load_data()
+    # isear.check_number_of_data()
+    # print(isear.get_vad_coordinates_of_labels())
+    # # print(data)
 
-    print("---- SSEC ----")
-    ssec = SSECLoader()
-    data = ssec.load_data()
-    ssec.check_number_of_data()
-    print(ssec.get_vad_coordinates_of_labels())
-    #print(data)
+    # print("---- SSEC ----")
+    # ssec = SSECLoader()
+    # data = ssec.load_data()
+    # ssec.check_number_of_data()
+    # print(ssec.get_vad_coordinates_of_labels())
+    # #print(data)
 
     print("---- IEMOCAPCAT ----")
     iemocapcat = IEMOCAPCatLoader()
     data = iemocapcat.load_data()
     iemocapcat.check_number_of_data()
     print(iemocapcat.get_vad_coordinates_of_labels())
-    # print(data)
+    # # print(data)
 
-    print("---- IEMOCAPVAD ----")
-    iemocapvad = IEMOCAPVADLoader()
-    data = iemocapvad.load_data()
-    iemocapvad.check_number_of_data()
-    # print(data)
+    # print("---- IEMOCAPVAD ----")
+    # iemocapvad = IEMOCAPVADLoader()
+    # data = iemocapvad.load_data()
+    # iemocapvad.check_number_of_data()
+    # # print(data)
+
+    print("---- GOEMOTIONS ----")
+    goemotions = GOEMOTIONSLoader()
+    data = goemotions.load_data()
+    goemotions.check_number_of_data()
+    # print(len(data['test']['label']))
 
 
 if __name__ == "__main__":

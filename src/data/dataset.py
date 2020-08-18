@@ -7,7 +7,7 @@ from torch.utils.data import (
     TensorDataset
     )
 
-from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader
+from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader, GOEMOTIONSLoader
 
 
 class EmotionDataset():
@@ -25,6 +25,8 @@ class EmotionDataset():
             self.loader = ISEARLoader()
         elif self.args['dataset'] == 'ssec':
             self.loader = SSECLoader()
+        elif self.args['dataset'] == 'goemotions':
+            self.loader = GOEMOTIONSLoader()
 
     def load_label_names_and_vads(self):
         return self.loader.labels, self.loader.get_vad_coordinates_of_labels()

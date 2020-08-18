@@ -231,37 +231,44 @@ class Trainer():
 
     def _set_loss(self):
         if self.args['task'] == 'category-classification':
-            assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
+            assert self.args['dataset'] in ['semeval', 'ssec', 'isear', 'goemotions']
             if self.args['dataset'] == 'semeval': # multi-labeled
                 self.loss = torch.nn.BCEWithLogitsLoss()
             elif self.args['dataset'] == 'ssec': # multi-labeled
                 self.loss = torch.nn.BCEWithLogitsLoss()
             elif self.args['dataset'] == 'isear': # single-labeled
                 self.loss = torch.nn.CrossEntropyLoss()
+            elif self.args['dataset'] == 'goemotions': # multi-labeled
+                self.loss = torch.nn.BCEWithLogitsLoss()
+            
 
         elif self.args['task'] == 'vad-regression':
             assert self.args['dataset'] in ['emobank']
             self.loss = nn.MSELoss()
 
         elif self.args['task'] == 'vad-from-categories':
-            assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
+            assert self.args['dataset'] in ['semeval', 'ssec', 'isear', 'goemotions']
             if self.args['dataset'] == 'semeval': # multi-labeled
                 self.loss = EMDLoss(self.args, label_type='multi')
             elif self.args['dataset'] == 'ssec': # multi-labeled
                 self.loss = EMDLoss(self.args, label_type='multi')
             elif self.args['dataset'] == 'isear': # single-labeled
                 self.loss = EMDLoss(self.args, label_type='single')
+            elif self.args['dataset'] == 'goemotions': # multi-labeled
+                self.loss = EMDLoss(self.args, label_type='multi')
 
 
     def _set_prediction(self):
-        assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
+        assert self.args['dataset'] in ['semeval', 'ssec', 'isear', 'goemotions']
         if self.args['dataset'] == 'semeval': # multi-labeled
             self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
         elif self.args['dataset'] == 'ssec': # multi-labeled
             self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
         elif self.args['dataset'] == 'isear': # single-labeled
             self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='single')
-
+        elif self.args['dataset'] == 'goemotions': # multi-labeled
+            self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
+        
 
     def _set_eval_layers(self):
         self.softmax = nn.Softmax(dim=1)
@@ -272,7 +279,7 @@ class Trainer():
         if self.args['task'] == 'vad-regression':
             logits = F.relu(logits)
         if self.args['task'] == 'category-classification':
-            if self.args['dataset'] == 'semeval' or self.args['dataset'] == 'ssec': # multi-labeled
+            if self.args['dataset'] == 'semeval' or self.args['dataset'] == 'ssec' or self.args['dataset'] == 'goemotions' : # multi-labeled
                 labels = labels.type_as(logits)
         return self.loss(logits, labels)
 
@@ -361,7 +368,7 @@ class Trainer():
             if eval_type == 'vad':
                 metrics = self._compute_vad_eval_metrics(metrics, predictions, labels)
             else: # eval_type == 'cat':
-                if self.args['dataset'] in ['semeval', 'ssec']: # multi-labeled
+                if self.args['dataset'] in ['semeval', 'ssec', 'goemotions']: # multi-labeled
                     add_jaccard_score = True
                 elif self.args['dataset'] == 'isear': # single-labeled
                     add_jaccard_score = False
@@ -373,7 +380,7 @@ class Trainer():
         
         # 3. category-classification ------------------------------------------------
         elif self.args['task'] == 'category-classification':
-            if self.args['dataset'] in ['semeval', 'ssec']: # multi-labeled
+            if self.args['dataset'] in ['semeval', 'ssec', 'goemotions']: # multi-labeled
                 add_jaccard_score = True
             elif self.args['dataset'] == 'isear': # single-labeled
                 add_jaccard_score = False
@@ -423,7 +430,7 @@ class Trainer():
                         predictions = self.convert_logits_to_predictions(logits, predict='cat')         # vad 
 
                 elif self.args['task'] == 'category-classification':
-                    assert self.args['dataset'] in ['semeval', 'ssec', 'isear']
+                    assert self.args['dataset'] in ['semeval', 'ssec', 'isear', 'goemotions']
                     if self.args['dataset'] == 'semeval': # multi-labeled
                         predictions = self.sigmoid(logits) >= 0.5
                         predictions = torch.squeeze(predictions.float()) 
@@ -433,6 +440,9 @@ class Trainer():
                     elif self.args['dataset'] == 'isear': # single-labeled
                         predictions = self.softmax(logits)
                         predictions = torch.max(predictions, 1)[1] # argmax along dim=1
+                    elif self.args['dataset'] == 'goemotions': # multi-labeled
+                        predictions = self.sigmoid(logits) >= 0.5
+                        predictions = torch.squeeze(predictions.float())
 
                 total_predictions.append(predictions)
 
