@@ -32,6 +32,7 @@ class PretrainedLMModel(BertPreTrainedModel):
 
         # dropout
         self.dropout = nn.Dropout(self.config.hidden_dropout_prob)
+        self.projection_lm = nn.Linear(self.config.hidden_size, self.config.vocab_size, bias=False)
 
         # classification/regression head
         if self.args['task'] != "vad-from-categories":
@@ -68,10 +69,12 @@ class PretrainedLMModel(BertPreTrainedModel):
         # loading pretrained weights
         hidden_states, pooled_output = lm_outputs
 
+        lm_logits = self.projection_lm(hidden_states)
+
         # add head over [CLS] token
         # ramdomly initialized layers
         pooled_output = self.dropout(pooled_output)
         logits = self.head(pooled_output)
 
-        return logits
+        return lm_logits, logits
 

@@ -7,7 +7,7 @@ from torch.utils.data import (
     TensorDataset
     )
 
-from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader, GOEMOTIONSLoader
+from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader, GOEMOTIONSLoader, GOEMOTIONSEkmanLoader
 
 
 class EmotionDataset():
@@ -27,6 +27,8 @@ class EmotionDataset():
             self.loader = SSECLoader()
         elif self.args['dataset'] == 'goemotions':
             self.loader = GOEMOTIONSLoader()
+        elif self.args['dataset'] =='ekman':
+            self.loader = GOEMOTIONSEkmanLoader()
 
     def load_label_names_and_vads(self):
         return self.loader.labels, self.loader.get_vad_coordinates_of_labels()
@@ -62,6 +64,7 @@ class EmotionDataset():
                                 pad_to_max_length = True,
                                 return_attention_mask = True,   # Construct attn. masks.
                                 return_tensors = 'pt',     # Return pytorch tensors.
+                                truncation=True
                         )
             
             # Add the encoded sentence to the list.    
