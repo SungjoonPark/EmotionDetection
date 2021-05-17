@@ -4,7 +4,8 @@ from torch.utils.data import (
     DataLoader,
     RandomSampler, 
     SequentialSampler, 
-    TensorDataset
+    TensorDataset,
+    SubsetRandomSampler,
     )
 
 from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader, GOEMOTIONSLoader, GOEMOTIONSEkmanLoader
@@ -126,15 +127,33 @@ class EmotionDataset():
                 data_dict[split_name]['label'])
 
             if split_name != 'train':
-                sampler = SequentialSampler
+                sampler = SequentialSampler(dataset)
                 batch_size = self.args['eval_batch_size']
+                # sampler = SequentialSampler
+                # batch_size = self.args['eval_batch_size']
             else:
-                sampler = RandomSampler
-                batch_size = self.args['train_batch_size']
+                # sampler = RandomSampler
+                # batch_size = self.args['train_batch_size']
+                if self.args['few_shot_ratio'] == 1:
+                    sampler = RandomSampler(dataset)
+                    batch_size = self.args['train_batch_size']
+                else:
+                    print("dataset length is",len(dataset) )
+                    subset = int(len(dataset) * self.args['few_shot_ratio'])
+                    print("subset is ", subset)
+                    # dataset = dataset[:subset]
+                    # print("dataset subset", dataset[:subset])
+                    # print("dataset length after is",len(dataset) )
+                    # sampler = RandomSampler(dataset[:subset])
+                    # indices = torch.randperm(len(dataset))[:subset]
+                    indices = torch.arange(0,subset)
+                    print("indices", indices)
+                    sampler = SubsetRandomSampler(indices)
+                    batch_size = self.args['train_batch_size']
 
             dataloader = DataLoader(
                 dataset,
-                sampler = sampler(dataset),
+                sampler = sampler,
                 batch_size = batch_size,
             #    shuffle = True, # sampler option is mutually exclusive with shuffle
             )
