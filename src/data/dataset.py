@@ -8,7 +8,7 @@ from torch.utils.data import (
     SubsetRandomSampler,
     )
 
-from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader, GOEMOTIONSLoader, GOEMOTIONSEkmanLoader
+from data.loader import EmobankLoader, SemEvalLoader, ISEARLoader, SSECLoader, GOEMOTIONSLoader, GOEMOTIONSEkmanLoader, IEMOCAPVADLoader
 
 
 class EmotionDataset():
@@ -30,6 +30,8 @@ class EmotionDataset():
             self.loader = GOEMOTIONSLoader()
         elif self.args['dataset'] =='ekman':
             self.loader = GOEMOTIONSEkmanLoader()
+        elif self.args['dataset'] =='iemocap':
+            self.loader = IEMOCAPVADLoader()
 
     def load_label_names_and_vads(self):
         return self.loader.labels, self.loader.get_vad_coordinates_of_labels()

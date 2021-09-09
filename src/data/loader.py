@@ -50,9 +50,11 @@ class EmotionDatasetLoader():
 
     def _get_emotion_label_VAD_scores(self):
         vad_score_dict = {}
-        dir_path = os.path.join(self.rel_path, "./../../data/NRC-VAD/")
+        # dir_path = os.path.join(self.rel_path, "./../../data/NRC-VAD/")
+        dir_path = os.path.join(self.rel_path, "./../../data/ANEW/")
         vad_scores = pd.read_csv(
-            dir_path + "NRC-VAD-Lexicon.txt", sep='\t', index_col='Word')
+            # dir_path + "NRC-VAD-Lexicon.txt", sep='\t', index_col='Word')
+            dir_path + "anew.txt", sep=',', index_col='Word')
         for w, (v, a, d) in vad_scores.iterrows():
             vad_score_dict[w] = (round(v, 3), round(a, 3), round(d, 3))
         return vad_score_dict
@@ -823,11 +825,11 @@ def main():
     # print(data['test']['label'])
     # print(data)
 
-    print("---- ISEAR ----")
-    isear = ISEARLoader()
-    data = isear.load_data()
-    isear.check_number_of_data()
-    print(isear.get_vad_coordinates_of_labels())
+    # print("---- ISEAR ----")
+    # isear = ISEARLoader()
+    # data = isear.load_data()
+    # isear.check_number_of_data()
+    # print(isear.get_vad_coordinates_of_labels())
     # # print(data)
 
     # print("---- SSEC ----")
@@ -844,10 +846,10 @@ def main():
     # print(iemocapcat.get_vad_coordinates_of_labels())
     # # print(data)
 
-    # print("---- IEMOCAPVAD ----")
-    # iemocapvad = IEMOCAPVADLoader()
-    # data = iemocapvad.load_data()
-    # iemocapvad.check_number_of_data()
+    print("---- IEMOCAPVAD ----")
+    iemocapvad = IEMOCAPVADLoader()
+    data = iemocapvad.load_data()
+    iemocapvad.check_number_of_data()
     # # print(data)
 
     print("---- GOEMOTIONS ----")

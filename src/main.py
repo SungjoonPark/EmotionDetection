@@ -17,6 +17,7 @@ from data import (
     EmotionDataset,
     GOEMOTIONSLoader,
     GOEMOTIONSEkmanLoader,
+    IEMOCAPVADLoader,
 )
 
 from models import (
@@ -71,7 +72,7 @@ class SingleDatasetTrainer():
     def _check_args(self, args):
         assert args['task'] in ['category-classification', 'vad-regression', 'vad-from-categories']
         assert args['model'] in ['bert', 'roberta']
-        assert args['dataset'] in ['semeval', 'emobank', 'isear', 'ssec', 'goemotions', 'ekman']
+        assert args['dataset'] in ['semeval', 'emobank', 'isear', 'ssec', 'goemotions', 'ekman', 'iemocap']
         assert args['load_model'] in ['pretrained_lm', 'fine_tuned_lm']
         assert args['label-type'] in ['categorical', 'dimensional']
         assert args['optimizer_type'] in ['legacy', 'trans']
@@ -355,7 +356,8 @@ class SingleDatasetTrainer():
         if self.args['task'] == "vad-from-categories":
             print("Build emobank for valid/test", flush=True)
             args_ = self.args.copy()
-            args_['dataset'] = 'emobank'
+            args_['dataset'] = 'emobank'    
+            # args_['dataset'] = 'iemocap'
             d = EmotionDataset(args_)
             dataset = d.build_datasets(tokenizer)
             eb_train_loader, eb_valid_loader, eb_test_loader = d.build_dataloaders(dataset)
@@ -404,7 +406,8 @@ class SingleDatasetTrainer():
                     else: 
                         if self.n_epoch == self.args['max_freeze_epoch'] and lr_switch==0:
                             for g in optimizer.param_groups:
-                                g['lr'] = float(sys.argv[10])
+                                # g['lr'] = float(sys.argv[10])
+                                g['lr'] = 5e-06
                             lr_switch = 1
                         print("epoch enter", self.n_epoch)
                         for para2 in model.parameters():
@@ -425,7 +428,7 @@ class SingleDatasetTrainer():
                 self.accumulated_loss += loss
 
                 # backward
-                print('Epoch-{0} lr: {1}'.format(self.n_epoch, optimizer.param_groups[0]['lr']))
+                # print('Epoch-{0} lr: {1}'.format(self.n_epoch, optimizer.param_groups[0]['lr']))
                 self.accumulated_loss, self.n_updates = self.backward_step(
                     it, 
                     self.n_updates,
@@ -489,19 +492,21 @@ def main():
 
     args = {
 
-        'CUDA_VISIBLE_DEVICES': sys.argv[8],
- 
+        'CUDA_VISIBLE_DEVICES': '1',
+
         # task and models
-        'csv_file_name': sys.argv[1], #"isear_vad_lr2e05_3", #"semeval_vad_lr2e05_5",  # 
-        'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']
-        'label-type': 'dimensional', # ['categorical', 'dimensional']
+        'csv_file_name': 'semeval_anew', #"isear_vad_lr2e05_3", #"semeval_vad_lr2e05_5",  # 
+        'task': 'vad-from-categories', # ['category-classification', 'vad-regression', 'vad-from-categories']
+        'label-type': 'categorical', # ['categorical', 'dimensional']
         'model': 'roberta', # ['bert', 'roberta'],
         'load_pretrained_lm_weights': True, # if false, only using architecture, randomly init weights.
-        'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec', 'goemotions', 'ekman']
+        'dataset': 'semeval', # ['semeval', 'emobank', 'isear', 'ssec', 'goemotions', 'ekman']
         'load_model': 'pretrained_lm', # else: fine_tuned_lm
         'use_emd': True, # if False, use Cross-entropy loss (only valid for vad-from-categories)
-        'max_freeze_epoch': int(sys.argv[7]),
-        'few_shot_ratio': float(sys.argv[6]),
+        # 'max_freeze_epoch': int(sys.argv[7]),
+        # 'few_shot_ratio': float(sys.argv[6]),
+        'max_freeze_epoch': -1,
+        'few_shot_ratio': 1,
 
         # memory-args
         'max_seq_len': 256,
@@ -511,27 +516,35 @@ def main():
 
         # optim-args
         'optimizer_type' : 'legacy', # ['legacy', 'trans']
-        'learning_rate': float(sys.argv[9]),
+        # 'learning_rate': float(sys.argv[9]),
         # 'learning_rate': 1e-05,
-        # 'learning_rate': 3e-05,
+        'learning_rate': 3e-05,
         # 'learning_rate' : 5e-06,
-        # 'total_n_updates': 100000,
-        'total_n_updates': int(sys.argv[12]),
-        'max_epoch': int(sys.argv[13]),
-        'warmup_proportion': float(sys.argv[11]),
-        # 'warmup_proportion': 0.1,
+        'total_n_updates': 100000,
+        # 'total_n_updates': int(sys.argv[12]),
+        'max_epoch': 20,
+        # 'max_epoch': int(sys.argv[13]),
+        # 'warmup_proportion': float(sys.argv[11]),
+        'warmup_proportion': 0.1,
         # 'warmup_proportion': 0,
         # 'warmup_proportion': 0,
         'clip_grad': 1.0,
 
         # save & load args
-        'save_model': False,
-        'load_dataset': sys.argv[2],
+        # 'save_model': False,
+        # 'load_dataset': sys.argv[2],
+        # 'load_task': 'vad-from-categories',
+        # 'load_ckeckpoint': parse_boolean(sys.argv[5]),
+        # 'load_optimizer': False,
+        # 'load_n_epoch': int(sys.argv[3]),
+        # 'load_n_it': int(sys.argv[4]),
+        'save_model': True,
+        'load_dataset': 'semeval',
         'load_task': 'vad-from-categories',
-        'load_ckeckpoint': parse_boolean(sys.argv[5]),
+        'load_ckeckpoint': False,
         'load_optimizer': False,
-        'load_n_epoch': int(sys.argv[3]),
-        'load_n_it': int(sys.argv[4]),
+        'load_n_epoch': 2,
+        'load_n_it': 2,
         'save_dir': "./data/private/Emotion/ckpt/trained/",
 
         # etc

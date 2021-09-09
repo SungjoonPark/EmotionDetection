@@ -107,6 +107,8 @@ class EMDLoss(torch.nn.Module):
         inter_emd_loss = torch.matmul(distance, torch.transpose(torch.square(
                 torch.cumsum(normalized_input_probs, dim=1) - torch.cumsum(normalized_label_probs, dim=1),
             ), 0, 1))
+
+        inter_emd_loss = torch.div(inter_emd_loss, 8)   
         return inter_emd_loss
 
 
@@ -485,6 +487,7 @@ class Trainer():
                 # 3. model predictions
                 if self.args['task'] == 'vad-regression':
                     predictions = F.relu(cls_logits) # vads
+                    print("predictions", predictions)
 
                 elif self.args['task'] == 'vad-from-categories':
                     if prediction_type == 'vad':
