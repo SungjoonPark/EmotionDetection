@@ -41,6 +41,7 @@ class PretrainedLMModel(BertPreTrainedModel):
 
         # classification/regression head
         if self.args.task == "vad-regression":
+            # baseline roberta case
             if self.args.load_ckeckpoint is False:
                 self.label_num = 1
                 self.loader = None
@@ -60,6 +61,7 @@ class PretrainedLMModel(BertPreTrainedModel):
                 self.label_num * 3
             )
 
+            # initialize head weight for each dimension (V,A,D)
             if self.loader is not None:
                 self.category_label_names = self.loader.labels
                 self.category_label_vads = self.loader.get_vad_coordinates_of_labels()
@@ -72,7 +74,6 @@ class PretrainedLMModel(BertPreTrainedModel):
                 self.v_sorted_values = torch.tensor(np.sort(v_scores).tolist()).to(self.args.device)
                 self.a_sorted_values = torch.tensor(np.sort(a_scores).tolist()).to(self.args.device)
                 self.d_sorted_values = torch.tensor(np.sort(d_scores).tolist()).to(self.args.device)
-                print("v sorted values", self.v_sorted_values)
 
                 self.v_head = nn.Linear(self.label_num, 1 ,bias=False)
                 self.v_head.weight = nn.Parameter(torch.unsqueeze(self.v_sorted_values, 0))
@@ -127,6 +128,7 @@ class PretrainedLMModel(BertPreTrainedModel):
         pooled_output = self.dropout(pooled_output)
         logits = self.head(pooled_output)
 
+        # additional head for VAD dimension
         if self.args.task == "vad-regression" and self.args.load_ckeckpoint is True:
             
             v_logit, a_logit, d_logit = torch.split(logits, self.label_num, dim=1) # logits for sorted (v, a, d)

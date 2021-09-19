@@ -428,7 +428,6 @@ class Trainer():
             if eval_type == 'vad':
                 metrics = self._compute_vad_eval_metrics(metrics, predictions, labels)
             else: # eval_type == 'cat':
-                print("dataset is", self.args.dataset)
                 if self.args.dataset in ['semeval', 'ssec', 'goemotions', 'ekman']: # multi-labeled
                     add_jaccard_score = True
                 elif self.args.dataset == 'isear': # single-labeled
@@ -522,7 +521,6 @@ class Trainer():
         total_predictions, total_labels, total_losses = predictions
 
         eval_loss = torch.mean(total_losses)
-        print("predcition", prediction_type)
         eval_metrics = self.compute_eval_metric(total_predictions, total_labels, eval_type=prediction_type)
 
         return eval_loss, eval_metrics, total_predictions.size()

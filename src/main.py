@@ -383,7 +383,6 @@ class SingleDatasetTrainer():
                 self.accumulated_loss += loss
 
                 # backward
-                print('Epoch-{0} lr: {1}'.format(self.n_epoch, optimizer.param_groups[0]['lr']))
                 self.accumulated_loss, self.n_updates = self.backward_step(
                     it, 
                     self.n_updates,
