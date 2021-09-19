@@ -1,0 +1,31 @@
+{
+    "CUDA_VISIBLE_DEVICES": "0",
+    "csv_file_name": "semeval_cat_lr3e05_20",
+    "task": "category-classification", 
+    "label_type": "categorical",
+    "model": "roberta", 
+    "load_pretrained_lm_weights": true,
+    "dataset": "semeval", 
+    "load_model": "pretrained_lm", 
+    "use_emd": true, 
+    "few_shot_ratio": 0.01,
+
+    "max_seq_len": 256,
+    "train_batch_size": 16,
+    "eval_batch_size": 16,
+    "update_freq": 4,
+
+    "optimizer_type" : "legacy", 
+    "learning_rate": 3e-05,
+    "total_n_updates": 10000,
+    "max_epoch": 20,
+    "warmup_proportion": 0.1,
+    "clip_grad": 1.0,
+
+    "save_model": true,
+    "load_ckeckpoint": false,
+    "load_optimizer": false,
+    "save_dir": "data/private/Emotion/ckpt/trained/",
+
+    "log_updates": false
+}

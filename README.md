@@ -25,15 +25,30 @@ In this work, We use four existing datasets consisting of text and corresponding
 ## Traning
 ## Dependencies Requirements
 ```bash
-pip install -e .
+pip install -r requirements.txt
 ```
-### Train the model Pretrained LMs and Classifiers
+### Running Baseline Model (Pretrained RoBERTa-Base)
+
+Classification
 ```bash
-python 
+python src/main.py --config configs/baseline/semeval_cat_classification.json
 ```
-#### our pretrained model
+
+Regression
 ```bash
-python 
+python src/main.py --config configs/baseline/emobank_dim_regression.json
+```
+
+#### Our Model
+
+Classification & Zeroshot VAD prediction
+```bash
+python src/main.py --config configs/semeval/vad_from_categories.json
+```
+
+Regression
+```bash
+python src/main.py --config configs/semeval/vad_regression.json
 ```
 ## Results
 

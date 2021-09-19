@@ -24,13 +24,10 @@ from models import (
     Trainer,
 )
 import argparse
+from argparse import ArgumentParser
+import json
 import sys
-
-# import apex
 import csv
-# from apex import amp
-# from apex.fp16_utils import *
-# from apex.multi_tensor_apply import multi_tensor_applier
 
 import logging
 logging.basicConfig(level=logging.ERROR)
@@ -42,12 +39,12 @@ class SingleDatasetTrainer():
 
     def __init__(self, args):
         # args
-        os.environ["CUDA_VISIBLE_DEVICES"]= args['CUDA_VISIBLE_DEVICES']
+        os.environ["CUDA_VISIBLE_DEVICES"]= args.CUDA_VISIBLE_DEVICES
         self._check_args(args)
         self.args = args
 
         # output file
-        self.csv_file_name = args['csv_file_name']
+        self.csv_file_name = args.csv_file_name
 
         # cache path
         self.cache_dir = "./../ckpt/"
@@ -56,31 +53,31 @@ class SingleDatasetTrainer():
 
         # dataset class
         self.dataset = EmotionDataset(args)
-        if args['task'] == 'vad-from-categories':
+        if args.task == 'vad-from-categories':
             label_names, label_vads = self.dataset.load_label_names_and_vads()
-            self.args['label_names'] = label_names
-            self.args['label_vads'] = label_vads
+            self.args.label_names = label_names
+            self.args.label_vads = label_vads
         else:
-            self.args['label_names'] = self.dataset.load_label_names()
+            self.args.label_names = self.dataset.load_label_names()
 
         # trainer class
         self.trainer = Trainer(args)
-        self.device = self.trainer.args['device']
+        self.device = self.trainer.args.device
         self.coef_step =0
 
     def _check_args(self, args):
-        assert args['task'] in ['category-classification', 'vad-regression', 'vad-from-categories']
-        assert args['model'] in ['bert', 'roberta']
-        assert args['dataset'] in ['semeval', 'emobank', 'isear', 'ssec', 'goemotions', 'ekman']
-        assert args['load_model'] in ['pretrained_lm', 'fine_tuned_lm']
-        assert args['label-type'] in ['categorical', 'dimensional']
-        assert args['optimizer_type'] in ['legacy', 'trans']
+        assert args.task in ['category-classification', 'vad-regression', 'vad-from-categories']
+        assert args.model in ['bert', 'roberta']
+        assert args.dataset in ['semeval', 'emobank', 'isear', 'ssec', 'goemotions', 'ekman']
+        assert args.load_model in ['pretrained_lm', 'fine_tuned_lm']
+        assert args.label_type in ['categorical', 'dimensional']
+        assert args.optimizer_type in ['legacy', 'trans']
 
 
     def _set_model_args(self):
-        if self.args['model'] == 'bert':
+        if self.args.model == 'bert':
             model_name = 'bert-large-cased-whole-word-masking'
-        elif self.args['model'] == 'roberta':
+        elif self.args.model == 'roberta':
             model_name = 'roberta-large'
         cache_path = self.cache_dir + model_name
         if not os.path.exists(cache_path): 
@@ -98,9 +95,9 @@ class SingleDatasetTrainer():
 
     def load_tokenizer(self):
         model_name, cache_path = self._set_model_args()
-        if self.args['model'] == 'bert':
+        if self.args.model == 'bert':
             Tokenizer = BertTokenizer
-        elif self.args['model'] == 'roberta':
+        elif self.args.model == 'roberta':
             Tokenizer = RobertaTokenizer
         tokenizer = Tokenizer.from_pretrained(
             model_name, 
@@ -111,11 +108,11 @@ class SingleDatasetTrainer():
     def load_model(self):
         model_name, cache_path = self._set_model_args()
 
-        if self.args['model'] == 'bert':
+        if self.args.model == 'bert':
             config = BertConfig.from_pretrained(
                 model_name, 
                 cache_dir=cache_path+'/model/config/')
-        elif self.args['model'] == 'roberta':
+        elif self.args.model == 'roberta':
             config = RobertaConfig.from_pretrained(
                 model_name, 
                 cache_dir=cache_path+'/model/config/')
@@ -140,16 +137,14 @@ class SingleDatasetTrainer():
 
 
     def set_optimizer(self, model):
-        if self.args['optimizer_type'] == 'trans':
+        if self.args.optimizer_type == 'trans':
             optim, lr_scheduler = self.trainer.set_optimizer(model.parameters())
-        else : # self.args['optimizer_type'] == 'legacy':
+        else : # self.args.optimizer_type == 'legacy':
             optim, lr_scheduler = self.trainer.set_legacy_optimizer(model.parameters())
         return optim, lr_scheduler
 
 
     def backward_step(self, it, n_updates, model, loss, accumulated_loss, optimizer, lr_scheduler):
-        # with amp.scale_loss(loss, optimizer) as scaled_loss:
-        #     scaled_loss.backward()
         accumulated_loss = self.trainer.backward_step(
             it, 
             n_updates,
@@ -160,36 +155,6 @@ class SingleDatasetTrainer():
             lr_scheduler
         )
         return accumulated_loss
-
-
-    def evaluate(self, 
-                 model, 
-                 valid_loader, 
-                 test_loader, 
-                 prediction_type=None,
-                 compute_loss=True):
-        valid_loss, valid_metrics, valid_size = self.trainer.evaluate(
-            model, 
-            valid_loader, 
-            prediction_type,
-            compute_loss)
-        test_loss, test_metrics, test_size = self.trainer.evaluate(
-            model, 
-            test_loader, 
-            prediction_type,
-            compute_loss)
-
-        pp.pprint([
-            "Evaluation:",
-            self.n_updates,
-            valid_loss.item(),
-            valid_metrics,
-            valid_size,
-            test_loss.item(),
-            test_metrics,
-            test_size
-            ])
-        print("", flush=True)
 
     def evaluate_save_result(self,
                  epoch,
@@ -239,7 +204,7 @@ class SingleDatasetTrainer():
                 valid_size,
                 test_loss.item(),
                 test_metrics,
-                test_size, self.args['dataset'])
+                test_size, self.args.dataset)
 
         print("", flush=True)
 
@@ -297,11 +262,11 @@ class SingleDatasetTrainer():
 
     def save_model(self, model, optimizer):
         ckpt_name = "-".join([
-            self.args['dataset'], 
-            self.args['task'],
+            self.args.dataset, 
+            self.args.task,
             str(self.n_updates),
             str(self.n_epoch)]) + ".ckpt"
-        save_path = self.args['save_dir'] + ckpt_name
+        save_path = self.args.save_dir + ckpt_name
         print("Saving Model to:", save_path)
         save_state = {
             'n_updates': self.n_updates,
@@ -318,11 +283,11 @@ class SingleDatasetTrainer():
     def load_model_from_ckeckpoint(self, n_updates, n_epoch, model, optimizer):
         # 1. set path and load states
         ckpt_name = "-".join([
-            self.args['load_dataset'], 
-            self.args['load_task'],
+            self.args.load_dataset, 
+            self.args.load_task,
             str(n_updates),
             str(n_epoch)]) + ".ckpt"
-        save_path = self.args['save_dir'] + ckpt_name
+        save_path = self.args.save_dir + ckpt_name
         print("Loading Model from:", save_path)
         state = torch.load(save_path)
         
@@ -334,7 +299,7 @@ class SingleDatasetTrainer():
         model.load_state_dict(model_dict, strict=False)
 
         # 3. recover optim state
-        if self.args['load_optimizer']:
+        if self.args.load_optimizer:
             optimizer.load_state_dict(state['optimizer'])
 
         self.n_updates = 0 # renewed
@@ -350,37 +315,32 @@ class SingleDatasetTrainer():
         tokenizer = self.load_tokenizer()
         dataset = self.dataset.build_datasets(tokenizer)
         train_loader, valid_loader, test_loader = self.dataset.build_dataloaders(dataset)
-        print("Dataset Loaded:", self.args['dataset'], "with labels:", self.dataset.load_label_names())
+        print("Dataset Loaded:", self.args.dataset, "with labels:", self.dataset.load_label_names())
         
-        if self.args['task'] == "vad-from-categories":
+        if self.args.task == "vad-from-categories":
             print("Build emobank for valid/test", flush=True)
-            args_ = self.args.copy()
-            args_['dataset'] = 'emobank'
+            args_ = argparse.Namespace(**vars(self.args))
+            args_.dataset = 'emobank'
             d = EmotionDataset(args_)
             dataset = d.build_datasets(tokenizer)
             eb_train_loader, eb_valid_loader, eb_test_loader = d.build_dataloaders(dataset)
-            print("Dataset Loaded:", args_['dataset'], "with labels:", d.load_label_names())
+            print("Dataset Loaded:", args_.dataset, "with labels:", d.load_label_names())
 
         # 2. build/load models
         print("build/load models", flush=True)
         model, config = self.load_model()
-        #print(model, flush=True)
-        print(config, flush=True)
-        #print(config.args["labels"])
         optimizer, lr_scheduler = self.set_optimizer(model)
 
         self.set_train_vars()
-        if self.args['load_ckeckpoint']:
+        if self.args.load_ckeckpoint:
             model, optimizer = self.load_model_from_ckeckpoint(
-                self.args['load_n_it'], 
-                self.args['load_n_epoch'], 
+                self.args.load_n_it, 
+                self.args.load_n_epoch, 
                 model, 
                 optimizer)
-        
-        # model, optimizer = amp.initialize(model, optimizer, opt_level="O2", loss_scale="dynamic") 
 
-        if len(self.args['CUDA_VISIBLE_DEVICES'].split(',')) > 1:
-            device_list = self.args['CUDA_VISIBLE_DEVICES'].split(',')
+        if len(self.args.CUDA_VISIBLE_DEVICES.split(',')) > 1:
+            device_list = self.args.CUDA_VISIBLE_DEVICES.split(',')
             print("Using %d GPUs now" % len(device_list))
             map_object = map(int, device_list)
             print("Using GPU list of", list(map_object))
@@ -389,24 +349,22 @@ class SingleDatasetTrainer():
         optimizer.zero_grad()
         lr_switch = 0
 
-        while self.n_updates != self.args['total_n_updates'] and self.n_epoch != self.args['max_epoch']:
+        while self.n_updates != self.args.total_n_updates and self.n_epoch != self.args.max_epoch:
 
             for it, train_batch in enumerate(train_loader):
                 model.train() 
-                if self.args['task'] == "vad-regression":
-                    if self.n_epoch < self.args['max_freeze_epoch']:
-                        print("unfreeze")
+                if self.args.task == "vad-regression" and self.args.load_ckeckpoint is True:
+                    if self.n_epoch < self.args.max_freeze_epoch:
                         for para in model.parameters():
                             para.requires_grad = False
                         model.v_head.weight.requires_grad = True
                         model.a_head.weight.requires_grad = True
                         model.d_head.weight.requires_grad = True
                     else: 
-                        if self.n_epoch == self.args['max_freeze_epoch'] and lr_switch==0:
+                        if self.n_epoch == self.args.max_freeze_epoch and lr_switch==0:
                             for g in optimizer.param_groups:
-                                g['lr'] = float(sys.argv[10])
+                                g['lr'] = self.args.learning_rate_unfreeze
                             lr_switch = 1
-                        print("epoch enter", self.n_epoch)
                         for para2 in model.parameters():
                             para2.requires_grad = True
                 
@@ -438,10 +396,9 @@ class SingleDatasetTrainer():
                 self.coef_step +=1
 
                 # evaluation
-                # if it == 0  : # eval every epoch
                 if it == 0 and self.n_updates != 0 : # eval (and save) every epoch
                     self.n_epoch += 1; print("Epoch:", self.n_epoch, flush=True)
-                    if self.args['task'] == 'vad-from-categories':
+                    if self.args.task == 'vad-from-categories':
                         self.evaluate_save_result(
                             self.n_epoch,
                             self.csv_file_name,
@@ -457,7 +414,7 @@ class SingleDatasetTrainer():
                             eb_test_loader,
                             prediction_type='vad',
                             compute_loss=False)
-                    elif self.args['task'] == 'vad-regression':
+                    elif self.args.task == 'vad-regression':
                         self.evaluate_save_result(
                             self.n_epoch,
                             self.csv_file_name,
@@ -473,70 +430,24 @@ class SingleDatasetTrainer():
                             valid_loader, 
                             test_loader)
                     
-                    if self.args['save_model']:
+                    if self.args.save_model:
                         self.save_model(model, optimizer)
 
-                if self.n_updates == self.args['total_n_updates']: break
-                if self.n_epoch == self.args['max_epoch']: break
+                if self.n_updates == self.args.total_n_updates: break
+                if self.n_epoch == self.args.max_epoch: break
                 
-def parse_boolean(argument):
-    if argument == 'True':
-        return True
-    elif argument == 'False':
-        return False
 
 def main():
+    parser = ArgumentParser()
+    parser.add_argument('--config', default=None, type=str)
+    arg_ = parser.parse_args()
+    if arg_.config == None:
+        raise NameError("Include a config file in the argument please.")
 
-    args = {
-
-        'CUDA_VISIBLE_DEVICES': sys.argv[8],
- 
-        # task and models
-        'csv_file_name': sys.argv[1], #"isear_vad_lr2e05_3", #"semeval_vad_lr2e05_5",  # 
-        'task': 'vad-regression', # ['category-classification', 'vad-regression', 'vad-from-categories']
-        'label-type': 'dimensional', # ['categorical', 'dimensional']
-        'model': 'roberta', # ['bert', 'roberta'],
-        'load_pretrained_lm_weights': True, # if false, only using architecture, randomly init weights.
-        'dataset': 'emobank', # ['semeval', 'emobank', 'isear', 'ssec', 'goemotions', 'ekman']
-        'load_model': 'pretrained_lm', # else: fine_tuned_lm
-        'use_emd': True, # if False, use Cross-entropy loss (only valid for vad-from-categories)
-        'max_freeze_epoch': int(sys.argv[7]),
-        'few_shot_ratio': float(sys.argv[6]),
-
-        # memory-args
-        'max_seq_len': 256,
-        'train_batch_size': 16,
-        'eval_batch_size': 16,
-        'update_freq': 4,
-
-        # optim-args
-        'optimizer_type' : 'legacy', # ['legacy', 'trans']
-        'learning_rate': float(sys.argv[9]),
-        # 'learning_rate': 1e-05,
-        # 'learning_rate': 3e-05,
-        # 'learning_rate' : 5e-06,
-        # 'total_n_updates': 100000,
-        'total_n_updates': int(sys.argv[12]),
-        'max_epoch': int(sys.argv[13]),
-        'warmup_proportion': float(sys.argv[11]),
-        # 'warmup_proportion': 0.1,
-        # 'warmup_proportion': 0,
-        # 'warmup_proportion': 0,
-        'clip_grad': 1.0,
-
-        # save & load args
-        'save_model': False,
-        'load_dataset': sys.argv[2],
-        'load_task': 'vad-from-categories',
-        'load_ckeckpoint': parse_boolean(sys.argv[5]),
-        'load_optimizer': False,
-        'load_n_epoch': int(sys.argv[3]),
-        'load_n_it': int(sys.argv[4]),
-        'save_dir': "./data/private/Emotion/ckpt/trained/",
-
-        # etc
-        'log_updates': False,
-    }
+    #Getting configurations
+    with open(arg_.config) as config_file:
+        args = json.load(config_file)
+    args = argparse.Namespace(**args)
 
     sdt = SingleDatasetTrainer(args)
     sdt.train()

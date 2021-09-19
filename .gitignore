@@ -10,3 +10,9 @@ src/etc/
 
 # logs
 *.txt
+
+# result file
+csv_result
+
+# ckpt files
+data/private

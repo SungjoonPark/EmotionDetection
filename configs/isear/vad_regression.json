@@ -1,0 +1,37 @@
+{
+    "CUDA_VISIBLE_DEVICES": "0",
+    "csv_file_name": "isear_reg_lr3e03_20",
+    "task": "vad-regression", 
+    "label_type": "dimensional",
+    "model": "roberta", 
+    "load_pretrained_lm_weights": true,
+    "dataset": "emobank", 
+    "load_model": "pretrained_lm", 
+    "use_emd": true, 
+    "max_freeze_epoch": 5,
+    "few_shot_ratio": 1,
+
+    "max_seq_len": 256,
+    "train_batch_size": 16,
+    "eval_batch_size": 16,
+    "update_freq": 4,
+
+    "optimizer_type" : "legacy", 
+    "learning_rate": 3e-03,
+    "learning_rate_unfreeze": 5e-06,
+    "total_n_updates": 10000,
+    "max_epoch": 20,
+    "warmup_proportion": 0.001,
+    "clip_grad": 1.0,
+
+    "save_model": false,
+    "load_dataset": "isear",
+    "load_task": "vad-from-categories",
+    "load_ckeckpoint": true,
+    "load_optimizer": false,
+    "load_n_epoch": 1,
+    "load_n_it": 1,
+    "save_dir": "data/private/Emotion/ckpt/trained/",
+
+    "log_updates": false
+}

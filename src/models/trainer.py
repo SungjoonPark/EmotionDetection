@@ -38,33 +38,30 @@ class EMDLoss(torch.nn.Module):
             self.activation = nn.Sigmoid()
             self.ce_loss = torch.nn.BCEWithLogitsLoss()
 
-        self.category_label_vads = self.args['label_vads']
-        self.category_label_names = self.args['label_names']
+        self.category_label_vads = self.args.label_vads
+        self.category_label_names = self.args.label_names
         self._sort_labels()
 
         self.eps = 1e-05
 
 
     def _check_args(self):
-        assert self.args['task'] == 'vad-from-categories'
+        assert self.args.task == 'vad-from-categories'
         assert self.label_type in ['single', 'multi']
-        assert self.args['label_vads'] is not None
-        assert self.args['label_names'] is not None
+        assert self.args.label_vads is not None
+        assert self.args.label_names is not None
 
 
     def _sort_labels(self):
         v_scores = [self.category_label_vads[key][0] for key in self.category_label_names]
-        self.v_sorted_idxs = torch.tensor(np.argsort(v_scores).tolist()).to(self.args['device'])
+        self.v_sorted_idxs = torch.tensor(np.argsort(v_scores).tolist()).to(self.args.device)
         a_scores = [self.category_label_vads[key][1] for key in self.category_label_names]
-        self.a_sorted_idxs = torch.tensor(np.argsort(a_scores).tolist()).to(self.args['device'])
+        self.a_sorted_idxs = torch.tensor(np.argsort(a_scores).tolist()).to(self.args.device)
         d_scores = [self.category_label_vads[key][2] for key in self.category_label_names]
-        self.d_sorted_idxs = torch.tensor(np.argsort(d_scores).tolist()).to(self.args['device'])
-        self.v_sorted_values = torch.tensor(np.sort(v_scores).tolist()).to(self.args['device'])
-        self.a_sorted_values = torch.tensor(np.sort(a_scores).tolist()).to(self.args['device'])
-        self.d_sorted_values = torch.tensor(np.sort(d_scores).tolist()).to(self.args['device'])
-        # print("sorted value v", self.v_sorted_values)
-        # print("sorted value a", self.a_sorted_values)
-        # print("sorted value d", self.d_sorted_values)
+        self.d_sorted_idxs = torch.tensor(np.argsort(d_scores).tolist()).to(self.args.device)
+        self.v_sorted_values = torch.tensor(np.sort(v_scores).tolist()).to(self.args.device)
+        self.a_sorted_values = torch.tensor(np.sort(a_scores).tolist()).to(self.args.device)
+        self.d_sorted_values = torch.tensor(np.sort(d_scores).tolist()).to(self.args.device)
 
     def _sort_labels_by_vad_coordinates(self, labels):
         v_labels = torch.index_select(labels, 1, self.v_sorted_idxs)
@@ -117,14 +114,14 @@ class EMDLoss(torch.nn.Module):
         """
 
         if self.label_type == 'single':
-            label_one_hot = torch.eye(len(self.category_label_names)).to(self.args['device'])
+            label_one_hot = torch.eye(len(self.category_label_names)).to(self.args.device)
             labels = label_one_hot[labels]
 
         split_logits = torch.split(logits, len(self.category_label_names), dim=1) # logits for sorted (v, a, d)
         sorted_labels = self._sort_labels_by_vad_coordinates(labels)              # labels for sorted (v, a, d)
         distance_labels = self._set_vad_distance_matrix()
 
-        if self.args['use_emd']:
+        if self.args.use_emd:
             losses = []
             for logit, sorted_label, distance_label in zip(split_logits, sorted_labels, distance_labels):
                 input_probs = self.activation(logit)
@@ -135,7 +132,7 @@ class EMDLoss(torch.nn.Module):
             loss = torch.mean(torch.stack(losses, dim=1), dim=1)
 
         else: # using ce loss
-            losses = torch.tensor(0.0).to(self.args['device'])
+            losses = torch.tensor(0.0).to(self.args.device)
             for logit, label in zip(split_logits, sorted_labels):
                 if self.label_type == 'single':
                     label = torch.max(label, 1)[1] # argmax along dim=1
@@ -168,33 +165,33 @@ class PredcitVADandClassfromLogit(torch.nn.Module):
             self.activation = nn.Sigmoid()
             self.log_activation = nn.LogSigmoid()
 
-        self.category_label_vads = self.args['label_vads']
-        self.category_label_names = self.args['label_names']
+        self.category_label_vads = self.args.label_vads
+        self.category_label_names = self.args.label_names
         self._sort_labels()
 
 
     def _check_args(self):
-        assert self.args['task'] == 'vad-from-categories'
+        assert self.args.task == 'vad-from-categories'
         assert self.label_type in ['single', 'multi']
-        assert self.args['label_vads'] is not None
-        assert self.args['label_names'] is not None
+        assert self.args.label_vads is not None
+        assert self.args.label_names is not None
 
 
     def _sort_labels(self):
         v_scores = [self.category_label_vads[key][0] for key in self.category_label_names]
-        self.v_sorted_idxs = torch.tensor(np.argsort(v_scores).tolist()).to(self.args['device'])
+        self.v_sorted_idxs = torch.tensor(np.argsort(v_scores).tolist()).to(self.args.device)
         self.v_recover_idxs = torch.argsort(self.v_sorted_idxs)
-        self.v_sorted_values = torch.tensor(np.sort(v_scores).tolist()).to(self.args['device'])
+        self.v_sorted_values = torch.tensor(np.sort(v_scores).tolist()).to(self.args.device)
 
         a_scores = [self.category_label_vads[key][1] for key in self.category_label_names]
-        self.a_sorted_idxs = torch.tensor(np.argsort(a_scores).tolist()).to(self.args['device'])
+        self.a_sorted_idxs = torch.tensor(np.argsort(a_scores).tolist()).to(self.args.device)
         self.a_recover_idxs = torch.argsort(self.a_sorted_idxs)
-        self.a_sorted_values = torch.tensor(np.sort(a_scores).tolist()).to(self.args['device'])
+        self.a_sorted_values = torch.tensor(np.sort(a_scores).tolist()).to(self.args.device)
 
         d_scores = [self.category_label_vads[key][2] for key in self.category_label_names]
-        self.d_sorted_idxs = torch.tensor(np.argsort(d_scores).tolist()).to(self.args['device'])
+        self.d_sorted_idxs = torch.tensor(np.argsort(d_scores).tolist()).to(self.args.device)
         self.d_recover_idxs = torch.argsort(self.d_sorted_idxs)
-        self.d_sorted_values = torch.tensor(np.sort(d_scores).tolist()).to(self.args['device'])
+        self.d_sorted_values = torch.tensor(np.sort(d_scores).tolist()).to(self.args.device)
 
 
     def forward(self, logits, predict):
@@ -238,10 +235,10 @@ class Trainer():
 
     def __init__(self, args):
         self.args = args
-        self.args['device'] = self.set_device()
+        self.args.device = self.set_device()
         self._set_eval_layers()
         self._set_loss()
-        if self.args['task'] == 'vad-from-categories':
+        if self.args.task == 'vad-from-categories':
             self._set_prediction()
 
 
@@ -258,49 +255,49 @@ class Trainer():
 
 
     def _set_loss(self):
-        if self.args['task'] == 'category-classification':
-            assert self.args['dataset'] in ['semeval', 'ssec', 'isear', 'goemotions', 'ekman']
-            if self.args['dataset'] == 'semeval': # multi-labeled
+        if self.args.task == 'category-classification':
+            assert self.args.dataset in ['semeval', 'ssec', 'isear', 'goemotions', 'ekman']
+            if self.args.dataset == 'semeval': # multi-labeled
                 self.loss = torch.nn.BCEWithLogitsLoss()
-            elif self.args['dataset'] == 'ssec': # multi-labeled
+            elif self.args.dataset == 'ssec': # multi-labeled
                 self.loss = torch.nn.BCEWithLogitsLoss()
-            elif self.args['dataset'] == 'isear': # single-labeled
+            elif self.args.dataset == 'isear': # single-labeled
                 self.loss = torch.nn.CrossEntropyLoss()
-            elif self.args['dataset'] == 'goemotions': # multi-labeled
+            elif self.args.dataset == 'goemotions': # multi-labeled
                 self.loss = torch.nn.BCEWithLogitsLoss()
-            elif self.args['dataset'] == 'ekman': # multi-labeled
+            elif self.args.dataset == 'ekman': # multi-labeled
                 self.loss = torch.nn.BCEWithLogitsLoss()
             
 
-        elif self.args['task'] == 'vad-regression':
-            assert self.args['dataset'] in ['emobank']
+        elif self.args.task == 'vad-regression':
+            assert self.args.dataset in ['emobank']
             self.loss = nn.MSELoss()
 
-        elif self.args['task'] == 'vad-from-categories':
-            assert self.args['dataset'] in ['semeval', 'ssec', 'isear', 'goemotions', 'ekman']
-            if self.args['dataset'] == 'semeval': # multi-labeled
+        elif self.args.task == 'vad-from-categories':
+            assert self.args.dataset in ['semeval', 'ssec', 'isear', 'goemotions', 'ekman']
+            if self.args.dataset == 'semeval': # multi-labeled
                 self.loss = EMDLoss(self.args, label_type='multi')
-            elif self.args['dataset'] == 'ssec': # multi-labeled
+            elif self.args.dataset == 'ssec': # multi-labeled
                 self.loss = EMDLoss(self.args, label_type='multi')
-            elif self.args['dataset'] == 'isear': # single-labeled
+            elif self.args.dataset == 'isear': # single-labeled
                 self.loss = EMDLoss(self.args, label_type='single')
-            elif self.args['dataset'] == 'goemotions': # multi-labeled
+            elif self.args.dataset == 'goemotions': # multi-labeled
                 self.loss = EMDLoss(self.args, label_type='multi')
-            elif self.args['dataset'] == 'ekman': # multi-labeled
+            elif self.args.dataset == 'ekman': # multi-labeled
                 self.loss = EMDLoss(self.args, label_type='multi')  
 
 
     def _set_prediction(self):
-        assert self.args['dataset'] in ['semeval', 'ssec', 'isear', 'goemotions', 'ekman']
-        if self.args['dataset'] == 'semeval': # multi-labeled
+        assert self.args.dataset in ['semeval', 'ssec', 'isear', 'goemotions', 'ekman']
+        if self.args.dataset == 'semeval': # multi-labeled
             self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
-        elif self.args['dataset'] == 'ssec': # multi-labeled
+        elif self.args.dataset == 'ssec': # multi-labeled
             self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
-        elif self.args['dataset'] == 'isear': # single-labeled
+        elif self.args.dataset == 'isear': # single-labeled
             self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='single')
-        elif self.args['dataset'] == 'goemotions': # multi-labeled
+        elif self.args.dataset == 'goemotions': # multi-labeled
             self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
-        elif self.args['dataset'] == 'ekman': # multi-labeled
+        elif self.args.dataset == 'ekman': # multi-labeled
             self.convert_logits_to_predictions = PredcitVADandClassfromLogit(self.args, label_type='multi')
         
 
@@ -322,16 +319,16 @@ class Trainer():
 
 
     def compute_loss(self, inputs, lm_logits, logits, labels):
-        if self.args['task'] == 'vad-regression':
+        if self.args.task == 'vad-regression':
             logits = F.relu(logits)
             overall_loss = self.loss(logits, labels)
-        if self.args['task'] == 'category-classification':
-            if self.args['dataset'] == 'semeval' or self.args['dataset'] == 'ssec' or self.args['dataset'] == 'goemotions' or self.args['dataset'] == 'ekman' : # multi-labeled
+        if self.args.task == 'category-classification':
+            if self.args.dataset == 'semeval' or self.args.dataset == 'ssec' or self.args.dataset == 'goemotions' or self.args.dataset == 'ekman' : # multi-labeled
                 labels = labels.type_as(logits)
                 overall_loss = self.loss(logits, labels)
             else:
                 overall_loss = self.loss(logits, labels)
-        if self.args['task'] == 'vad-from-categories':
+        if self.args.task == 'vad-from-categories':
             emd_loss = self.loss(logits, labels)
             exp_decay=[-3.9, -4.6]
             self.lm_coef = exp_decay
@@ -351,7 +348,7 @@ class Trainer():
     def set_optimizer(self, params):
         optimizer = AdamW(
             params, 
-            lr = self.args['learning_rate'],
+            lr = self.args.learning_rate,
             betas = (0.9, 0.98),
             eps = 1e-06,
             correct_bias=False
@@ -359,8 +356,8 @@ class Trainer():
 
         lr_scheduler = get_linear_schedule_with_warmup(
             optimizer, 
-            num_warmup_steps=int(self.args['total_n_updates'] * self.args['warmup_proportion']), 
-            num_training_steps=self.args['total_n_updates'])
+            num_warmup_steps=int(self.args.total_n_updates * self.args.warmup_proportion), 
+            num_training_steps=self.args.total_n_updates)
             
         return optimizer, lr_scheduler
     
@@ -368,23 +365,23 @@ class Trainer():
     def set_legacy_optimizer(self, params):
         optimizer = BertAdam(
             params, 
-            lr = self.args['learning_rate'], 
+            lr = self.args.learning_rate, 
             schedule='warmup_linear', 
-            warmup = self.args['warmup_proportion'], 
-            t_total = self.args['total_n_updates']
+            warmup = self.args.warmup_proportion, 
+            t_total = self.args.total_n_updates
         )
         return optimizer, None
 
 
     def backward_step(self, it, n_updates, model, loss, accumulated_loss, optimizer, lr_scheduler):
         loss.backward() #Backpropagating the gradients
-        torch.nn.utils.clip_grad_norm_(model.parameters(), self.args['clip_grad'])
+        torch.nn.utils.clip_grad_norm_(model.parameters(), self.args.clip_grad)
 
-        if (it + 1) % self.args['update_freq'] == 0:
-            if self.args['optimizer_type'] == 'trans':
+        if (it + 1) % self.args.update_freq == 0:
+            if self.args.optimizer_type == 'trans':
                 lr_scheduler.step()
             optimizer.step()
-            if self.args['log_updates']:
+            if self.args.log_updates:
                 print('step:', it, 
                         "(updates:", n_updates ,")", 'loss:', accumulated_loss.item())
             accumulated_loss = 0
@@ -422,18 +419,19 @@ class Trainer():
         metrics = {}
 
         # 1. vad-regression ---------------------------------------------------------
-        if self.args['task'] == 'vad-regression': # corrleations between v, a, d
+        if self.args.task == 'vad-regression': # corrleations between v, a, d
             metrics = self._compute_vad_eval_metrics(metrics, predictions, labels)
         
         # 2. vad-from-categories ----------------------------------------------------
-        elif self.args['task'] == 'vad-from-categories':
+        elif self.args.task == 'vad-from-categories':
             assert eval_type in ['vad', 'cat']
             if eval_type == 'vad':
                 metrics = self._compute_vad_eval_metrics(metrics, predictions, labels)
             else: # eval_type == 'cat':
-                if self.args['dataset'] in ['semeval', 'ssec', 'goemotions', 'ekman']: # multi-labeled
+                print("dataset is", self.args.dataset)
+                if self.args.dataset in ['semeval', 'ssec', 'goemotions', 'ekman']: # multi-labeled
                     add_jaccard_score = True
-                elif self.args['dataset'] == 'isear': # single-labeled
+                elif self.args.dataset == 'isear': # single-labeled
                     add_jaccard_score = False
                 metrics = self._compute_classification_eval_metrics(
                     metrics, 
@@ -442,10 +440,10 @@ class Trainer():
                     add_jaccard_score=add_jaccard_score)             
         
         # 3. category-classification ------------------------------------------------
-        elif self.args['task'] == 'category-classification':
-            if self.args['dataset'] in ['semeval', 'ssec', 'goemotions', 'ekman']: # multi-labeled
+        elif self.args.task == 'category-classification':
+            if self.args.dataset in ['semeval', 'ssec', 'goemotions', 'ekman']: # multi-labeled
                 add_jaccard_score = True
-            elif self.args['dataset'] == 'isear': # single-labeled
+            elif self.args.dataset == 'isear': # single-labeled
                 add_jaccard_score = False
             metrics = self._compute_classification_eval_metrics(
                 metrics, 
@@ -459,7 +457,7 @@ class Trainer():
     def predict(self, model, dataloader, prediction_type=None, compute_loss=True):
         model.eval()
 
-        total_losses = torch.tensor(0).to(torch.device(self.args['device'])).float()
+        total_losses = torch.tensor(0).to(torch.device(self.args.device)).float()
         total_predictions = []
         total_labels = []
 
@@ -468,9 +466,9 @@ class Trainer():
             for it, batch in enumerate(dataloader):
                 
                 # 1. compute logits
-                input_ids = batch[0].to(torch.device(self.args['device']))
-                attention_masks = batch[1].to(torch.device(self.args['device']))
-                labels = batch[2].to(torch.device(self.args['device']))
+                input_ids = batch[0].to(torch.device(self.args.device))
+                attention_masks = batch[1].to(torch.device(self.args.device))
+                labels = batch[2].to(torch.device(self.args.device))
                 total_labels.append(labels)
 
                 lm_logits, cls_logits = model(
@@ -483,30 +481,30 @@ class Trainer():
                     total_losses += torch.sum(eval_loss)
                 
                 # 3. model predictions
-                if self.args['task'] == 'vad-regression':
+                if self.args.task == 'vad-regression':
                     predictions = F.relu(cls_logits) # vads
 
-                elif self.args['task'] == 'vad-from-categories':
+                elif self.args.task == 'vad-from-categories':
                     if prediction_type == 'vad':
                         predictions = self.convert_logits_to_predictions(cls_logits, predict='vad')         # vad 
                     else: # prediction_type == 'cat':
                         predictions = self.convert_logits_to_predictions(cls_logits, predict='cat')         # vad 
 
-                elif self.args['task'] == 'category-classification':
-                    assert self.args['dataset'] in ['semeval', 'ssec', 'isear', 'goemotions', 'ekman']
-                    if self.args['dataset'] == 'semeval': # multi-labeled
+                elif self.args.task == 'category-classification':
+                    assert self.args.dataset in ['semeval', 'ssec', 'isear', 'goemotions', 'ekman']
+                    if self.args.dataset == 'semeval': # multi-labeled
                         predictions = self.sigmoid(cls_logits) >= 0.5
                         predictions = torch.squeeze(predictions.float()) 
-                    elif self.args['dataset'] == 'ssec': # multi-labeled
+                    elif self.args.dataset == 'ssec': # multi-labeled
                         predictions = self.sigmoid(cls_logits) >= 0.5
                         predictions = torch.squeeze(predictions.float()) 
-                    elif self.args['dataset'] == 'isear': # single-labeled
+                    elif self.args.dataset == 'isear': # single-labeled
                         predictions = self.softmax(cls_logits)
                         predictions = torch.max(predictions, 1)[1] # argmax along dim=1
-                    elif self.args['dataset'] == 'goemotions': # multi-labeled
+                    elif self.args.dataset == 'goemotions': # multi-labeled
                         predictions = self.sigmoid(cls_logits) >= 0.5
                         predictions = torch.squeeze(predictions.float())
-                    elif self.args['dataset'] == 'ekman': # multi-labeled
+                    elif self.args.dataset == 'ekman': # multi-labeled
                         predictions = self.sigmoid(cls_logits) >= 0.5
                         predictions = torch.squeeze(predictions.float())
 
@@ -524,6 +522,7 @@ class Trainer():
         total_predictions, total_labels, total_losses = predictions
 
         eval_loss = torch.mean(total_losses)
+        print("predcition", prediction_type)
         eval_metrics = self.compute_eval_metric(total_predictions, total_labels, eval_type=prediction_type)
 
         return eval_loss, eval_metrics, total_predictions.size()
