@@ -24,11 +24,11 @@ In this work, we use four existing datasets consisting of text and corresponding
 |   EmoBank  | 10,062 |    V,A,D   |           regression          |             [**link**](https://github.com/JULIELab/EmoBank/tree/master/corpus)             |
 
 
-## Dependencies Requirements
+## Traning
+### Dependencies Requirements
 ```bash
 pip install -r requirements.txt
 ```
-## Traning
 ### Running Baseline Model (Pretrained RoBERTa-Base)
 
 #### Classification
