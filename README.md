@@ -95,4 +95,4 @@ With fine-tuning pre-trained RoBERTa, we show comparable performance to SOTA mod
 ```
 
 ## Contact
-Please contact {psj6512, jiseon_kim, vano1205}@kaist.ac.kr or raise an issue in this repository.
+Please contact {sungjoon.park, jiseon_kim, vano1205}@kaist.ac.kr or raise an issue in this repository.
