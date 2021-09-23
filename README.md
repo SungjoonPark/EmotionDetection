@@ -59,7 +59,7 @@ With fine-tuning pre-trained RoBERTa-Large, we show significant positive correla
 |-------------------|------------|------|------|------|
 | Baseline, SemEval | Zero-shot  | **.715** | **.319** | .319|
 | Baseline, ISEAR   | Zero-shot  | .611 | .083 | .242 |
-| Ours, GE          | Zero-shot  | .630 | .277 | **.311** |
+| Baseline, GE      | Zero-shot  | .630 | .277 | **.311** |
 | AAN               | Supervised | .424 | .352 | .265 |
 | Ensemble          | Supervised | .635 | .375 | .277 |
 | SRV-SLSTM         | Semi-super | .620 | .508 | .333 |
