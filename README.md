@@ -1,4 +1,4 @@
-# Toward Dimensional Emotion Detection from Categorical Emotion Annotations
+# Dimensional Emotion Detection from Categorical Emotion Annotation
 [**Paper**](https://arxiv.org/abs/1911.02499) |
 [**Dataset Preparation**](#Dataset-Preparation) | [**Traning**](#Traning) | [**Results**](#Results) |
 [**Citation**](#Citation) | [**Contact**](#Contact)
